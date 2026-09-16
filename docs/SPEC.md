@@ -153,8 +153,8 @@ aviso não bloqueante com a opção de tentar importar o arquivo manualmente.
 
 | Campo | Mín | Máx | Observação |
 |---|---|---|---|
-| `sigla` | 1 | 32 | Após normalização |
-| `en`, `pt`, `original` | 0 | 200 | **Ao menos um dos três** preenchido; os outros podem ficar vazios para preencher depois |
+| `sigla` | 1 | 120 | Após normalização; `rotulo` até 300 |
+| `en`, `pt`, `original` | 0 | 2000 | **Ao menos um dos três** preenchido; os outros podem ficar vazios. O limite cobre definições inteiras, não só expansões |
 | `aplicacao.contexto` | 0 | 2000 | Opcional |
 | `aplicacao.exemplo` | 0 | 2000 | Opcional |
 | `aplicacao.area`, `processo` | 0 | 120 | Opcional |

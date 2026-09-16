@@ -88,7 +88,15 @@ export function normalizar(entrada: string): string {
  * @example chaveDeRotulo("Artificial Network (AN)") // "ARTIFICIAL NETWORK AN"
  */
 export function chaveDeRotulo(rotulo: string): string {
-  return normalizar(rotulo);
+  const chave = normalizar(rotulo);
+  if (chave) return chave;
+  /**
+   * Rotulo formado so por pontuacao — a planilha real do usuario tem uma linha
+   * cuja "sigla" e apenas "[". Normalizar esvaziaria a chave e a entrada seria
+   * perdida, entao caimos no rotulo cru em maiusculas, sem espacos nas pontas.
+   * Continua sendo a grafia do usuario; nada e inventado.
+   */
+  return rotulo.trim().toUpperCase().replace(/\s+/gu, ' ');
 }
 
 /**

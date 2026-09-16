@@ -6,7 +6,7 @@ import { writeFileSync, readFileSync } from 'node:fs';
 import * as XLSX from 'xlsx';
 import { RepertorioSchema, SentidoSchema } from '../../shared/schema';
 import type { RelatorioImport, Sentido, Sigla } from '../../shared/types';
-import { normalizar } from '../../shared/normalize';
+import { chaveDeRotulo } from '../../shared/normalize';
 import * as repo from '../store/repository';
 import { ehCabecalhoCompleto, idiomaDoSignificado, lerLinhaSimples, montarSentido } from './formato-planilha';
 
@@ -47,11 +47,25 @@ export function exportar(caminho: string, formato: 'json' | 'csv' | 'xlsx'): str
   }
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Siglas');
-  XLSX.writeFile(wb, caminho);
+  // Escreve por buffer: o SheetJS empacotado nao enxerga o `fs` do Node.
+  writeFileSync(caminho, XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' }) as Buffer);
   return caminho;
 }
 
-export function importar(caminho: string, modo: 'merge' | 'substituir'): RelatorioImport {
+export interface ProgressoImport {
+  fase: 'lendo' | 'processando' | 'gravando' | 'concluido';
+  atual: number;
+  total: number;
+}
+
+export function importar(
+  caminho: string,
+  modo: 'merge' | 'substituir',
+  aoProgredir?: (p: ProgressoImport) => void,
+): RelatorioImport {
+  const avisar = (fase: ProgressoImport['fase'], atual: number, total: number): void =>
+    aoProgredir?.({ fase, atual, total });
+  avisar('lendo', 0, 0);
   const rel: RelatorioImport = { inseridos: 0, atualizados: 0, ignorados: 0, erros: [], backupCriado: '' };
 
   let linhas: Linha[];
@@ -68,7 +82,8 @@ export function importar(caminho: string, modo: 'merge' | 'substituir'): Relator
     }
     linhas = paraLinhas(r.data.siglas);
   } else {
-    const wb = XLSX.readFile(caminho);
+    // Le por buffer pelo mesmo motivo do export (ver acima).
+    const wb = XLSX.read(readFileSync(caminho), { type: 'buffer' });
     const nome = wb.SheetNames[0];
     if (!nome) {
       rel.erros.push({ linha: 0, campo: 'arquivo', mensagem: 'planilha sem abas' });
@@ -106,10 +121,13 @@ export function importar(caminho: string, modo: 'merge' | 'substituir'): Relator
 
   if (modo === 'substituir') repo.substituir({ schemaVersion: 1, atualizadoEm: new Date().toISOString(), siglas: [] });
 
+  avisar('processando', 0, linhas.length);
   linhas.forEach((l, i) => {
     const numero = i + 1;
+    // Avisa a cada 25 linhas: suficiente para a barra andar, sem inundar o IPC.
+    if (i % 25 === 0) avisar('processando', i, linhas.length);
     const rotulo = (l['rotulo'] || l['sigla'] || '').trim();
-    const chave = normalizar(rotulo);
+    const chave = chaveDeRotulo(rotulo);
     if (!chave) {
       rel.ignorados += 1;
       rel.erros.push({ linha: numero, campo: 'sigla', mensagem: 'sigla vazia' });
@@ -133,10 +151,13 @@ export function importar(caminho: string, modo: 'merge' | 'substituir'): Relator
       return;
     }
     const tipo = (l['tipo'] === 'termo' ? 'termo' : 'sigla') as 'sigla' | 'termo';
-    repo.salvarSentido(rotulo, r.data as Sentido, tipo);
+    repo.salvarSentido(rotulo, r.data as Sentido, tipo, true);
     if (alvo) rel.atualizados += 1;
     else rel.inseridos += 1;
   });
 
+  avisar('gravando', linhas.length, linhas.length);
+  repo.finalizarLote();
+  avisar('concluido', linhas.length, linhas.length);
   return rel;
 }

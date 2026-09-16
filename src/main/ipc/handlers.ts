@@ -67,8 +67,11 @@ export function registrarHandlers(): void {
         properties: ['openFile'],
       });
       if (r.canceled || !r.filePaths[0]) return null;
+      const painel = janelaPainel();
       try {
-        return importar(r.filePaths[0], modo === 'substituir' ? 'substituir' : 'merge');
+        return importar(r.filePaths[0], modo === 'substituir' ? 'substituir' : 'merge', (p) =>
+          painel?.webContents.send('lupa:progresso-import', p),
+        );
       } catch (e) {
         // Melhor devolver o motivo do que rejeitar o invoke e a tela nao dizer nada.
         return {

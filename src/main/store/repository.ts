@@ -5,7 +5,7 @@
 import { randomUUID } from 'node:crypto';
 import { RepertorioSchema, SentidoSchema } from '../../shared/schema';
 import type { Filtro, Repertorio, Sentido, Sigla } from '../../shared/types';
-import { normalizar } from '../../shared/normalize';
+import { chaveDeRotulo, normalizar } from '../../shared/normalize';
 import { arquivoRepertorio, pastaBackups, pastaDados } from './paths';
 import { criarBackup, escreverJsonAtomico, garantirPasta, lerJson } from './io';
 
@@ -51,7 +51,7 @@ export function todas(): Sigla[] {
 }
 
 export function obter(sigla: string): Sigla | null {
-  const chave = normalizar(sigla);
+  const chave = chaveDeRotulo(sigla);
   return repertorio.siglas.find((g) => g.sigla === chave) ?? null;
 }
 
@@ -86,8 +86,18 @@ const soma = (g: Sigla, campo: 'acessos'): number => g.sentidos.reduce((t, s) =>
 const ultima = (g: Sigla): string => g.sentidos.map((s) => s.atualizadoEm).sort().at(-1) ?? '';
 
 /** Cria ou atualiza um sentido. Cria a sigla se ainda não existir. */
-export function salvarSentido(rotulo: string, sentido: Sentido, tipo: 'sigla' | 'termo' = 'sigla'): void {
-  const chave = normalizar(rotulo);
+export function salvarSentido(
+  rotulo: string,
+  sentido: Sentido,
+  tipo: 'sigla' | 'termo' = 'sigla',
+  /**
+   * Import de centenas de linhas: gravar o arquivo a cada linha seria centenas
+   * de escritas e ordenações. Em lote, aplica tudo em memória e o chamador
+   * fecha com `finalizarLote()`, que ordena e grava uma vez só.
+   */
+  emLote = false,
+): void {
+  const chave = chaveDeRotulo(rotulo);
   if (!chave) throw new Error('sigla vazia');
   const valido = SentidoSchema.parse({ ...sentido, atualizadoEm: agora() });
 
@@ -99,6 +109,13 @@ export function salvarSentido(rotulo: string, sentido: Sentido, tipo: 'sigla' | 
     if (i >= 0) existente.sentidos[i] = valido;
     else existente.sentidos.push(valido);
   }
+  if (emLote) return;
+  repertorio.siglas.sort((a, b) => a.sigla.localeCompare(b.sigla));
+  persistir();
+}
+
+/** Ordena e grava uma única vez, no fim de um lote de importação. */
+export function finalizarLote(): void {
   repertorio.siglas.sort((a, b) => a.sigla.localeCompare(b.sigla));
   persistir();
 }

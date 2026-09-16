@@ -30,6 +30,10 @@ const api = {
   aoFocarBusca: (cb: () => void) => ipcRenderer.on('lupa:focar-busca', cb),
   aoMudarConfig: (cb: (cfg: unknown) => void) =>
     ipcRenderer.on('lupa:config-mudou', (_e, cfg) => cb(cfg)),
+  aoProgredirImport: (cb: (p: unknown) => void) => {
+    ipcRenderer.removeAllListeners('lupa:progresso-import');
+    ipcRenderer.on('lupa:progresso-import', (_e, p) => cb(p));
+  },
   iniciarArraste: (dx: number, dy: number) => ipcRenderer.send('lupa:iniciarArraste', dx, dy),
   pararArraste: () => ipcRenderer.send('lupa:pararArraste'),
   minimizar: () => ipcRenderer.send('lupa:minimizar'),

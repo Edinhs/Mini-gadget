@@ -67,6 +67,13 @@ describe('SiglaSchema', () => {
   it('rejeita chave não normalizada', () => {
     expect(SiglaSchema.safeParse({ ...base, sigla: 'AD&P' }).success).toBe(false);
     expect(SiglaSchema.safeParse({ ...base, sigla: 'ppap' }).success).toBe(false);
+    expect(SiglaSchema.safeParse({ ...base, sigla: 'PP-AP' }).success).toBe(false);
+  });
+
+  it('abre exceção só para rótulo sem nada normalizável (a linha "[" da planilha real)', () => {
+    expect(SiglaSchema.safeParse({ ...base, sigla: '[', rotulo: '[' }).success).toBe(true);
+    // e mesmo aí exige maiúsculas/trim, para não virar porta dos fundos
+    expect(SiglaSchema.safeParse({ ...base, sigla: ' [ ', rotulo: '[' }).success).toBe(false);
   });
 
   it('preserva a grafia do usuário no rotulo', () => {

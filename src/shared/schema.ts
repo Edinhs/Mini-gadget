@@ -5,12 +5,18 @@
  * módulo declara tipo estrutural próprio (CLAUDE.md, regra 1).
  */
 import { z } from 'zod';
-import { estaNormalizado } from './normalize';
+import { estaNormalizado, normalizar } from './normalize';
 
 /** SPEC §3.3 — limites de campo. Excedente é rejeitado, nunca truncado. */
 export const LIMITES = {
-  sigla: 32,
-  enPt: 200,
+  /**
+   * Medidos contra a planilha real do usuario (749 linhas): a maior chave tem
+   * 50 caracteres ("Kalman Filter or linear quadratic estimation (LQE)") e o
+   * maior significado, 409 — sao definicoes inteiras, nao apenas expansoes.
+   */
+  sigla: 120,
+  rotulo: 300,
+  enPt: 2000,
   textoLongo: 2000,
   areaProcesso: 120,
   referencia: 300,
@@ -68,9 +74,17 @@ export const SiglaSchema = z.object({
     .string()
     .min(1)
     .max(LIMITES.sigla)
-    .refine(estaNormalizado, { message: 'sigla deve estar normalizada (maiúsculas, sem acento/pontuação)' }),
+    /**
+      * A chave é normalizada, com UMA exceção: rótulos sem nenhum caractere
+      * normalizável — a planilha real traz uma "sigla" que é só "[". Aí a chave
+      * é o próprio rótulo em maiúsculas, para a entrada não ser perdida.
+      * `AD&P` continua exigindo a chave `ADP`, porque tem o que normalizar.
+      */
+    .refine((v) => estaNormalizado(v) || (normalizar(v) === '' && v === v.trim().toUpperCase()), {
+      message: 'sigla deve estar normalizada (maiúsculas, sem acento/pontuação)',
+    }),
   /** Grafia do usuário, preservada para exibição: "AD&P". */
-  rotulo: z.string().min(1).max(LIMITES.enPt),
+  rotulo: z.string().min(1).max(LIMITES.rotulo),
   tipo: z.enum(['sigla', 'termo']),
   sentidos: z.array(SentidoSchema).min(1, 'toda sigla precisa de ao menos um sentido'),
 });

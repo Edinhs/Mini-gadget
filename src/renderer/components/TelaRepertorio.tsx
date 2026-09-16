@@ -1,6 +1,6 @@
 /** Lista, CRUD, import e export (SPEC §5.4). */
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import type { Sentido, Sigla } from '@shared/types';
+import type { ProgressoImport, Sentido, Sigla } from '@shared/types';
 import { FormSentido, type Rascunho } from './FormSentido';
 import { Icone, IconeLupa } from './IconeLupa';
 
@@ -10,6 +10,7 @@ export function TelaRepertorio({ barra }: { barra: ReactNode }): JSX.Element {
   const [editando, setEditando] = useState<Rascunho | null>(null);
   const [novo, setNovo] = useState(false);
   const [aviso, setAviso] = useState<{ texto: string; erro: boolean } | null>(null);
+  const [progresso, setProgresso] = useState<ProgressoImport | null>(null);
 
   const recarregar = useCallback(async () => {
     setLista(await window.lupa.listar(texto ? { texto } : undefined));
@@ -24,9 +25,13 @@ export function TelaRepertorio({ barra }: { barra: ReactNode }): JSX.Element {
   };
 
   const importar = async (): Promise<void> => {
-    setAviso({ texto: 'Lendo a planilha…', erro: false });
+    setAviso(null);
+    setProgresso({ fase: 'lendo', atual: 0, total: 0 });
+    window.lupa.aoProgredirImport(setProgresso);
+
     const rel = await window.lupa.importar('merge');
-    if (!rel) { setAviso(null); return; }
+    setProgresso(null);
+    if (!rel) return;
 
     const entraram = rel.inseridos + rel.atualizados;
     const primeiro = rel.erros[0];
@@ -77,6 +82,7 @@ export function TelaRepertorio({ barra }: { barra: ReactNode }): JSX.Element {
       </div>
 
       <div className="conteudo">
+        {progresso && <BarraProgresso p={progresso} />}
         {aviso && <div className={`aviso ${aviso.erro ? 'erro' : ''}`}>{aviso.texto}</div>}
 
         {lista.length === 0 ? (
@@ -136,6 +142,30 @@ export function VazioRepertorio({ aoCadastrar, aoImportar }: { aoCadastrar: () =
         A planilha pode ser bem simples: coluna A a sigla, B o significado e
         C a aplicação. Só com A e B também funciona.
       </p>
+    </div>
+  );
+}
+
+/** Barra de carregamento do import (SPEC §7). */
+function BarraProgresso({ p }: { p: ProgressoImport }): JSX.Element {
+  const pct = p.total > 0 ? Math.round((p.atual / p.total) * 100) : 0;
+  const rotulo =
+    p.fase === 'lendo' ? 'Lendo a planilha…'
+    : p.fase === 'processando' ? `Importando ${p.atual} de ${p.total} linhas…`
+    : p.fase === 'gravando' ? 'Gravando o repertório…'
+    : 'Concluído';
+  return (
+    <div className="progresso" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+      <div className="progresso-topo">
+        <span>{rotulo}</span>
+        {p.total > 0 && <strong>{pct}%</strong>}
+      </div>
+      <div className="progresso-trilho">
+        <div
+          className={`progresso-barra ${p.total === 0 ? 'indeterminada' : ''}`}
+          style={p.total > 0 ? { width: `${pct}%` } : undefined}
+        />
+      </div>
     </div>
   );
 }

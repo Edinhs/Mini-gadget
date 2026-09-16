@@ -29,6 +29,12 @@ export type ResultadoBusca = z.infer<typeof ResultadoBuscaSchema>;
 export type RelatorioImport = z.infer<typeof RelatorioImportSchema>;
 export type Config = z.infer<typeof ConfigSchema>;
 
+export interface ProgressoImport {
+  fase: 'lendo' | 'processando' | 'gravando' | 'concluido';
+  atual: number;
+  total: number;
+}
+
 export type FormatoExport = 'json' | 'csv' | 'xlsx';
 export type ModoImport = 'merge' | 'substituir';
 
@@ -62,6 +68,8 @@ export interface LupaAPI {
   aoFocarBusca(cb: () => void): void;
   /** Avisa o renderer quando a configuracao muda, para o tema valer na hora. */
   aoMudarConfig(cb: (cfg: Config) => void): void;
+  /** Progresso do import, para a barra de carregamento. */
+  aoProgredirImport(cb: (p: ProgressoImport) => void): void;
   /** Arraste livre da lupa: o main passa a seguir o cursor. */
   iniciarArraste(dx: number, dy: number): void;
   pararArraste(): void;
