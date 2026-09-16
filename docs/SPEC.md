@@ -1,7 +1,8 @@
 # SPEC — Lupa (Mini-Gadget de Siglas)
 
 > Especificação funcional e técnica. Responde *como*.
-> Versão 1.0 — 2026-09-16 · Base: `docs/BRIEFING.md`
+> Versão 1.1 — 2026-09-16 · Base: `docs/BRIEFING.md`
+> v1.1: correções das lacunas L-01 a L-20 apontadas em `docs/VF.md` §9.
 
 ---
 
@@ -47,6 +48,9 @@
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
+**Instância única:** a segunda execução não abre outra janela — ela traz a
+instância existente ao topo e abre o painel de busca focado.
+
 **Segurança:** `nodeIntegration: false`, `contextIsolation: true`, `sandbox: true`.
 O renderer nunca toca no filesystem — só fala por IPC tipado.
 
@@ -56,6 +60,10 @@ O renderer nunca toca no filesystem — só fala por IPC tipado.
 
 `%APPDATA%/Lupa/repertorio.json` — escrita atômica (`.tmp` + `rename`), backup
 rotativo das últimas 5 versões em `%APPDATA%/Lupa/backups/`.
+
+A pasta é configurável (`Config.pastaRepertorio`); ao trocá-la, o app copia o
+repertório atual para o novo destino antes de passar a usá-lo. `%APPDATA%/Lupa`
+é apenas o padrão.
 
 ### 3.2 Schema
 
@@ -76,6 +84,7 @@ interface Sentido {
   };
   tags: string[];
   favorito: boolean;
+  acessos: number;         // incrementado a cada consulta; usado na ordenação §4.3
   criadoEm: string;        // ISO 8601
   atualizadoEm: string;
 }
@@ -92,7 +101,21 @@ interface Repertorio {
 }
 ```
 
-### 3.3 Regras de integridade
+### 3.3 Limites de campo
+
+| Campo | Mín | Máx | Observação |
+|---|---|---|---|
+| `sigla` | 1 | 32 | Após normalização |
+| `en`, `pt` | 1 | 200 | Obrigatórios |
+| `aplicacao.contexto` | 1 | 2000 | Obrigatório |
+| `aplicacao.exemplo` | 0 | 2000 | Opcional |
+| `aplicacao.area`, `processo` | 0 | 120 | Opcional |
+| `aplicacao.referencia` | 0 | 300 | `null` quando não houver |
+| `tags` | 0 | 10 itens × 40 chars | Separador em CSV/XLSX: `;` |
+
+O excedente é rejeitado pelo Zod com mensagem de campo, nunca truncado em silêncio.
+
+### 3.4 Regras de integridade
 - `sigla` é chave única, normalizada: maiúsculas, sem acento, sem pontuação.
 - Toda sigla tem ≥ 1 sentido; excluir o último sentido remove a sigla.
 - `en` e `pt` são obrigatórios; `aplicacao.contexto` obrigatório; demais opcionais.
@@ -112,6 +135,10 @@ interface Repertorio {
 | 4 | Full-text em `en`, `pt`, `tags` | Busca reversa (pelo significado) |
 | 5 | Nenhum resultado | CTA "Cadastrar «XYZ» no repertório" |
 
+A cascata é **excludente**: para na primeira etapa que produzir resultado, e a
+etapa usada é devolvida em `ResultadoBusca.estrategia`. O limite é de **10
+resultados** por consulta, ordenados conforme §4.3.
+
 ### 4.3 Desambiguação
 Múltiplos sentidos → cards empilhados, ordenados por: favorito → nº de acessos →
 categoria preferida (Settings) → ordem alfabética.
@@ -126,6 +153,8 @@ categoria preferida (Settings) → ordem alfabética.
 | Idle | opacidade 0,55 após 5 s sem interação |
 | Hover | opacidade 1,0 + leve escala (1,08) |
 | Arrastar | `-webkit-app-region: drag`; posição salva em Settings |
+| Opacidade ociosa | Configurável 0,30–1,00 · padrão 0,55 |
+| Multi-monitor | No boot e em `display-metrics-changed`, se a posição salva estiver fora de qualquer display, a lupa volta ao canto inferior direito do display primário |
 | Clique | abre/fecha o painel ancorado ao lado da lupa |
 | Botão direito | menu: Repertório · Configurações · Sair |
 
@@ -133,7 +162,9 @@ categoria preferida (Settings) → ordem alfabética.
 - Abre com foco automático no input (cursor pronto para digitar).
 - Busca *as-you-type* com debounce de 120 ms.
 - `Esc` fecha · `Enter` seleciona o primeiro resultado · `↑/↓` navega.
-- Perde o foco → fecha (configurável: modo "fixar painel").
+- Perde o foco → fecha, **exceto** quando: `fixarPainel` está ligado, há diálogo
+  nativo aberto (importar/exportar), ou há formulário de cadastro/edição com
+  alterações não salvas — nestes casos o painel permanece aberto.
 
 ### 5.3 Card de resultado
 ```
@@ -171,16 +202,66 @@ ociosa · aba padrão · categoria preferida · pasta do repertório · fixar pa
 
 ## 6. Contrato IPC
 
+### 6.1 Tipos auxiliares
+
+```ts
+type Estrategia = 'exato' | 'prefixo' | 'fuzzy' | 'fulltext' | 'nenhum';
+
+interface ResultadoBusca {
+  termo: string;           // entrada original
+  normalizado: string;
+  estrategia: Estrategia;  // qual etapa da cascata resolveu
+  resultados: Sigla[];     // no máx. 10 (§4.2)
+  sugestaoCadastro: boolean; // true quando estrategia === 'nenhum'
+}
+
+interface Filtro {
+  texto?: string;
+  categoria?: Categoria;
+  apenasFavoritos?: boolean;
+  ordenarPor?: 'sigla' | 'atualizadoEm' | 'acessos';
+  direcao?: 'asc' | 'desc';
+}
+
+interface RelatorioImport {
+  inseridos: number;
+  atualizados: number;
+  ignorados: number;
+  erros: { linha: number; campo: string; mensagem: string }[];
+  backupCriado: string;    // caminho do backup pré-import
+}
+
+interface Config {
+  atalhoGlobal: string;        // padrão 'Ctrl+Alt+L'
+  iniciarComWindows: boolean;
+  tema: 'claro' | 'escuro' | 'sistema';
+  opacidadeOciosa: number;     // 0,30–1,00 · padrão 0,55
+  abaPadrao: 'en' | 'pt' | 'aplicacao';
+  categoriaPreferida: Categoria | null;
+  pastaRepertorio: string;     // padrão %APPDATA%/Lupa
+  fixarPainel: boolean;
+  posicaoLupa: { x: number; y: number };
+  tamanhoHistorico: number;    // padrão 10
+}
+```
+
+### 6.2 Superfície exposta ao renderer
+
 ```ts
 interface LupaAPI {
   buscar(termo: string): Promise<ResultadoBusca>;
   obter(sigla: string): Promise<Sigla | null>;
   listar(filtro?: Filtro): Promise<Sigla[]>;
   salvarSentido(sigla: string, sentido: Sentido): Promise<void>;
+  duplicarSentido(sigla: string, sentidoId: string): Promise<Sentido>;
   excluirSentido(sigla: string, sentidoId: string): Promise<void>;
+  excluirSigla(sigla: string): Promise<void>;
   alternarFavorito(sigla: string, sentidoId: string): Promise<void>;
+  registrarAcesso(sigla: string, sentidoId: string): Promise<void>;
   importar(caminho: string, modo: 'merge' | 'substituir'): Promise<RelatorioImport>;
   exportar(formato: 'json' | 'csv' | 'xlsx'): Promise<string>;
+  listarBackups(): Promise<{ caminho: string; data: string }[]>;
+  restaurarBackup(caminho: string): Promise<void>;
   historico(): Promise<string[]>;
   obterConfig(): Promise<Config>;
   salvarConfig(patch: Partial<Config>): Promise<Config>;
@@ -194,10 +275,19 @@ Todo handler valida entrada com **Zod** antes de tocar no store.
 ## 7. Import / Export
 
 **Colunas do XLSX/CSV** (uma linha por sentido):
-`sigla | categoria | en | pt | contexto | exemplo | area | processo | referencia | tags`
+`id | sigla | categoria | en | pt | contexto | exemplo | area | processo | referencia | tags | favorito | criadoEm | atualizadoEm`
 
-- Import valida linha a linha e devolve `RelatorioImport { inseridos, atualizados, ignorados, erros[] }`.
-- Modo `merge` (padrão) preserva o que existe; `substituir` troca o repertório inteiro (com backup automático antes).
+As quatro últimas colunas garantem **round-trip sem perda**: exportar e reimportar
+preserva favoritos e datas. `tags` usa `;` como separador. `favorito` aceita
+`sim/não`, `true/false`, `1/0`.
+
+**Chave de identidade no `merge`**, nesta ordem:
+1. `id` preenchido e existente no repertório → **atualiza** aquele sentido;
+2. senão, `sigla` + `categoria` + `en` (normalizados) → **atualiza** o sentido casado;
+3. senão → **insere** novo sentido com `id` gerado.
+
+- Import valida linha a linha e devolve `RelatorioImport`; linha inválida é ignorada e reportada, sem abortar o lote.
+- Modo `merge` (padrão) preserva o que existe; `substituir` troca o repertório inteiro. Ambos criam backup antes de escrever.
 - Export sempre em UTF-8 com BOM (Excel PT-BR abre sem quebrar acento).
 
 ## 8. Requisitos não-funcionais
@@ -212,6 +302,8 @@ Todo handler valida entrada com **Zod** antes de tocar no store.
 | RNF6 | Sem privilégio de administrador | obrigatório |
 | RNF7 | Instalador x64 | < 120 MB |
 | RNF8 | Nenhuma telemetria / envio externo | obrigatório |
+| RNF9 | Latência atalho → resultado legível na tela (métrica M1) | < 1,5 s |
+| RNF10 | Passos para cadastrar uma sigla nova (métrica M6) | ≤ 4 |
 
 ## 9. Estrutura do repositório
 
@@ -241,3 +333,4 @@ Mini-gadget/
 | ADR-3 | Duas janelas (lupa + painel) | Janela única redimensionável | Lupa permanece leve e sempre no topo, sem redraw do painel |
 | ADR-4 | Fuse.js | Índice próprio | 5 KB resolvem fuzzy + full-text; não reinventar |
 | ADR-5 | Sem IA na v1 | Fallback Claude API | Offline-first e zero custo; fica planejado para v2 |
+| ADR-6 | v1.0 sem assinatura de código | Certificado EV | Custo/prazo de certificado não cabem na v1; mitigado pela versão portátil. **Limitação conhecida:** SmartScreen exibirá aviso na primeira execução |
