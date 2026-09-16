@@ -1,0 +1,702 @@
+{
+  "schemaVersion": 1,
+  "origem": "Lista enviada pelo usuario em 2026-09-16 (letra A, 1o lote)",
+  "atualizadoEm": "2026-09-16T00:00:00.000Z",
+  "siglas": [
+    {
+      "sigla": "ABC",
+      "rotulo": "ABC",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "abc-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automated Build Code",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ABPMP",
+      "rotulo": "ABPMP",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "abpmp-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Association of Business Process Management Professionals",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ABS",
+      "rotulo": "ABS",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "abs-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Antilock Break System",
+          "pt": "Sistema de Freios Antitravamento",
+          "aplicacao": {
+            "contexto": "Grafia \"Break\" conforme a lista de origem; conferir se o correto no seu contexto é \"Brake\".",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ACC",
+      "rotulo": "ACC",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "acc-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Adaptive Cruise Control",
+          "pt": "Controle de Cruzeiro Adaptativo",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ACE",
+      "rotulo": "ACE",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "ace-automotivo-1",
+          "categoria": "automotivo",
+          "en": "",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "Termo original em italiano: \"Alzacristallo Elettrico\".",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": "it",
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ACN",
+      "rotulo": "ACN",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "acn-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automatic Crash Notification",
+          "pt": "Notificação Automática de Colisão",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ADA",
+      "rotulo": "ADA",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "ada-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automotive Data Aggregation process",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ADC",
+      "rotulo": "ADC",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "adc-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Adjacent Component",
+          "pt": "Componente Adjacente",
+          "aplicacao": {
+            "contexto": "Something other than that part caused our part to fail (such as a broken clip, or broken housing, etc).",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ADP",
+      "rotulo": "AD&P",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "adp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Advanced Design & Packaging",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AEB",
+      "rotulo": "AEB",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "aeb-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Autonomous Emergency Break",
+          "pt": "Frenagem Autônoma de Emergência",
+          "aplicacao": {
+            "contexto": "Grafia \"Break\" conforme a lista de origem; conferir se o correto no seu contexto é \"Brake\".",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AFP",
+      "rotulo": "AFP",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "afp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Staging Final Product",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "Do italiano \"Allestimento Finale Prodotto\". Cada AFP e uma configuracao construivel (buildable configuration).",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": "it",
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "afp-automotivo-2",
+          "categoria": "automotivo",
+          "en": "",
+          "pt": "Codigo de identificacao do modelo no CoDeP",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AGSM",
+      "rotulo": "AGSM",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "agsm-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automatic Gearbox Shifter Module",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AHB",
+      "rotulo": "AHB",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "ahb-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Auto High Beam",
+          "pt": "Farol Alto Automático",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AL",
+      "rotulo": "AL",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "al-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Architecture Leader",
+          "pt": "Líder de Arquitetura",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ALLESTIMENTO",
+      "rotulo": "Allestimento",
+      "tipo": "termo",
+      "sentidos": [
+        {
+          "id": "allestimento-automotivo-1",
+          "categoria": "automotivo",
+          "en": "",
+          "pt": "Modelo / versão",
+          "aplicacao": {
+            "contexto": "Termo original em italiano.",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": "it",
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ALSE",
+      "rotulo": "ALSE",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "alse-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Absorber Lined Shielded Enclosure",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ALT",
+      "rotulo": "ALT",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "alt-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Alternator",
+          "pt": "Alternador",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AM",
+      "rotulo": "AM",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "am-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Amplitude Modulation",
+          "pt": "Modulação em Amplitude",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AME",
+      "rotulo": "AME",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "ame-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Advanced Manufacturing Engineering",
+          "pt": "Engenharia de Manufatura Avançada",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AMP",
+      "rotulo": "AMP",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "amp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Amplifier",
+          "pt": "Amplificador",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AN",
+      "rotulo": "Artificial Network (AN)",
+      "tipo": "termo",
+      "sentidos": [
+        {
+          "id": "an-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Artificial Network",
+          "pt": "",
+          "aplicacao": {
+            "contexto": "A device used to present a known impedance to the power line of the DUT.",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ANOMALY",
+      "rotulo": "Anomaly",
+      "tipo": "termo",
+      "sentidos": [
+        {
+          "id": "anomaly-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Anomaly",
+          "pt": "Anomalia",
+          "aplicacao": {
+            "contexto": "A detectable change in DUT performance due to an applied stimulus.",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "APAC",
+      "rotulo": "APAC",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "apac-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Asia Pacific Region",
+          "pt": "Região Ásia-Pacífico",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "APQP",
+      "rotulo": "APQP",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "apqp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Advanced Product Quality Planning",
+          "pt": "Planejamento Avançado da Qualidade do Produto",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AQR",
+      "rotulo": "AQR",
+      "tipo": "sigla",
+      "sentidos": [
+        {
+          "id": "aqr-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Additional Quality Requirements",
+          "pt": "Requisitos Adicionais de Qualidade",
+          "aplicacao": {
+            "contexto": "",
+            "exemplo": "",
+            "area": "",
+            "processo": "",
+            "referencia": null
+          },
+          "idiomaOrigem": null,
+          "tags": [],
+          "favorito": false,
+          "acessos": 0,
+          "revisar": true,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

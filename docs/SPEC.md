@@ -1,8 +1,11 @@
 # SPEC — Lupa (Mini-Gadget de Siglas)
 
 > Especificação funcional e técnica. Responde *como*.
-> Versão 1.1 — 2026-09-16 · Base: `docs/BRIEFING.md`
+> Versão 1.2 — 2026-09-16 · Base: `docs/BRIEFING.md`
 > v1.1: correções das lacunas L-01 a L-20 apontadas em `docs/VF.md` §9.
+> v1.2: carga inicial com aplicação única (nunca sobrescreve edições do usuário),
+> tratamento de carga corrompida, e schema ajustado ao 1º lote real de siglas (`rotulo`, `tipo`,
+> `idiomaOrigem`, `revisar`; `en`/`pt` deixam de ser ambos obrigatórios).
 
 ---
 
@@ -73,8 +76,10 @@ type Categoria = 'automotivo' | 'ti' | 'corporativo' | 'generico';
 interface Sentido {
   id: string;              // uuid
   categoria: Categoria;
-  en: string;              // "Production Part Approval Process"
-  pt: string;              // "Processo de Aprovação de Peça de Produção"
+  en: string;              // "Production Part Approval Process" — pode estar vazio
+  pt: string;              // "Processo de Aprovação de Peça de Produção" — pode estar vazio
+  idiomaOrigem?: 'en' | 'pt' | 'it' | 'fr' | null; // termos italianos/franceses são comuns na Stellantis
+  revisar: boolean;        // true = importado, aguardando conferência do usuário
   aplicacao: {
     contexto: string;      // como/quando se usa
     exemplo: string;       // frase real de uso
@@ -90,7 +95,9 @@ interface Sentido {
 }
 
 interface Sigla {
-  sigla: string;           // "PPAP" — normalizada em MAIÚSCULAS
+  sigla: string;           // chave normalizada: "ADP", "AN" — MAIÚSCULAS, sem pontuação
+  rotulo: string;          // como o usuário escreve: "AD&P", "Artificial Network (AN)"
+  tipo: 'sigla' | 'termo'; // 'sigla' expande; 'termo' define (ex.: "Anomaly", "Allestimento")
   sentidos: Sentido[];     // 1..n (desambiguação)
 }
 
@@ -116,13 +123,38 @@ Se não houver `data/carga-inicial.json`, o 1º boot cria um repertório **vazio
 a interface exibe o estado vazio com os dois CTAs (cadastrar / importar). O app
 nunca inventa, sugere ou busca significado em fonte externa.
 
+#### Formato da carga inicial
+
+`data/carga-inicial.json` usa o mesmo objeto `Repertorio` da §3.2, acrescido de
+`origem: string` (procedência da lista, para rastreabilidade). Viaja como
+`extraResources` do instalador e é opcional: sua ausência não é erro.
+
+#### Aplicação única — a carga nunca sobrescreve o seu trabalho
+
+Ao aplicar a carga, o app grava `cargaInicialAplicadaEm` (ISO 8601) e o hash
+SHA-256 do arquivo em `settings`. A carga **só é aplicada** quando não há marca
+registrada. Consequências obrigatórias:
+
+- Atualizar ou reinstalar o app **nunca** reaplica a carga nem desfaz edições,
+  exclusões ou favoritos do usuário.
+- Carga nova (hash diferente) não entra sozinha: a UI avisa que há uma lista nova
+  disponível e o usuário decide importar em modo `merge`, com backup antes.
+- Uma sigla excluída pelo usuário permanece excluída.
+
+#### Carga inicial corrompida
+
+Se o arquivo existir mas for JSON inválido ou falhar no `RepertorioSchema`, o app
+**abre normalmente com repertório vazio** — nunca trava no 1º boot. Registra o erro
+em log, marca a carga como falha (sem gravar `cargaInicialAplicadaEm`) e mostra um
+aviso não bloqueante com a opção de tentar importar o arquivo manualmente.
+
 ### 3.3 Limites de campo
 
 | Campo | Mín | Máx | Observação |
 |---|---|---|---|
 | `sigla` | 1 | 32 | Após normalização |
-| `en`, `pt` | 1 | 200 | Obrigatórios |
-| `aplicacao.contexto` | 1 | 2000 | Obrigatório |
+| `en`, `pt` | 0 | 200 | **Ao menos um dos dois** preenchido; o outro pode ficar vazio para preencher depois |
+| `aplicacao.contexto` | 0 | 2000 | Opcional |
 | `aplicacao.exemplo` | 0 | 2000 | Opcional |
 | `aplicacao.area`, `processo` | 0 | 120 | Opcional |
 | `aplicacao.referencia` | 0 | 300 | `null` quando não houver |
@@ -133,7 +165,10 @@ O excedente é rejeitado pelo Zod com mensagem de campo, nunca truncado em silê
 ### 3.4 Regras de integridade
 - `sigla` é chave única, normalizada: maiúsculas, sem acento, sem pontuação.
 - Toda sigla tem ≥ 1 sentido; excluir o último sentido remove a sigla.
-- `en` e `pt` são obrigatórios; `aplicacao.contexto` obrigatório; demais opcionais.
+- **Ao menos um** entre `en` e `pt` preenchido; o outro pode ficar vazio. Nenhum
+  campo vazio é preenchido automaticamente pelo app.
+- `rotulo` preserva a grafia do usuário; `sigla` é a chave de busca normalizada.
+- `revisar: true` marca entrada importada ainda não conferida — a UI sinaliza.
 - `schemaVersion` habilita migração automática em versões futuras.
 
 ## 4. Normalização e busca
@@ -204,12 +239,17 @@ categoria preferida (Settings) → ordem alfabética.
 └──────────────────────────────────────────┘
 ```
 - Aba padrão: **Inglês** (configurável).
+- Aba com campo vazio não fica em branco: mostra "ainda não preenchido" e um
+  botão que abre a edição daquele campo.
+- Entrada com `revisar: true` exibe um selo discreto "a conferir" no cabeçalho.
 - `[⧉]` copia o texto da aba ativa para a área de transferência.
 - `[★]` favorita · `[✎]` abre edição daquele sentido.
 
 ### 5.4 Tela Repertório
-Tabela virtualizada com busca, filtro por categoria e ordenação. Ações: novo,
-editar, duplicar, excluir (com confirmação), importar, exportar.
+Tabela virtualizada com busca, filtro por categoria e ordenação. Ações:
+**+ Nova sigla** (rótulo literal do botão), editar, duplicar, excluir (com
+confirmação), importar, exportar. O cadastro manual conclui em **≤ 4 interações**
+(métrica M6 / RNF10) e nenhum campo é preenchido automaticamente pelo app.
 
 ### 5.5 Configurações
 Atalho global · iniciar com o Windows · tema (claro/escuro/sistema) · opacidade
@@ -257,6 +297,8 @@ interface Config {
   fixarPainel: boolean;
   posicaoLupa: { x: number; y: number };
   tamanhoHistorico: number;    // padrão 10
+  cargaInicialAplicadaEm: string | null;  // ISO 8601; null = nunca aplicada
+  cargaInicialHash: string | null;        // SHA-256 do arquivo aplicado
 }
 ```
 
