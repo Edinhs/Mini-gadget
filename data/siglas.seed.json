@@ -1,0 +1,3605 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-16T00:00:00.000Z",
+  "siglas": [
+    {
+      "sigla": "5S",
+      "sentidos": [
+        {
+          "id": "5s-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Five S (Sort, Set in order, Shine, Standardize, Sustain)",
+          "pt": "Cinco Sensos (utilização, ordenação, limpeza, padronização, disciplina)",
+          "aplicacao": {
+            "contexto": "Metodologia de organização do posto de trabalho em cinco etapas, base para segurança, qualidade e produtividade. Normalmente é o primeiro passo de qualquer programa de manufatura enxuta.",
+            "exemplo": "Antes de falar em OEE, essa célula precisa passar por um 5S de verdade.",
+            "area": "Manufatura",
+            "processo": "Organização do posto de trabalho",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "lean",
+            "organizacao",
+            "chao-de-fabrica",
+            "padronizacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "8D",
+      "sentidos": [
+        {
+          "id": "8d-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Eight Disciplines Problem Solving",
+          "pt": "Oito Disciplinas para Solução de Problemas",
+          "aplicacao": {
+            "contexto": "Método estruturado em oito etapas para tratar reclamação de cliente ou falha recorrente: contenção imediata, causa raiz, ação corretiva e verificação de eficácia. Muito usado como formato oficial de resposta ao cliente.",
+            "exemplo": "O cliente abriu um 8D e cobra a D4 com a causa raiz até sexta.",
+            "area": "Qualidade",
+            "processo": "Tratamento de não conformidade",
+            "referencia": "Ford Global 8D"
+          },
+          "tags": [
+            "problema",
+            "causa-raiz",
+            "acao-corretiva",
+            "reclamacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ADAS",
+      "sentidos": [
+        {
+          "id": "adas-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Advanced Driver Assistance Systems",
+          "pt": "Sistemas Avançados de Assistência ao Condutor",
+          "aplicacao": {
+            "contexto": "Família de funções que apoiam o motorista com sensores e câmeras: frenagem autônoma de emergência, manutenção de faixa, piloto adaptativo. Base tecnológica para os níveis de automação de condução.",
+            "exemplo": "O pacote ADAS desse modelo já sai de fábrica com frenagem autônoma e alerta de faixa.",
+            "area": "Engenharia Elétrica/Eletrônica",
+            "processo": "Desenvolvimento de sistemas de assistência",
+            "referencia": "SAE J3016"
+          },
+          "tags": [
+            "seguranca",
+            "sensores",
+            "autonomo",
+            "assistencia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AIAG",
+      "sentidos": [
+        {
+          "id": "aiag-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automotive Industry Action Group",
+          "pt": "Grupo de Ação da Indústria Automotiva",
+          "aplicacao": {
+            "contexto": "Associação norte-americana que publica os manuais de referência da qualidade automotiva (PPAP, APQP, FMEA, MSA, SPC) usados como linguagem comum entre montadoras e fornecedores.",
+            "exemplo": "Segue o manual da AIAG, o nível de submissao do PPAP está definido lá.",
+            "area": "Qualidade",
+            "processo": "Normalização de métodos da qualidade",
+            "referencia": "AIAG Core Tools"
+          },
+          "tags": [
+            "norma",
+            "manual",
+            "qualidade",
+            "referencia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "AKA",
+      "sentidos": [
+        {
+          "id": "aka-generico-1",
+          "categoria": "generico",
+          "en": "Also Known As",
+          "pt": "Também Conhecido Como",
+          "aplicacao": {
+            "contexto": "Introduz um nome alternativo, apelido ou denominação mais conhecida de algo ou alguém. Útil em glossários e cadastros para registrar como as pessoas realmente chamam o item.",
+            "exemplo": "O dispositivo de solda 12, aka gabarito vermelho, é o que trava na troca de modelo.",
+            "area": "Geral",
+            "processo": "Documentação e glossários",
+            "referencia": null
+          },
+          "tags": [
+            "apelido",
+            "sinonimo",
+            "glossario",
+            "nome"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ANDON",
+      "sentidos": [
+        {
+          "id": "andon-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Andon (visual line status signal)",
+          "pt": "Andon (sinalização visual de status da linha)",
+          "aplicacao": {
+            "contexto": "Painel ou torre luminosa que mostra o estado da linha e permite ao operador chamar ajuda ou parar a produção ao detectar anomalia. Do japonês andon, lanterna; torna o problema visível na hora.",
+            "exemplo": "O operador puxou o andon na estação 30, o líder já está indo lá.",
+            "area": "Manufatura",
+            "processo": "Gestão visual do chão de fábrica",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "lean",
+            "gestao-visual",
+            "parada",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "API",
+      "sentidos": [
+        {
+          "id": "api-ti-1",
+          "categoria": "ti",
+          "en": "Application Programming Interface",
+          "pt": "Interface de Programação de Aplicações",
+          "aplicacao": {
+            "contexto": "Contrato que expõe funcionalidades de um sistema para outro consumir, sem que o consumidor precise conhecer a implementação interna. É a forma padrão de integrar sistemas hoje.",
+            "exemplo": "Em vez de exportar planilha, consome a API do ERP e pega o dado atualizado.",
+            "area": "TI",
+            "processo": "Integração entre sistemas",
+            "referencia": null
+          },
+          "tags": [
+            "integracao",
+            "interface",
+            "backend",
+            "contrato"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "APQP",
+      "sentidos": [
+        {
+          "id": "apqp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Advanced Product Quality Planning",
+          "pt": "Planejamento Avançado da Qualidade do Produto",
+          "aplicacao": {
+            "contexto": "Metodologia em cinco fases que organiza o desenvolvimento de um produto novo, do conceito até o feedback pós-lançamento, amarrando entregáveis de engenharia e qualidade a cada fase. É a espinha dorsal do cronograma de um projeto automotivo.",
+            "exemplo": "Estamos na fase 3 do APQP, então o foco agora é validar processo e fechar o plano de controle.",
+            "area": "Engenharia de Produto",
+            "processo": "Desenvolvimento de novo produto",
+            "referencia": "AIAG APQP 2a ed."
+          },
+          "tags": [
+            "planejamento",
+            "projeto",
+            "qualidade",
+            "fases"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ASAP",
+      "sentidos": [
+        {
+          "id": "asap-generico-1",
+          "categoria": "generico",
+          "en": "As Soon As Possible",
+          "pt": "O Mais Rápido Possível",
+          "aplicacao": {
+            "contexto": "Pedido de urgência sem data definida. Justamente por ser vago, costuma gerar expectativa desalinhada; combinar prazo concreto funciona melhor.",
+            "exemplo": "Precisamos disso ASAP, mas me diz o que é realista: hoje ou amanha cedo?",
+            "area": "Geral",
+            "processo": "Comunicação de urgência",
+            "referencia": null
+          },
+          "tags": [
+            "urgencia",
+            "prazo",
+            "email",
+            "comunicacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ASIL",
+      "sentidos": [
+        {
+          "id": "asil-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Automotive Safety Integrity Level",
+          "pt": "Nível de Integridade de Segurança Automotiva",
+          "aplicacao": {
+            "contexto": "Classificação de risco (A a D, sendo D o mais crítico) atribuída a cada função do veículo conforme severidade, exposição e controlabilidade da falha. Define o rigor exigido de processo, arquitetura e validação.",
+            "exemplo": "Essa função de frenagem é ASIL D, então a redundância do sensor não é negociável.",
+            "area": "Engenharia Elétrica/Eletrônica",
+            "processo": "Segurança funcional",
+            "referencia": "ISO 26262"
+          },
+          "tags": [
+            "seguranca",
+            "risco",
+            "embarcado",
+            "norma"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "B2B",
+      "sentidos": [
+        {
+          "id": "b2b-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Business to Business",
+          "pt": "De Empresa para Empresa",
+          "aplicacao": {
+            "contexto": "Modelo de negócio em que o cliente é outra empresa, com ciclo de venda mais longo, decisão por comite, contrato formal e relacionamento técnico intenso.",
+            "exemplo": "Nosso negócio é B2B, quem decide é a engenharia do cliente, não o consumidor final.",
+            "area": "Comercial",
+            "processo": "Estratégia comercial",
+            "referencia": null
+          },
+          "tags": [
+            "negocio",
+            "vendas",
+            "mercado",
+            "cliente"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "B2C",
+      "sentidos": [
+        {
+          "id": "b2c-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Business to Consumer",
+          "pt": "Da Empresa para o Consumidor",
+          "aplicacao": {
+            "contexto": "Modelo de negócio em que a venda é direta ao consumidor final, com decisão rápida, volume alto, marca forte e sensibilidade a experiência de compra.",
+            "exemplo": "A operação de peças de reposição pela loja online é B2C, exige outro tipo de atendimento.",
+            "area": "Comercial",
+            "processo": "Estratégia comercial",
+            "referencia": null
+          },
+          "tags": [
+            "negocio",
+            "varejo",
+            "consumidor",
+            "mercado"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "BEV",
+      "sentidos": [
+        {
+          "id": "bev-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Battery Electric Vehicle",
+          "pt": "Veículo Elétrico a Bateria",
+          "aplicacao": {
+            "contexto": "Veículo movido exclusivamente por motor elétrico alimentado por bateria recarregável, sem motor a combustão. Muda completamente a arquitetura do produto: pack, inversor, gestão térmica e recarga.",
+            "exemplo": "A plataforma nova nasce como BEV, não é adaptação de carro a combustão.",
+            "area": "Engenharia de Produto",
+            "processo": "Estratégia de eletrificação",
+            "referencia": null
+          },
+          "tags": [
+            "eletrico",
+            "bateria",
+            "eletrificacao",
+            "powertrain"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "BOM",
+      "sentidos": [
+        {
+          "id": "bom-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Bill of Materials",
+          "pt": "Lista de Materiais",
+          "aplicacao": {
+            "contexto": "Estrutura hierárquica de tudo que compõe o produto: peças, submontagens, quantidades e níveis. É a referência única para custo, compras, planejamento de materiais e engenharia de mudança.",
+            "exemplo": "Essa peça nova ainda não entrou na BOM, por isso compras não emitiu o pedido.",
+            "area": "Engenharia de Produto",
+            "processo": "Estruturação de produto e custeio",
+            "referencia": null
+          },
+          "tags": [
+            "estrutura",
+            "materiais",
+            "custo",
+            "pecas"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "bom-ti-1",
+          "categoria": "ti",
+          "en": "Byte Order Mark",
+          "pt": "Marca de Ordem de Byte",
+          "aplicacao": {
+            "contexto": "Sequência de bytes no início de um arquivo de texto que sinaliza a codificação usada. Em UTF-8 é opcional, mas é o que faz o Excel em português abrir um CSV sem quebrar acento.",
+            "exemplo": "Exporta o CSV com BOM, senao o Excel abre acentuação toda errada.",
+            "area": "TI",
+            "processo": "Exportação e codificação de arquivos",
+            "referencia": "Unicode Standard (UTF-8/UTF-16 BOM)"
+          },
+          "tags": [
+            "encoding",
+            "utf8",
+            "csv",
+            "arquivo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CAD",
+      "sentidos": [
+        {
+          "id": "cad-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Computer Aided Design",
+          "pt": "Desenho Assistido por Computador",
+          "aplicacao": {
+            "contexto": "Software de modelagem 2D/3D usado para criar a geometria da peça, o desenho de fabricação e os dados que alimentam ferramental, CAE e metrologia. No automotivo é a fonte de verdade da geometria.",
+            "exemplo": "Me manda o CAD atualizado em STEP que eu verifico a folga com a carroceria.",
+            "area": "Engenharia de Produto",
+            "processo": "Modelagem e detalhamento de peça",
+            "referencia": null
+          },
+          "tags": [
+            "desenho",
+            "3d",
+            "geometria",
+            "engenharia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "cad-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Canadian Dollar",
+          "pt": "Dólar Canadense",
+          "aplicacao": {
+            "contexto": "Código de três letras da moeda oficial do Canadá no padrão internacional de moedas. Aparece em cotações, contratos e relatórios financeiros com operações naquele país.",
+            "exemplo": "A proposta veio em CAD, converte para real com o câmbio de fechamento do mes.",
+            "area": "Financeiro",
+            "processo": "Operações e conversão cambial",
+            "referencia": "ISO 4217"
+          },
+          "tags": [
+            "moeda",
+            "cambio",
+            "financeiro",
+            "canada"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CAE",
+      "sentidos": [
+        {
+          "id": "cae-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Computer Aided Engineering",
+          "pt": "Engenharia Assistida por Computador",
+          "aplicacao": {
+            "contexto": "Conjunto de simulações numéricas (elementos finitos, fluidodinâmica, crash, fadiga) que antecipam o comportamento da peça antes de existir protótipo físico, reduzindo rodadas caras de ferramental.",
+            "exemplo": "A rodada de CAE mostrou que o suporte passa no impacto sem precisar de reforço.",
+            "area": "Engenharia de Produto",
+            "processo": "Simulação e análise estrutural",
+            "referencia": null
+          },
+          "tags": [
+            "simulacao",
+            "elementos-finitos",
+            "analise"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CAN",
+      "sentidos": [
+        {
+          "id": "can-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Controller Area Network",
+          "pt": "Rede de Área de Controladores",
+          "aplicacao": {
+            "contexto": "Barramento serial multiponto criado pela Bosch para as centrais eletrônicas do veículo conversarem entre si com poucos fios e alta imunidade a ruído. É a rede base da eletrônica veicular e do diagnóstico.",
+            "exemplo": "O sinal de rotação vem pela CAN, não precisa passar fio dedicado até o painel.",
+            "area": "Engenharia Elétrica/Eletrônica",
+            "processo": "Arquitetura elétrica do veículo",
+            "referencia": "ISO 11898"
+          },
+          "tags": [
+            "rede",
+            "eletronica",
+            "barramento",
+            "diagnostico"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CAPEX",
+      "sentidos": [
+        {
+          "id": "capex-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Capital Expenditure",
+          "pt": "Investimento em Bens de Capital",
+          "aplicacao": {
+            "contexto": "Gasto na aquisição ou melhoria de ativos de longa duração, como máquinas, ferramental e instalações. Vira ativo no balanço e é depreciado ao longo do tempo, em vez de pesar todo no resultado do ano.",
+            "exemplo": "A prensa nova entra como CAPEX, então precisa de aprovação no comite de investimento.",
+            "area": "Financeiro",
+            "processo": "Planejamento de investimentos",
+            "referencia": null
+          },
+          "tags": [
+            "investimento",
+            "ativo",
+            "orcamento",
+            "financeiro"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CD",
+      "sentidos": [
+        {
+          "id": "cd-ti-1",
+          "categoria": "ti",
+          "en": "Continuous Delivery / Continuous Deployment",
+          "pt": "Entrega Contínua / Implantação Contínua",
+          "aplicacao": {
+            "contexto": "Extensão do CI que mantém o software sempre pronto para ser liberado (delivery) ou o publica automaticamente em produção a cada mudança aprovada (deployment). Reduz o risco de releases grandes.",
+            "exemplo": "Com CD a gente publica várias vezes por semana, não precisa daquele release mensal.",
+            "area": "TI",
+            "processo": "Entrega e implantação de software",
+            "referencia": null
+          },
+          "tags": [
+            "devops",
+            "deploy",
+            "release",
+            "automacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CEO",
+      "sentidos": [
+        {
+          "id": "ceo-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Chief Executive Officer",
+          "pt": "Diretor-Presidente",
+          "aplicacao": {
+            "contexto": "Executivo principal da empresa, responsável pela estratégia geral, pela alocação de capital e pela prestação de contas ao conselho e aos acionistas.",
+            "exemplo": "A decisão de manter a planta subiu até o CEO, não se resolve na diretoria local.",
+            "area": "Gestão",
+            "processo": "Governança corporativa",
+            "referencia": null
+          },
+          "tags": [
+            "executivo",
+            "lideranca",
+            "cargo",
+            "governanca"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CFO",
+      "sentidos": [
+        {
+          "id": "cfo-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Chief Financial Officer",
+          "pt": "Diretor Financeiro",
+          "aplicacao": {
+            "contexto": "Executivo responsável por finanças, controladoria, tesouraria, planejamento orçamentário e relação com investidores e auditoria.",
+            "exemplo": "O CFO quer o business case com sensibilidade de câmbio antes de aprovar.",
+            "area": "Financeiro",
+            "processo": "Governança corporativa",
+            "referencia": null
+          },
+          "tags": [
+            "executivo",
+            "financas",
+            "cargo",
+            "orcamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CI",
+      "sentidos": [
+        {
+          "id": "ci-ti-1",
+          "categoria": "ti",
+          "en": "Continuous Integration",
+          "pt": "Integração Contínua",
+          "aplicacao": {
+            "contexto": "Prática de integrar o código ao tronco principal várias vezes ao dia, com build e testes automáticos a cada envio, para que erros apareçam em minutos e não na véspera da entrega.",
+            "exemplo": "O CI quebrou no seu commit, o teste de importação está falhando.",
+            "area": "TI",
+            "processo": "Desenvolvimento de software",
+            "referencia": null
+          },
+          "tags": [
+            "devops",
+            "build",
+            "testes",
+            "automacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CMM",
+      "sentidos": [
+        {
+          "id": "cmm-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Coordinate Measuring Machine",
+          "pt": "Máquina de Medir por Coordenadas",
+          "aplicacao": {
+            "contexto": "Equipamento de metrologia que apalpa pontos da peça e calcula dimensões e desvios geométricos contra o modelo nominal. É o meio usual de gerar o relatório dimensional do PPAP.",
+            "exemplo": "Manda a amostra para a CMM e traz o relatório dimensional completo amanha.",
+            "area": "Qualidade",
+            "processo": "Inspeção dimensional",
+            "referencia": "ISO 10360"
+          },
+          "tags": [
+            "metrologia",
+            "medicao",
+            "dimensional",
+            "inspecao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "COO",
+      "sentidos": [
+        {
+          "id": "coo-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Chief Operating Officer",
+          "pt": "Diretor de Operações",
+          "aplicacao": {
+            "contexto": "Executivo responsável pela operação do dia a dia: manufatura, logística, qualidade e entrega. Traduz a estratégia em capacidade instalada e resultado operacional.",
+            "exemplo": "O COO puxou a reunião diária de crise enquanto a linha estiver parada.",
+            "area": "Operações",
+            "processo": "Governança corporativa",
+            "referencia": null
+          },
+          "tags": [
+            "executivo",
+            "operacoes",
+            "cargo",
+            "manufatura"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CPK",
+      "sentidos": [
+        {
+          "id": "cpk-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Process Capability Index",
+          "pt": "Índice de Capabilidade de Processo",
+          "aplicacao": {
+            "contexto": "Indicador que compara a dispersão real do processo com a faixa de tolerância, considerando o descentramento da média. No automotivo costuma-se exigir Cpk maior ou igual a 1,33 em características significativas.",
+            "exemplo": "O Cpk do diâmetro deu 1,12, abaixo do minimo, precisamos centrar o processo.",
+            "area": "Qualidade",
+            "processo": "Estudo de capabilidade",
+            "referencia": "AIAG SPC 2a ed."
+          },
+          "tags": [
+            "capabilidade",
+            "estatistica",
+            "tolerancia",
+            "indicador"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CPU",
+      "sentidos": [
+        {
+          "id": "cpu-ti-1",
+          "categoria": "ti",
+          "en": "Central Processing Unit",
+          "pt": "Unidade Central de Processamento",
+          "aplicacao": {
+            "contexto": "Processador que executa as instruções dos programas. É o recurso que limita cargas de trabalho sequenciais e aparece primeiro quando se investiga lentidão de sistema.",
+            "exemplo": "A CPU está em 100% desde a rotina da madrugada, o processo ficou preso.",
+            "area": "TI",
+            "processo": "Infraestrutura e performance",
+            "referencia": null
+          },
+          "tags": [
+            "hardware",
+            "processador",
+            "performance"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CRUD",
+      "sentidos": [
+        {
+          "id": "crud-ti-1",
+          "categoria": "ti",
+          "en": "Create, Read, Update, Delete",
+          "pt": "Criar, Ler, Atualizar, Excluir",
+          "aplicacao": {
+            "contexto": "As quatro operações básicas sobre um registro persistido. Serve de atalho para descrever a parte mais previsível de um sistema, em oposição às regras de negócio complexas.",
+            "exemplo": "A tela de repertório é um CRUD simples, o desafio está na busca.",
+            "area": "TI",
+            "processo": "Desenvolvimento de software",
+            "referencia": null
+          },
+          "tags": [
+            "dados",
+            "operacoes",
+            "persistencia",
+            "desenvolvimento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CSV",
+      "sentidos": [
+        {
+          "id": "csv-ti-1",
+          "categoria": "ti",
+          "en": "Comma-Separated Values",
+          "pt": "Valores Separados por Vírgula",
+          "aplicacao": {
+            "contexto": "Formato de texto simples em que cada linha é um registro e os campos são separados por um delimitador. Universal para troca de tabelas, mas sem tipos, o que exige acordo sobre encoding e separador.",
+            "exemplo": "Manda em CSV que eu importo direto, só confirma se o separador é ponto e vírgula.",
+            "area": "TI",
+            "processo": "Importação e exportação de dados",
+            "referencia": null
+          },
+          "tags": [
+            "dados",
+            "planilha",
+            "importacao",
+            "formato"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "CTO",
+      "sentidos": [
+        {
+          "id": "cto-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Chief Technology Officer",
+          "pt": "Diretor de Tecnologia",
+          "aplicacao": {
+            "contexto": "Executivo responsável pela estratégia tecnológica, arquitetura, engenharia e decisões de construir ou comprar tecnologia.",
+            "exemplo": "O CTO pediu que todo sistema novo nasça com SSO integrado.",
+            "area": "TI",
+            "processo": "Governança corporativa",
+            "referencia": null
+          },
+          "tags": [
+            "executivo",
+            "tecnologia",
+            "cargo",
+            "estrategia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "DFMEA",
+      "sentidos": [
+        {
+          "id": "dfmea-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Design Failure Mode and Effects Analysis",
+          "pt": "Análise de Modos de Falha e Efeitos de Projeto",
+          "aplicacao": {
+            "contexto": "Variante do FMEA aplicada ao projeto do produto: avalia como o desenho, o material ou a geometria podem falhar em atender a função esperada. Roda antes da liberação do desenho e alimenta o plano de verificação (DVP&R).",
+            "exemplo": "O DFMEA apontou risco alto de trinca no reforço, então o time aumentou o raio de concordância.",
+            "area": "Engenharia de Produto",
+            "processo": "Projeto do produto",
+            "referencia": "AIAG-VDA FMEA Handbook (2019)"
+          },
+          "tags": [
+            "projeto",
+            "risco",
+            "desenho",
+            "falha"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "DIY",
+      "sentidos": [
+        {
+          "id": "diy-generico-1",
+          "categoria": "generico",
+          "en": "Do It Yourself",
+          "pt": "Faça Você Mesmo",
+          "aplicacao": {
+            "contexto": "Abordagem de resolver ou construir algo por conta própria, sem contratar terceiro. No trabalho, costuma descrever solução improvisada internamente enquanto a definitiva não chega.",
+            "exemplo": "Por enquanto é uma solução DIY em planilha, o sistema oficial fica para o ano que vem.",
+            "area": "Geral",
+            "processo": "Soluções internas e improvisos",
+            "referencia": null
+          },
+          "tags": [
+            "improviso",
+            "autonomia",
+            "solucao",
+            "informal"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "DNS",
+      "sentidos": [
+        {
+          "id": "dns-ti-1",
+          "categoria": "ti",
+          "en": "Domain Name System",
+          "pt": "Sistema de Nomes de Domínio",
+          "aplicacao": {
+            "contexto": "Serviço distribuído que traduz nomes legíveis em endereços IP e guia o roteamento das requisições. Quando falha, o sintoma parece ser de tudo, menos de rede.",
+            "exemplo": "O site não caiu, foi o DNS interno que parou de resolver o nome.",
+            "area": "TI",
+            "processo": "Infraestrutura de rede",
+            "referencia": "RFC 1035"
+          },
+          "tags": [
+            "rede",
+            "dominio",
+            "infraestrutura",
+            "resolucao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "DOE",
+      "sentidos": [
+        {
+          "id": "doe-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Design of Experiments",
+          "pt": "Planejamento de Experimentos",
+          "aplicacao": {
+            "contexto": "Técnica estatística que varia fatores de forma planejada para descobrir quais realmente afetam a resposta e como eles interagem, com poucos ensaios. Muito usada para ajustar processo e otimizar parâmetros.",
+            "exemplo": "Em vez de tentativa e erro, roda um DOE com temperatura, pressao e tempo.",
+            "area": "Qualidade",
+            "processo": "Otimização de processo",
+            "referencia": null
+          },
+          "tags": [
+            "estatistica",
+            "experimento",
+            "parametros",
+            "otimizacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "DVPR",
+      "sentidos": [
+        {
+          "id": "dvpr-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Design Verification Plan and Report",
+          "pt": "Plano e Relatório de Verificação de Projeto",
+          "aplicacao": {
+            "contexto": "Matriz que amarra cada requisito do produto a um ensaio de verificação, com amostra, critério de aceitação, prazo e resultado. Serve como evidência de que o projeto foi validado antes da produção seriada.",
+            "exemplo": "O DVP&R ainda tem tres ensaios em aberto, o de fadiga é o critico para o gate.",
+            "area": "Engenharia de Produto",
+            "processo": "Validação de projeto",
+            "referencia": null
+          },
+          "tags": [
+            "ensaio",
+            "validacao",
+            "requisito",
+            "projeto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "EBITDA",
+      "sentidos": [
+        {
+          "id": "ebitda-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Earnings Before Interest, Taxes, Depreciation and Amortization",
+          "pt": "Lucro Antes de Juros, Impostos, Depreciação e Amortização",
+          "aplicacao": {
+            "contexto": "Medida de geração operacional de caixa que remove efeitos de estrutura de capital, tributação e decisões contábeis de depreciação. Útil para comparar operações, mas não equivale a caixa livre.",
+            "exemplo": "O EBITDA melhorou, mas o caixa não, porque o estoque subiu junto.",
+            "area": "Financeiro",
+            "processo": "Análise de desempenho financeiro",
+            "referencia": null
+          },
+          "tags": [
+            "financeiro",
+            "resultado",
+            "operacional",
+            "indicador"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ECN",
+      "sentidos": [
+        {
+          "id": "ecn-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Engineering Change Notice",
+          "pt": "Aviso de Alteração de Engenharia",
+          "aplicacao": {
+            "contexto": "Documento que comunica oficialmente a mudança já aprovada, com o nível de revisão, a data de efetivação e o tratamento do estoque antigo. É o que autoriza fábrica e fornecedor a mudar.",
+            "exemplo": "O ECN saiu com efetivação no lote de agosto, o estoque atual segue com o desenho antigo.",
+            "area": "Engenharia de Produto",
+            "processo": "Gestão de mudança de engenharia",
+            "referencia": null
+          },
+          "tags": [
+            "mudanca",
+            "revisao",
+            "comunicacao",
+            "efetivacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ECR",
+      "sentidos": [
+        {
+          "id": "ecr-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Engineering Change Request",
+          "pt": "Solicitação de Alteração de Engenharia",
+          "aplicacao": {
+            "contexto": "Pedido formal de mudança em produto ou processo, com justificativa, impacto estimado em custo, prazo e qualidade. É analisado antes de virar alteração efetiva.",
+            "exemplo": "Abre um ECR para essa mudança de espessura, precisa passar pelo comite.",
+            "area": "Engenharia de Produto",
+            "processo": "Gestão de mudança de engenharia",
+            "referencia": null
+          },
+          "tags": [
+            "mudanca",
+            "alteracao",
+            "engenharia",
+            "processo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ECU",
+      "sentidos": [
+        {
+          "id": "ecu-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Electronic Control Unit",
+          "pt": "Unidade de Controle Eletrônico",
+          "aplicacao": {
+            "contexto": "Módulo eletrônico embarcado que lê sensores, roda o software de controle e aciona atuadores. Um veículo moderno tem dezenas delas: motor, freios, airbag, carroceria, infotenimento.",
+            "exemplo": "A ECU do motor precisa de recalibração depois que trocamos o turbo.",
+            "area": "Engenharia Elétrica/Eletrônica",
+            "processo": "Desenvolvimento de sistemas embarcados",
+            "referencia": null
+          },
+          "tags": [
+            "eletronica",
+            "embarcado",
+            "modulo",
+            "software"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "EOD",
+      "sentidos": [
+        {
+          "id": "eod-generico-1",
+          "categoria": "generico",
+          "en": "End of Day",
+          "pt": "Fim do Dia",
+          "aplicacao": {
+            "contexto": "Prazo que significa até o encerramento do expediente do dia. Em time distribuído, vale combinar o fuso de referência, senão o fim do dia de cada um é diferente.",
+            "exemplo": "Me manda até EOD que eu consolido e envio para o cliente amanha cedo.",
+            "area": "Geral",
+            "processo": "Comunicação de prazos",
+            "referencia": null
+          },
+          "tags": [
+            "prazo",
+            "expediente",
+            "entrega",
+            "comunicacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "EOL",
+      "sentidos": [
+        {
+          "id": "eol-automotivo-1",
+          "categoria": "automotivo",
+          "en": "End of Line",
+          "pt": "Fim de Linha",
+          "aplicacao": {
+            "contexto": "Estação final do processo produtivo onde o produto passa pelos testes funcionais e de conformidade antes de ser liberado. Também designa o próprio teste feito nessa estação.",
+            "exemplo": "A falha só aparece no teste de EOL, na estação anterior o sinal está normal.",
+            "area": "Manufatura",
+            "processo": "Teste funcional de fim de linha",
+            "referencia": null
+          },
+          "tags": [
+            "teste",
+            "linha",
+            "funcional",
+            "liberacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "EOP",
+      "sentidos": [
+        {
+          "id": "eop-automotivo-1",
+          "categoria": "automotivo",
+          "en": "End of Production",
+          "pt": "Fim de Produção",
+          "aplicacao": {
+            "contexto": "Data em que a produção seriada de um modelo ou componente é encerrada. Dispara decisões de estoque final, peças de reposição, desmobilização de ferramental e acerto com fornecedores.",
+            "exemplo": "Com o EOP em dezembro, precisamos definir o lote final de peças de serviço.",
+            "area": "Projetos",
+            "processo": "Encerramento de ciclo de vida do produto",
+            "referencia": null
+          },
+          "tags": [
+            "fim-de-vida",
+            "cronograma",
+            "reposicao",
+            "ferramental"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ERP",
+      "sentidos": [
+        {
+          "id": "erp-ti-1",
+          "categoria": "ti",
+          "en": "Enterprise Resource Planning",
+          "pt": "Planejamento de Recursos Empresariais",
+          "aplicacao": {
+            "contexto": "Sistema integrado que unifica em uma única base os processos de finanças, compras, estoque, produção e vendas, eliminando ilhas de planilha e garantindo um número só para a empresa toda.",
+            "exemplo": "Esse dado sai do ERP, se estiver divergente é porque o lançamento não foi feito.",
+            "area": "TI",
+            "processo": "Sistemas corporativos integrados",
+            "referencia": "ASCM/APICS Dictionary"
+          },
+          "tags": [
+            "sistema",
+            "integracao",
+            "gestao",
+            "corporativo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ESG",
+      "sentidos": [
+        {
+          "id": "esg-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Environmental, Social and Governance",
+          "pt": "Ambiental, Social e Governança",
+          "aplicacao": {
+            "contexto": "Conjunto de critérios não financeiros usados para avaliar como a empresa lida com meio ambiente, pessoas e sociedade, e com a própria estrutura de governança e controles.",
+            "exemplo": "O cliente europeu já pede indicadores de ESG junto com a cotação.",
+            "area": "Estratégia",
+            "processo": "Sustentabilidade e relato corporativo",
+            "referencia": null
+          },
+          "tags": [
+            "sustentabilidade",
+            "governanca",
+            "social",
+            "ambiental"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ETA",
+      "sentidos": [
+        {
+          "id": "eta-generico-1",
+          "categoria": "generico",
+          "en": "Estimated Time of Arrival",
+          "pt": "Tempo Estimado de Chegada",
+          "aplicacao": {
+            "contexto": "Previsão de quando algo vai chegar ou ficar pronto. Nasceu em logística e transporte, mas hoje é usada para qualquer entrega: carga, relatório ou correção.",
+            "exemplo": "Qual o ETA desse relatório? Preciso dele antes da reunião das 15h.",
+            "area": "Geral",
+            "processo": "Comunicação de prazos",
+            "referencia": null
+          },
+          "tags": [
+            "prazo",
+            "previsao",
+            "logistica",
+            "entrega"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ETL",
+      "sentidos": [
+        {
+          "id": "etl-ti-1",
+          "categoria": "ti",
+          "en": "Extract, Transform, Load",
+          "pt": "Extrair, Transformar, Carregar",
+          "aplicacao": {
+            "contexto": "Pipeline que retira dados dos sistemas de origem, aplica limpeza e regras de negócio e grava no destino analítico. É onde a maior parte do esforço de um projeto de dados realmente acontece.",
+            "exemplo": "O número diverge porque o ETL da noite falhou e carregou só metade dos pedidos.",
+            "area": "TI",
+            "processo": "Engenharia de dados",
+            "referencia": null
+          },
+          "tags": [
+            "dados",
+            "pipeline",
+            "integracao",
+            "bi"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "FAQ",
+      "sentidos": [
+        {
+          "id": "faq-generico-1",
+          "categoria": "generico",
+          "en": "Frequently Asked Questions",
+          "pt": "Perguntas Frequentes",
+          "aplicacao": {
+            "contexto": "Lista de perguntas recorrentes com as respostas padronizadas, usada para reduzir chamados repetidos e alinhar a versão oficial de cada resposta.",
+            "exemplo": "Antes de abrir chamado, da uma olhada no FAQ, essa dúvida já está respondida lá.",
+            "area": "Geral",
+            "processo": "Suporte e comunicação",
+            "referencia": null
+          },
+          "tags": [
+            "duvidas",
+            "suporte",
+            "documentacao",
+            "ajuda"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "FMEA",
+      "sentidos": [
+        {
+          "id": "fmea-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Failure Mode and Effects Analysis",
+          "pt": "Análise de Modos de Falha e Efeitos",
+          "aplicacao": {
+            "contexto": "Análise sistemática e preventiva que lista os modos de falha possíveis, seus efeitos e causas, e prioriza ações com base em severidade, ocorrência e detecção. Existe na versão de projeto (DFMEA) e de processo (PFMEA).",
+            "exemplo": "Antes de liberar o desenho a gente precisa revisar o FMEA com a equipe de processo.",
+            "area": "Qualidade",
+            "processo": "Análise de risco de produto e processo",
+            "referencia": "AIAG-VDA FMEA Handbook (2019)"
+          },
+          "tags": [
+            "risco",
+            "prevencao",
+            "falha",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "FTE",
+      "sentidos": [
+        {
+          "id": "fte-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Full-Time Equivalent",
+          "pt": "Equivalente a Tempo Integral",
+          "aplicacao": {
+            "contexto": "Unidade que converte horas de trabalho em pessoas equivalentes em jornada integral, permitindo dimensionar esforço e custo mesmo com alocação parcial ou temporária.",
+            "exemplo": "O projeto precisa de 2,5 FTE de engenharia por seis meses.",
+            "area": "RH",
+            "processo": "Dimensionamento de equipe",
+            "referencia": null
+          },
+          "tags": [
+            "headcount",
+            "esforco",
+            "equipe",
+            "dimensionamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "FTQ",
+      "sentidos": [
+        {
+          "id": "ftq-automotivo-1",
+          "categoria": "automotivo",
+          "en": "First Time Quality",
+          "pt": "Qualidade de Primeira Passagem",
+          "aplicacao": {
+            "contexto": "Percentual de unidades que atravessam o processo sem precisar de retrabalho ou reparo. Mede a saúde real da linha melhor do que o índice de produto final aprovado depois do conserto.",
+            "exemplo": "O FTQ da montagem final está em 91%, o retrabalho de porta é o maior ofensor.",
+            "area": "Qualidade",
+            "processo": "Monitoramento de linha de produção",
+            "referencia": null
+          },
+          "tags": [
+            "indicador",
+            "retrabalho",
+            "qualidade",
+            "linha"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "FYI",
+      "sentidos": [
+        {
+          "id": "fyi-generico-1",
+          "categoria": "generico",
+          "en": "For Your Information",
+          "pt": "Para Seu Conhecimento",
+          "aplicacao": {
+            "contexto": "Marcação usada ao repassar uma informação que não exige ação de quem recebe, apenas ciência. Se houver pedido embutido, o correto é dizer explicitamente o que se espera.",
+            "exemplo": "FYI, o cliente antecipou a auditoria para a semana que vem.",
+            "area": "Geral",
+            "processo": "Comunicação interna",
+            "referencia": null
+          },
+          "tags": [
+            "email",
+            "informacao",
+            "comunicacao",
+            "ciencia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "GDT",
+      "sentidos": [
+        {
+          "id": "gdt-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Geometric Dimensioning and Tolerancing",
+          "pt": "Dimensionamento e Tolerâncias Geométricas",
+          "aplicacao": {
+            "contexto": "Linguagem simbólica de desenho que define forma, orientação, posição e batimento em relação a referências (datums), em vez de só cotas lineares. Garante que projeto, ferramental e metrologia falem a mesma língua.",
+            "exemplo": "Pelo GD&T a posição do furo é em relação ao datum B, não à borda da peça.",
+            "area": "Engenharia de Produto",
+            "processo": "Detalhamento e metrologia",
+            "referencia": "ASME Y14.5-2018"
+          },
+          "tags": [
+            "desenho",
+            "tolerancia",
+            "metrologia",
+            "datum"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "GPU",
+      "sentidos": [
+        {
+          "id": "gpu-ti-1",
+          "categoria": "ti",
+          "en": "Graphics Processing Unit",
+          "pt": "Unidade de Processamento Gráfico",
+          "aplicacao": {
+            "contexto": "Processador com milhares de núcleos otimizado para cálculos paralelos. Além de gráficos, é o hardware que viabiliza simulação numérica e treinamento de modelos de aprendizado de máquina.",
+            "exemplo": "O treino do modelo só é viável com GPU, na CPU levaria semanas.",
+            "area": "TI",
+            "processo": "Infraestrutura e computação de alto desempenho",
+            "referencia": null
+          },
+          "tags": [
+            "hardware",
+            "paralelismo",
+            "grafico",
+            "ia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "HIL",
+      "sentidos": [
+        {
+          "id": "hil-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Hardware in the Loop",
+          "pt": "Hardware em Malha",
+          "aplicacao": {
+            "contexto": "Bancada que conecta a central eletrônica real a um modelo simulado do veículo em tempo real, permitindo testar o software em situações perigosas ou caras sem carro físico.",
+            "exemplo": "Valida essa falha de sensor no HIL antes de arriscar na pista.",
+            "area": "Engenharia Elétrica/Eletrônica",
+            "processo": "Validação de software embarcado",
+            "referencia": null
+          },
+          "tags": [
+            "simulacao",
+            "bancada",
+            "embarcado",
+            "teste"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "HTTP",
+      "sentidos": [
+        {
+          "id": "http-ti-1",
+          "categoria": "ti",
+          "en": "Hypertext Transfer Protocol",
+          "pt": "Protocolo de Transferência de Hipertexto",
+          "aplicacao": {
+            "contexto": "Protocolo de aplicação que rege a conversa entre cliente e servidor na web, com métodos, cabeçalhos e códigos de status. Base de praticamente toda integração moderna.",
+            "exemplo": "Ele devolveu HTTP 404, o endpoint mudou de caminho na versão nova.",
+            "area": "TI",
+            "processo": "Comunicação cliente-servidor",
+            "referencia": "RFC 9110"
+          },
+          "tags": [
+            "protocolo",
+            "web",
+            "rede",
+            "api"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "HTTPS",
+      "sentidos": [
+        {
+          "id": "https-ti-1",
+          "categoria": "ti",
+          "en": "Hypertext Transfer Protocol Secure",
+          "pt": "Protocolo de Transferência de Hipertexto Seguro",
+          "aplicacao": {
+            "contexto": "HTTP transportado sobre TLS, que cifra o tráfego e autentica o servidor por certificado. É requisito mínimo para qualquer aplicação que trafegue dado pessoal ou credencial.",
+            "exemplo": "Esse formulário ainda está em HTTP puro, tem que subir para HTTPS antes de publicar.",
+            "area": "TI",
+            "processo": "Segurança da informação",
+            "referencia": "RFC 2818"
+          },
+          "tags": [
+            "seguranca",
+            "tls",
+            "certificado",
+            "web"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "HVAC",
+      "sentidos": [
+        {
+          "id": "hvac-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Heating, Ventilation and Air Conditioning",
+          "pt": "Aquecimento, Ventilação e Ar-Condicionado",
+          "aplicacao": {
+            "contexto": "Sistema de climatização da cabine, incluindo aquecimento, ventilação, refrigeração, desembaçamento e filtragem. No automotivo pesa em consumo de energia, especialmente em veículos elétricos.",
+            "exemplo": "No BEV o HVAC é o maior consumidor depois da tração, afeta direto a autonomia.",
+            "area": "Engenharia de Produto",
+            "processo": "Desenvolvimento de sistema de climatização",
+            "referencia": null
+          },
+          "tags": [
+            "climatizacao",
+            "conforto",
+            "cabine",
+            "energia"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "IATF",
+      "sentidos": [
+        {
+          "id": "iatf-automotivo-1",
+          "categoria": "automotivo",
+          "en": "International Automotive Task Force",
+          "pt": "Força-Tarefa Automotiva Internacional",
+          "aplicacao": {
+            "contexto": "Grupo de montadoras e associações que mantém a norma de sistema de gestão da qualidade automotiva. Na prática o nome da entidade virou sinônimo da própria certificação exigida dos fornecedores.",
+            "exemplo": "O fornecedor perde o contrato se não recertificar a IATF este ano.",
+            "area": "Qualidade",
+            "processo": "Certificação de sistema de gestão",
+            "referencia": "IATF 16949:2016"
+          },
+          "tags": [
+            "norma",
+            "certificacao",
+            "qualidade",
+            "sistema"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ICE",
+      "sentidos": [
+        {
+          "id": "ice-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Internal Combustion Engine",
+          "pt": "Motor de Combustão Interna",
+          "aplicacao": {
+            "contexto": "Motor que gera trabalho pela queima de combustível dentro dos cilindros. No jargão atual a sigla aparece principalmente para contrastar a arquitetura tradicional com as eletrificadas.",
+            "exemplo": "A linha ICE continua até 2030, mas todo investimento novo vai para eletrificado.",
+            "area": "Engenharia de Produto",
+            "processo": "Estratégia de powertrain",
+            "referencia": null
+          },
+          "tags": [
+            "motor",
+            "combustao",
+            "powertrain"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "IDE",
+      "sentidos": [
+        {
+          "id": "ide-ti-1",
+          "categoria": "ti",
+          "en": "Integrated Development Environment",
+          "pt": "Ambiente de Desenvolvimento Integrado",
+          "aplicacao": {
+            "contexto": "Programa que reúne editor, compilador, depurador e controle de versão em uma única ferramenta, acelerando o ciclo de escrever, rodar e corrigir código.",
+            "exemplo": "Configura o lint direto na IDE para o erro aparecer enquanto você digita.",
+            "area": "TI",
+            "processo": "Desenvolvimento de software",
+            "referencia": null
+          },
+          "tags": [
+            "ferramenta",
+            "editor",
+            "desenvolvimento",
+            "debug"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "IP",
+      "sentidos": [
+        {
+          "id": "ip-ti-1",
+          "categoria": "ti",
+          "en": "Internet Protocol",
+          "pt": "Protocolo de Internet",
+          "aplicacao": {
+            "contexto": "Protocolo de rede que endereça e roteia pacotes entre máquinas. Também se usa a sigla para o próprio endereço numérico que identifica um dispositivo na rede.",
+            "exemplo": "Libera o IP da máquina da qualidade no firewall para ela acessar o servidor.",
+            "area": "TI",
+            "processo": "Infraestrutura de rede",
+            "referencia": "RFC 791"
+          },
+          "tags": [
+            "rede",
+            "endereco",
+            "protocolo",
+            "infraestrutura"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "ip-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Intellectual Property",
+          "pt": "Propriedade Intelectual",
+          "aplicacao": {
+            "contexto": "Conjunto de direitos sobre criações da mente: patentes, marcas, desenhos industriais, software e segredo industrial. Em projeto conjunto, definir a titularidade em contrato evita disputa depois.",
+            "exemplo": "O contrato precisa deixar claro de quem é a IP do dispositivo que desenvolvemos juntos.",
+            "area": "Jurídico",
+            "processo": "Gestão de ativos intangíveis",
+            "referencia": "Lei 9.279/1996"
+          },
+          "tags": [
+            "patente",
+            "marca",
+            "juridico",
+            "inovacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "JIT",
+      "sentidos": [
+        {
+          "id": "jit-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Just In Time",
+          "pt": "Just in Time / Produção no Momento Certo",
+          "aplicacao": {
+            "contexto": "Princípio de produzir e abastecer somente o necessário, na quantidade necessária, no momento necessário, reduzindo estoque e expondo problemas de processo. Pilar do Sistema Toyota de Produção.",
+            "exemplo": "O banco chega em JIT, se atrasar meia hora a linha para.",
+            "area": "Logística / Manufatura",
+            "processo": "Abastecimento de linha",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "lean",
+            "estoque",
+            "abastecimento",
+            "toyota"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "JSON",
+      "sentidos": [
+        {
+          "id": "json-ti-1",
+          "categoria": "ti",
+          "en": "JavaScript Object Notation",
+          "pt": "Notação de Objetos JavaScript",
+          "aplicacao": {
+            "contexto": "Formato leve de troca de dados em texto, legível por humanos, baseado em pares chave-valor e listas. Virou o padrão de fato para APIs web e para arquivos de configuração.",
+            "exemplo": "O repertório é salvo em JSON justamente para poder abrir e versionar no Git.",
+            "area": "TI",
+            "processo": "Troca e persistência de dados",
+            "referencia": "RFC 8259"
+          },
+          "tags": [
+            "dados",
+            "formato",
+            "api",
+            "configuracao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "KANBAN",
+      "sentidos": [
+        {
+          "id": "kanban-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Kanban (visual signal card)",
+          "pt": "Kanban (cartão de sinalização)",
+          "aplicacao": {
+            "contexto": "Sistema de sinalização visual que autoriza reposição ou produção apenas quando o consumo acontece, puxando o fluxo. A palavra é japonesa e significa cartão ou placa; não é sigla, mas circula como tal.",
+            "exemplo": "Quando o cartao kanban voltar para o quadro, ai sim o almoxarifado repõe.",
+            "area": "Logística / Manufatura",
+            "processo": "Controle de reposição de materiais",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "lean",
+            "puxado",
+            "visual",
+            "reposicao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "KO",
+      "sentidos": [
+        {
+          "id": "ko-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Kick-Off",
+          "pt": "Reunião de Partida do Projeto",
+          "aplicacao": {
+            "contexto": "Marco que abre oficialmente o projeto, alinhando escopo, premissas, cronograma, orçamento e responsáveis com todas as áreas envolvidas. Tudo que ficar impreciso aqui vira retrabalho depois.",
+            "exemplo": "O KO do projeto ficou para segunda, traz o escopo e a premissa de volume.",
+            "area": "Projetos",
+            "processo": "Abertura de projeto",
+            "referencia": null
+          },
+          "tags": [
+            "projeto",
+            "inicio",
+            "reuniao",
+            "alinhamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "KPI",
+      "sentidos": [
+        {
+          "id": "kpi-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Key Performance Indicator",
+          "pt": "Indicador-Chave de Desempenho",
+          "aplicacao": {
+            "contexto": "Métrica escolhida para acompanhar se a operação ou o projeto está indo na direção da meta. Bom KPI tem fórmula clara, dono, frequência e uma decisão associada quando desvia.",
+            "exemplo": "Esse número é interessante, mas não é KPI: ninguém toma decisão olhando para ele.",
+            "area": "Gestão",
+            "processo": "Gestão de desempenho",
+            "referencia": null
+          },
+          "tags": [
+            "indicador",
+            "meta",
+            "desempenho",
+            "gestao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "LGPD",
+      "sentidos": [
+        {
+          "id": "lgpd-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Brazilian General Data Protection Law",
+          "pt": "Lei Geral de Proteção de Dados Pessoais",
+          "aplicacao": {
+            "contexto": "Lei brasileira que regula o tratamento de dados pessoais, exigindo base legal, finalidade definida, minimização e garantia dos direitos do titular. Inspirada no GDPR europeu.",
+            "exemplo": "Pela LGPD a gente não pode guardar esse dado do candidato sem finalidade definida.",
+            "area": "Jurídico",
+            "processo": "Conformidade e privacidade",
+            "referencia": "Lei 13.709/2018"
+          },
+          "tags": [
+            "privacidade",
+            "dados",
+            "compliance",
+            "juridico"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "LLM",
+      "sentidos": [
+        {
+          "id": "llm-ti-1",
+          "categoria": "ti",
+          "en": "Large Language Model",
+          "pt": "Modelo de Linguagem de Grande Porte",
+          "aplicacao": {
+            "contexto": "Modelo de aprendizado de máquina treinado em grande volume de texto para prever e gerar linguagem, capaz de resumir, classificar, traduzir e conversar a partir de instruções.",
+            "exemplo": "Dá para usar um LLM para sugerir o significado da sigla, mas na v1 ficamos offline.",
+            "area": "TI",
+            "processo": "Inteligência artificial aplicada",
+            "referencia": null
+          },
+          "tags": [
+            "ia",
+            "modelo",
+            "linguagem",
+            "texto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "MFA",
+      "sentidos": [
+        {
+          "id": "mfa-ti-1",
+          "categoria": "ti",
+          "en": "Multi-Factor Authentication",
+          "pt": "Autenticação Multifator",
+          "aplicacao": {
+            "contexto": "Exigência de dois ou mais fatores independentes para autenticar: algo que você sabe, algo que você tem e algo que você é. Derruba drasticamente o risco de credencial vazada.",
+            "exemplo": "Ativa o MFA nas contas de administrador, senha sozinha não basta.",
+            "area": "TI",
+            "processo": "Segurança da informação",
+            "referencia": null
+          },
+          "tags": [
+            "seguranca",
+            "autenticacao",
+            "token",
+            "acesso"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "MOM",
+      "sentidos": [
+        {
+          "id": "mom-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Month over Month",
+          "pt": "Mês contra Mês",
+          "aplicacao": {
+            "contexto": "Comparação do resultado de um mes com o do mes imediatamente anterior, usada para enxergar tendência de curto prazo. Exige cuidado com sazonalidade e número de dias úteis.",
+            "exemplo": "O refugo caiu 12% MoM, mas contra o ano passado ainda estamos piores.",
+            "area": "Financeiro",
+            "processo": "Análise de tendência",
+            "referencia": null
+          },
+          "tags": [
+            "comparativo",
+            "tendencia",
+            "mensal",
+            "indicador"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "MRP",
+      "sentidos": [
+        {
+          "id": "mrp-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Material Requirements Planning",
+          "pt": "Planejamento das Necessidades de Materiais",
+          "aplicacao": {
+            "contexto": "Lógica que explode a demanda do produto final pela lista de materiais e gera, considerando estoque e lead time, o que comprar ou produzir e quando. Motor do planejamento de manufatura.",
+            "exemplo": "O MRP puxou 400 peças a mais porque a BOM ainda estava com o componente antigo.",
+            "area": "Planejamento / Logística",
+            "processo": "Planejamento de materiais",
+            "referencia": "ASCM/APICS Dictionary"
+          },
+          "tags": [
+            "planejamento",
+            "materiais",
+            "estoque",
+            "demanda"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "MSA",
+      "sentidos": [
+        {
+          "id": "msa-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Measurement System Analysis",
+          "pt": "Análise do Sistema de Medição",
+          "aplicacao": {
+            "contexto": "Estudo que quantifica quanto da variação observada vem do próprio sistema de medição (repetitividade, reprodutibilidade, linearidade, estabilidade). Sem MSA aprovada, dado de inspeção não é confiável.",
+            "exemplo": "Antes de discutir o Cpk, roda a MSA: o R&R do paquimetro está em 28%.",
+            "area": "Qualidade",
+            "processo": "Validação de meios de medição",
+            "referencia": "AIAG MSA 4a ed."
+          },
+          "tags": [
+            "medicao",
+            "rr",
+            "calibracao",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "MVP",
+      "sentidos": [
+        {
+          "id": "mvp-ti-1",
+          "categoria": "ti",
+          "en": "Minimum Viable Product",
+          "pt": "Produto Mínimo Viável",
+          "aplicacao": {
+            "contexto": "Menor versão do produto capaz de entregar valor real e gerar aprendizado com usuários de verdade. Não é protótipo descartável nem versão capenga: é escopo cortado, qualidade mantida.",
+            "exemplo": "Para o MVP basta busca e cadastro, importação de planilha fica para a v2.",
+            "area": "TI",
+            "processo": "Desenvolvimento de produto",
+            "referencia": "Eric Ries, The Lean Startup (2011)"
+          },
+          "tags": [
+            "produto",
+            "escopo",
+            "agil",
+            "lancamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "mvp-generico-1",
+          "categoria": "generico",
+          "en": "Most Valuable Player",
+          "pt": "Jogador Mais Valioso / Destaque",
+          "aplicacao": {
+            "contexto": "Expressão vinda do esporte usada de forma informal para apontar a pessoa que mais contribuiu para um resultado. Cuidado com a ambiguidade: em contexto de produto, MVP é produto mínimo viável.",
+            "exemplo": "O MVP da virada foi a manutenção, ficaram a madrugada inteira recuperando a prensa.",
+            "area": "Geral",
+            "processo": "Reconhecimento informal de equipe",
+            "referencia": null
+          },
+          "tags": [
+            "informal",
+            "reconhecimento",
+            "equipe",
+            "esporte"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "NA",
+      "sentidos": [
+        {
+          "id": "na-generico-1",
+          "categoria": "generico",
+          "en": "Not Applicable / Not Available",
+          "pt": "Não Aplicável / Não Disponível",
+          "aplicacao": {
+            "contexto": "Escrito como N/A, indica que o campo não se aplica àquele caso ou que o dado não está disponível. Em formulário de qualidade, deixar N/A explícito evita ser lido como esquecimento.",
+            "exemplo": "Marca N/A nesse campo, esse requisito não se aplica a peça de serviço.",
+            "area": "Geral",
+            "processo": "Preenchimento de formulários e relatórios",
+            "referencia": null
+          },
+          "tags": [
+            "formulario",
+            "campo",
+            "preenchimento",
+            "registro"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "NDA",
+      "sentidos": [
+        {
+          "id": "nda-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Non-Disclosure Agreement",
+          "pt": "Acordo de Confidencialidade",
+          "aplicacao": {
+            "contexto": "Contrato que obriga as partes a não divulgar informações sensíveis trocadas durante uma negociação ou projeto, definindo prazo, escopo do que é confidencial e penalidades.",
+            "exemplo": "Só mandamos o desenho depois que o NDA estiver assinado pelos dois lados.",
+            "area": "Jurídico",
+            "processo": "Contratação e proteção de informação",
+            "referencia": null
+          },
+          "tags": [
+            "contrato",
+            "confidencialidade",
+            "juridico",
+            "sigilo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "NVH",
+      "sentidos": [
+        {
+          "id": "nvh-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Noise, Vibration and Harshness",
+          "pt": "Ruído, Vibração e Aspereza",
+          "aplicacao": {
+            "contexto": "Disciplina que mede e trata o conforto acústico e vibratório percebido pelo ocupante. É um atributo de percepção de qualidade: o cliente não ve a rigidez da carroceria, mas escuta o resultado dela.",
+            "exemplo": "O time de NVH reprovou o coxim novo porque subiu o ruido de rodagem em 3 dB.",
+            "area": "Engenharia de Produto",
+            "processo": "Desenvolvimento de atributos do veículo",
+            "referencia": null
+          },
+          "tags": [
+            "conforto",
+            "ruido",
+            "vibracao",
+            "acustica"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "OBD",
+      "sentidos": [
+        {
+          "id": "obd-automotivo-1",
+          "categoria": "automotivo",
+          "en": "On-Board Diagnostics",
+          "pt": "Diagnóstico de Bordo",
+          "aplicacao": {
+            "contexto": "Sistema de autodiagnóstico do veículo que monitora emissões e falhas, registra códigos (DTCs) e os disponibiliza por um conector padronizado para a oficina e para a fiscalização ambiental.",
+            "exemplo": "Pluga o scanner no OBD e ve qual DTC está gravado antes de trocar a peça.",
+            "area": "Pós-venda / Engenharia Elétrica",
+            "processo": "Diagnóstico e manutenção",
+            "referencia": "ISO 15765 / SAE J1979"
+          },
+          "tags": [
+            "diagnostico",
+            "emissoes",
+            "falha",
+            "scanner"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "OEE",
+      "sentidos": [
+        {
+          "id": "oee-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Overall Equipment Effectiveness",
+          "pt": "Eficiência Global do Equipamento",
+          "aplicacao": {
+            "contexto": "Indicador que multiplica disponibilidade, performance e qualidade para mostrar quanto do tempo planejado o equipamento realmente produziu peça boa na velocidade certa. Expõe perdas escondidas.",
+            "exemplo": "O OEE da injetora caiu para 62%, quase tudo é perda de setup.",
+            "area": "Manufatura",
+            "processo": "Gestão de performance de linha",
+            "referencia": null
+          },
+          "tags": [
+            "indicador",
+            "produtividade",
+            "perda",
+            "equipamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "OKR",
+      "sentidos": [
+        {
+          "id": "okr-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Objectives and Key Results",
+          "pt": "Objetivos e Resultados-Chave",
+          "aplicacao": {
+            "contexto": "Método de definição de metas em que um objetivo qualitativo e inspirador é acompanhado de poucos resultados-chave mensuráveis, revisados em ciclos curtos, normalmente trimestrais.",
+            "exemplo": "No OKR do trimestre o objetivo é reduzir retrabalho, o KR é cair de 9% para 5%.",
+            "area": "Gestão",
+            "processo": "Planejamento e desdobramento de metas",
+            "referencia": null
+          },
+          "tags": [
+            "meta",
+            "trimestre",
+            "objetivo",
+            "gestao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ONEONONE",
+      "sentidos": [
+        {
+          "id": "oneonone-corporativo-1",
+          "categoria": "corporativo",
+          "en": "One-on-One meeting",
+          "pt": "Reunião Individual (1:1)",
+          "aplicacao": {
+            "contexto": "Conversa periódica e reservada entre gestor e liderado, escrita como 1:1, voltada a feedback, prioridades, obstáculos e desenvolvimento de carreira. Não é reunião de status de tarefa.",
+            "exemplo": "Leva isso para o nosso 1:1 de quinta, é conversa de carreira, não de projeto.",
+            "area": "RH",
+            "processo": "Gestão de pessoas e desenvolvimento",
+            "referencia": null
+          },
+          "tags": [
+            "feedback",
+            "gestao",
+            "carreira",
+            "reuniao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "OPEX",
+      "sentidos": [
+        {
+          "id": "opex-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Operational Expenditure",
+          "pt": "Despesa Operacional",
+          "aplicacao": {
+            "contexto": "Gasto corrente necessário para operar o negócio no dia a dia: pessoal, manutenção, energia, serviços e assinaturas. Impacta o resultado do próprio período em que ocorre.",
+            "exemplo": "Se contratarmos em nuvem vira OPEX mensal e não consome o orçamento de CAPEX.",
+            "area": "Financeiro",
+            "processo": "Planejamento orçamentário",
+            "referencia": null
+          },
+          "tags": [
+            "despesa",
+            "orcamento",
+            "custeio",
+            "financeiro"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PDCA",
+      "sentidos": [
+        {
+          "id": "pdca-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Plan-Do-Check-Act",
+          "pt": "Planejar-Fazer-Verificar-Agir",
+          "aplicacao": {
+            "contexto": "Ciclo de melhoria contínua em quatro passos que estrutura qualquer ação corretiva ou projeto de melhoria e exige verificar o resultado antes de padronizar. Base cultural da melhoria em manufatura.",
+            "exemplo": "Fecha o PDCA: a ação foi feita, mas ninguém checou se o refugo caiu mesmo.",
+            "area": "Qualidade",
+            "processo": "Melhoria contínua",
+            "referencia": "Ciclo de Shewhart/Deming"
+          },
+          "tags": [
+            "melhoria",
+            "ciclo",
+            "qualidade",
+            "metodo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PFMEA",
+      "sentidos": [
+        {
+          "id": "pfmea-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Process Failure Mode and Effects Analysis",
+          "pt": "Análise de Modos de Falha e Efeitos de Processo",
+          "aplicacao": {
+            "contexto": "Variante do FMEA aplicada ao processo de manufatura: cada operação é analisada quanto a falhas possíveis de montagem, ajuste ou controle. As ações de detecção geradas aqui viram itens do plano de controle.",
+            "exemplo": "O PFMEA da linha de montagem gerou um poka-yoke novo na estação 40.",
+            "area": "Manufatura",
+            "processo": "Planejamento do processo produtivo",
+            "referencia": "AIAG-VDA FMEA Handbook (2019)"
+          },
+          "tags": [
+            "processo",
+            "manufatura",
+            "risco",
+            "controle"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PHEV",
+      "sentidos": [
+        {
+          "id": "phev-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Plug-in Hybrid Electric Vehicle",
+          "pt": "Veículo Elétrico Híbrido Plug-in",
+          "aplicacao": {
+            "contexto": "Híbrido que combina motor a combustão e motor elétrico com bateria recarregável na tomada, permitindo rodar alguns quilômetros em modo puramente elétrico e usar a combustão no restante.",
+            "exemplo": "O PHEV resolve a ansiedade de autonomia enquanto a rede de recarga não amadurece.",
+            "area": "Engenharia de Produto",
+            "processo": "Estratégia de eletrificação",
+            "referencia": null
+          },
+          "tags": [
+            "hibrido",
+            "eletrico",
+            "powertrain",
+            "recarga"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PL",
+      "sentidos": [
+        {
+          "id": "pl-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Profit and Loss statement",
+          "pt": "Demonstração de Resultados",
+          "aplicacao": {
+            "contexto": "Relatório que mostra receitas, custos e despesas de um período até chegar ao lucro ou prejuízo. Escrito como P&L; quem é dono de um P&L responde pelo resultado daquela operação.",
+            "exemplo": "Essa decisão bate direto no P&L da unidade, não dá para tratar como detalhe.",
+            "area": "Financeiro",
+            "processo": "Apuração e análise de resultado",
+            "referencia": null
+          },
+          "tags": [
+            "resultado",
+            "lucro",
+            "financeiro",
+            "dre"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PMO",
+      "sentidos": [
+        {
+          "id": "pmo-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Project Management Office",
+          "pt": "Escritório de Projetos",
+          "aplicacao": {
+            "contexto": "Estrutura que padroniza método, ferramentas e indicadores de projetos, consolida o portfólio e dá visibilidade de prazo, custo e risco à direção. Pode ser de suporte, de controle ou diretivo.",
+            "exemplo": "Manda o status para o PMO até quinta, eles consolidam o portfólio na sexta.",
+            "area": "Projetos",
+            "processo": "Governança de projetos",
+            "referencia": "PMI PMBOK Guide"
+          },
+          "tags": [
+            "projetos",
+            "governanca",
+            "portfolio",
+            "metodo"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "POKAYOKE",
+      "sentidos": [
+        {
+          "id": "pokayoke-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Poka-yoke (mistake proofing)",
+          "pt": "Poka-yoke (dispositivo à prova de erro)",
+          "aplicacao": {
+            "contexto": "Dispositivo ou arranjo que impede fisicamente o erro de montagem ou o detecta imediatamente, em vez de depender da atenção do operador. Termo japonês criado por Shigeo Shingo.",
+            "exemplo": "Colocamos um poka-yoke no gabarito: se o clipe estiver invertido a peça não encaixa.",
+            "area": "Manufatura",
+            "processo": "Prevenção de defeito na operação",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "lean",
+            "erro",
+            "dispositivo",
+            "prevencao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PPAP",
+      "sentidos": [
+        {
+          "id": "ppap-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Production Part Approval Process",
+          "pt": "Processo de Aprovação de Peça de Produção",
+          "aplicacao": {
+            "contexto": "Pacote de evidências que o fornecedor entrega ao cliente para provar que o processo produtivo é capaz de fabricar a peça conforme o desenho e a especificação, de forma repetitiva. Sem PPAP aprovado, a peça não pode ser faturada como peça de série.",
+            "exemplo": "O fornecedor do suporte do farol só libera série depois que o PPAP nível 3 for aprovado.",
+            "area": "Qualidade",
+            "processo": "Validação de fornecedor",
+            "referencia": "AIAG PPAP 4a ed."
+          },
+          "tags": [
+            "qualidade",
+            "fornecedor",
+            "aprovacao",
+            "peca"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PPM",
+      "sentidos": [
+        {
+          "id": "ppm-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Parts Per Million",
+          "pt": "Partes por Milhão",
+          "aplicacao": {
+            "contexto": "Unidade de medida de defeito usada na cadeia automotiva: quantas peças defeituosas ocorreriam a cada um milhão entregues. Permite comparar fornecedores e metas em níveis muito baixos de refugo.",
+            "exemplo": "A meta de qualidade do contrato é 25 PPM, estamos entregando 90.",
+            "area": "Qualidade",
+            "processo": "Monitoramento de desempenho de fornecedor",
+            "referencia": null
+          },
+          "tags": [
+            "indicador",
+            "defeito",
+            "fornecedor",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "ppm-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Project Portfolio Management",
+          "pt": "Gestão de Portfólio de Projetos",
+          "aplicacao": {
+            "contexto": "Disciplina de selecionar, priorizar e balancear o conjunto de projetos conforme estratégia, capacidade e risco, decidindo o que entra, o que espera e o que é cancelado.",
+            "exemplo": "Pelo PPM, esse projeto entra só no ano que vem, não temos engenheiro disponível agora.",
+            "area": "Projetos",
+            "processo": "Priorização de portfólio",
+            "referencia": "PMI Standard for Portfolio Management"
+          },
+          "tags": [
+            "portfolio",
+            "priorizacao",
+            "projetos",
+            "capacidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PS",
+      "sentidos": [
+        {
+          "id": "ps-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Product Sign-off",
+          "pt": "Aprovação Formal do Produto",
+          "aplicacao": {
+            "contexto": "Marco em que o cliente ou a engenharia responsável assina que o produto atende aos requisitos acordados, liberando a etapa seguinte do desenvolvimento. É a formalização do aceite técnico.",
+            "exemplo": "Sem o PS assinado pela engenharia do cliente não liberamos o ferramental definitivo.",
+            "area": "Engenharia de Produto",
+            "processo": "Aprovação de produto",
+            "referencia": null
+          },
+          "tags": [
+            "aprovacao",
+            "aceite",
+            "marco",
+            "projeto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "ps-generico-1",
+          "categoria": "generico",
+          "en": "Post Scriptum (postscript)",
+          "pt": "Pós-escrito",
+          "aplicacao": {
+            "contexto": "Observação acrescentada ao final de uma mensagem ou carta, depois do texto principal. Do latim post scriptum, escrito depois.",
+            "exemplo": "PS: esqueci de anexar a planilha, segue no próximo e-mail.",
+            "area": "Geral",
+            "processo": "Redação de mensagens e e-mails",
+            "referencia": null
+          },
+          "tags": [
+            "email",
+            "observacao",
+            "escrita",
+            "latim"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "PSW",
+      "sentidos": [
+        {
+          "id": "psw-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Part Submission Warrant",
+          "pt": "Certificado de Submissão de Peça",
+          "aplicacao": {
+            "contexto": "É a folha de rosto do pacote de PPAP: resume a peça, o nível de submissao, o motivo da submissao e traz a assinatura do fornecedor e o campo de disposicao do cliente (aprovado, aprovado interino ou rejeitado).",
+            "exemplo": "Manda o PSW assinado junto com o pacote, senao a qualidade do cliente nem abre o PPAP.",
+            "area": "Qualidade",
+            "processo": "Validação de fornecedor",
+            "referencia": "AIAG PPAP 4a ed."
+          },
+          "tags": [
+            "ppap",
+            "documento",
+            "fornecedor"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "QA",
+      "sentidos": [
+        {
+          "id": "qa-ti-1",
+          "categoria": "ti",
+          "en": "Quality Assurance",
+          "pt": "Garantia da Qualidade",
+          "aplicacao": {
+            "contexto": "Função e conjunto de práticas que asseguram que o software atende aos requisitos antes de chegar ao usuário, combinando testes manuais, automatizados e critérios de aceite.",
+            "exemplo": "Passa para QA antes de subir, essa tela mexe com o arquivo do usuário.",
+            "area": "TI",
+            "processo": "Teste e validação de software",
+            "referencia": "ISO/IEC 25010"
+          },
+          "tags": [
+            "teste",
+            "qualidade",
+            "validacao",
+            "software"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "QBR",
+      "sentidos": [
+        {
+          "id": "qbr-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Quarterly Business Review",
+          "pt": "Revisão Trimestral de Negócios",
+          "aplicacao": {
+            "contexto": "Reunião formal de balanço do trimestre com resultados, aprendizados, riscos e compromissos para o período seguinte. Usada tanto internamente quanto com clientes e fornecedores estratégicos.",
+            "exemplo": "Guarda esse tema para o QBR, lá teremos o cliente e o diretor na mesma sala.",
+            "area": "Gestão",
+            "processo": "Revisão periódica de desempenho",
+            "referencia": null
+          },
+          "tags": [
+            "trimestre",
+            "reuniao",
+            "resultado",
+            "cliente"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "QFD",
+      "sentidos": [
+        {
+          "id": "qfd-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Quality Function Deployment",
+          "pt": "Desdobramento da Função Qualidade",
+          "aplicacao": {
+            "contexto": "Método que traduz a voz do cliente em características técnicas mensuráveis, usando a matriz conhecida como casa da qualidade. Ajuda a decidir onde vale investir esforço de engenharia.",
+            "exemplo": "O QFD mostrou que o cliente valoriza mais o fechamento da porta do que o peso.",
+            "area": "Engenharia de Produto",
+            "processo": "Definição de requisitos de produto",
+            "referencia": "Yoji Akao (1966)"
+          },
+          "tags": [
+            "requisitos",
+            "cliente",
+            "matriz",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RACI",
+      "sentidos": [
+        {
+          "id": "raci-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Responsible, Accountable, Consulted, Informed",
+          "pt": "Responsável, Aprovador, Consultado, Informado",
+          "aplicacao": {
+            "contexto": "Matriz que atribui papéis por atividade para acabar com a dúvida de quem faz, quem responde pelo resultado, quem opina e quem só precisa ser avisado. Cada linha deve ter um único aprovador.",
+            "exemplo": "Monta o RACI dessa entrega, ninguém sabe quem aprova a mudança de escopo.",
+            "area": "Projetos",
+            "processo": "Definição de papéis e responsabilidades",
+            "referencia": "PMI PMBOK Guide"
+          },
+          "tags": [
+            "papeis",
+            "responsabilidade",
+            "matriz",
+            "projeto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RAM",
+      "sentidos": [
+        {
+          "id": "ram-ti-1",
+          "categoria": "ti",
+          "en": "Random Access Memory",
+          "pt": "Memória de Acesso Aleatório",
+          "aplicacao": {
+            "contexto": "Memória volátil de trabalho onde ficam os dados e programas em execução. Insuficiência de RAM faz o sistema recorrer ao disco e derruba a performance percebida.",
+            "exemplo": "O requisito é rodar com menos de 180 MB de RAM em repouso.",
+            "area": "TI",
+            "processo": "Infraestrutura e performance",
+            "referencia": null
+          },
+          "tags": [
+            "hardware",
+            "memoria",
+            "performance"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "REST",
+      "sentidos": [
+        {
+          "id": "rest-ti-1",
+          "categoria": "ti",
+          "en": "Representational State Transfer",
+          "pt": "Transferência de Estado Representacional",
+          "aplicacao": {
+            "contexto": "Estilo de arquitetura para APIs sobre HTTP que trata tudo como recurso identificado por URL e usa os verbos do protocolo para operar sobre ele, mantendo as chamadas sem estado no servidor.",
+            "exemplo": "A API é REST, então o GET não pode alterar nada no servidor.",
+            "area": "TI",
+            "processo": "Arquitetura de integração",
+            "referencia": "Dissertação de Roy Fielding (2000)"
+          },
+          "tags": [
+            "api",
+            "http",
+            "arquitetura",
+            "web"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RFQ",
+      "sentidos": [
+        {
+          "id": "rfq-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Request for Quotation",
+          "pt": "Solicitação de Cotação",
+          "aplicacao": {
+            "contexto": "Pacote enviado aos fornecedores potenciais com desenho, volume, requisitos e prazo, pedindo proposta comercial e técnica. É o ponto de partida do processo de seleção de fornecedor.",
+            "exemplo": "Mandamos o RFQ para tres fornecedores, as propostas voltam dia 20.",
+            "area": "Compras",
+            "processo": "Sourcing e seleção de fornecedor",
+            "referencia": null
+          },
+          "tags": [
+            "cotacao",
+            "compras",
+            "fornecedor",
+            "proposta"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RH",
+      "sentidos": [
+        {
+          "id": "rh-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Human Resources (HR)",
+          "pt": "Recursos Humanos",
+          "aplicacao": {
+            "contexto": "Área responsável por atrair, contratar, desenvolver, remunerar e desligar pessoas, além de cuidar de clima, relações trabalhistas e políticas internas. Em inglês aparece como HR.",
+            "exemplo": "Alinha com o RH antes de abrir a vaga, o headcount ainda não foi aprovado.",
+            "area": "RH",
+            "processo": "Gestão de pessoas",
+            "referencia": null
+          },
+          "tags": [
+            "pessoas",
+            "gente",
+            "contratacao",
+            "departamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "ROI",
+      "sentidos": [
+        {
+          "id": "roi-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Return on Investment",
+          "pt": "Retorno sobre o Investimento",
+          "aplicacao": {
+            "contexto": "Relação entre o ganho obtido e o valor investido, usada para comparar alternativas de aplicação de recurso. Precisa sempre vir acompanhada do horizonte de tempo considerado.",
+            "exemplo": "O ROI do novo dispositivo se paga em 8 meses só com a economia de retrabalho.",
+            "area": "Financeiro",
+            "processo": "Análise de investimento",
+            "referencia": null
+          },
+          "tags": [
+            "investimento",
+            "retorno",
+            "financeiro",
+            "payback"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RPA",
+      "sentidos": [
+        {
+          "id": "rpa-ti-1",
+          "categoria": "ti",
+          "en": "Robotic Process Automation",
+          "pt": "Automação Robótica de Processos",
+          "aplicacao": {
+            "contexto": "Robôs de software que executam tarefas repetitivas simulando a interação humana com sistemas existentes, sem alterar o sistema de origem. Resolve integração onde não existe API.",
+            "exemplo": "Enquanto não temos API, um RPA copia o relatório diário para a planilha.",
+            "area": "TI",
+            "processo": "Automação de processos",
+            "referencia": null
+          },
+          "tags": [
+            "automacao",
+            "robo",
+            "processo",
+            "integracao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "RSVP",
+      "sentidos": [
+        {
+          "id": "rsvp-generico-1",
+          "categoria": "generico",
+          "en": "Répondez s'il vous plaît (please reply)",
+          "pt": "Favor Confirmar Presença",
+          "aplicacao": {
+            "contexto": "Pedido de confirmação de presença em convites, vindo do francês. Em convite de reunião corporativa, sinaliza que a lista de participantes depende da resposta de cada um.",
+            "exemplo": "O convite pede RSVP até sexta porque o almoço é por pessoa confirmada.",
+            "area": "Geral",
+            "processo": "Organização de eventos e reuniões",
+            "referencia": null
+          },
+          "tags": [
+            "convite",
+            "confirmacao",
+            "evento",
+            "reuniao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SAAS",
+      "sentidos": [
+        {
+          "id": "saas-ti-1",
+          "categoria": "ti",
+          "en": "Software as a Service",
+          "pt": "Software como Serviço",
+          "aplicacao": {
+            "contexto": "Modelo em que o software é acessado pela internet por assinatura, com infraestrutura, atualização e suporte sob responsabilidade do fornecedor. Troca investimento inicial por custo recorrente.",
+            "exemplo": "É SaaS, então não tem instalação no servidor da planta, mas entra como OPEX.",
+            "area": "TI",
+            "processo": "Contratação de software",
+            "referencia": null
+          },
+          "tags": [
+            "nuvem",
+            "assinatura",
+            "servico",
+            "software"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SDK",
+      "sentidos": [
+        {
+          "id": "sdk-ti-1",
+          "categoria": "ti",
+          "en": "Software Development Kit",
+          "pt": "Kit de Desenvolvimento de Software",
+          "aplicacao": {
+            "contexto": "Pacote com bibliotecas, ferramentas, exemplos e documentação que facilita construir em cima de uma plataforma. Enquanto a API é o contrato, o SDK é a caixa de ferramentas pronta para usá-lo.",
+            "exemplo": "Usa o SDK oficial em vez de montar as chamadas HTTP na mão.",
+            "area": "TI",
+            "processo": "Desenvolvimento de software",
+            "referencia": null
+          },
+          "tags": [
+            "biblioteca",
+            "ferramentas",
+            "desenvolvimento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SLA",
+      "sentidos": [
+        {
+          "id": "sla-ti-1",
+          "categoria": "ti",
+          "en": "Service Level Agreement",
+          "pt": "Acordo de Nível de Serviço",
+          "aplicacao": {
+            "contexto": "Acordo formal que define metas mensuráveis de serviço (disponibilidade, tempo de resposta, prazo de atendimento) e as consequências do descumprimento. Vale tanto para fornecedor externo quanto entre áreas.",
+            "exemplo": "O SLA de chamado critico é de 4 horas, esse aqui já estourou.",
+            "area": "TI",
+            "processo": "Gestão de serviços e suporte",
+            "referencia": "ITIL 4"
+          },
+          "tags": [
+            "contrato",
+            "suporte",
+            "disponibilidade",
+            "meta"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SOP",
+      "sentidos": [
+        {
+          "id": "sop-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Start of Production",
+          "pt": "Início de Produção Seriada",
+          "aplicacao": {
+            "contexto": "Data em que a fábrica passa a produzir o veículo ou componente em série, com processo, ferramental e fornecedores já validados. É a data âncora de todo o cronograma de um projeto automotivo.",
+            "exemplo": "O SOP é em março, então o PPAP de todos os fornecedores tem que estar aprovado em janeiro.",
+            "area": "Projetos",
+            "processo": "Cronograma de lançamento de produto",
+            "referencia": null
+          },
+          "tags": [
+            "lancamento",
+            "marco",
+            "producao",
+            "cronograma"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        },
+        {
+          "id": "sop-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Standard Operating Procedure",
+          "pt": "Procedimento Operacional Padrão",
+          "aplicacao": {
+            "contexto": "Documento que descreve passo a passo como executar uma atividade, com responsáveis, critérios e registros, para que o resultado não dependa de quem faz. É a base de treinamento e auditoria.",
+            "exemplo": "Se a atividade não tem SOP, cada turno faz de um jeito e o resultado varia.",
+            "area": "Qualidade",
+            "processo": "Padronização de processos",
+            "referencia": "ISO 9001:2015"
+          },
+          "tags": [
+            "procedimento",
+            "padronizacao",
+            "processo",
+            "treinamento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SPC",
+      "sentidos": [
+        {
+          "id": "spc-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Statistical Process Control",
+          "pt": "Controle Estatístico de Processo",
+          "aplicacao": {
+            "contexto": "Uso de cartas de controle para separar variação natural de variação especial e agir só quando o processo realmente saiu do padrão. Base do monitoramento de características especiais no plano de controle.",
+            "exemplo": "A carta de SPC dessa cota já deu dois pontos fora, para a máquina e investiga.",
+            "area": "Qualidade",
+            "processo": "Controle de processo produtivo",
+            "referencia": "AIAG SPC 2a ed."
+          },
+          "tags": [
+            "estatistica",
+            "carta-controle",
+            "processo",
+            "variacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SQL",
+      "sentidos": [
+        {
+          "id": "sql-ti-1",
+          "categoria": "ti",
+          "en": "Structured Query Language",
+          "pt": "Linguagem de Consulta Estruturada",
+          "aplicacao": {
+            "contexto": "Linguagem padrão para consultar e manipular dados em bancos relacionais, com comandos declarativos de seleção, inserção, atualização e exclusão.",
+            "exemplo": "Puxa esse número direto por SQL, é mais rápido do que pedir relatório.",
+            "area": "TI",
+            "processo": "Consulta e manipulação de dados",
+            "referencia": "ISO/IEC 9075"
+          },
+          "tags": [
+            "banco-de-dados",
+            "consulta",
+            "relacional",
+            "dados"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SSD",
+      "sentidos": [
+        {
+          "id": "ssd-ti-1",
+          "categoria": "ti",
+          "en": "Solid State Drive",
+          "pt": "Unidade de Estado Sólido",
+          "aplicacao": {
+            "contexto": "Dispositivo de armazenamento baseado em memória flash, sem partes móveis, com latência muito menor que o disco magnético. Costuma ser o ganho mais barato de performance percebida.",
+            "exemplo": "Depois que trocaram para SSD o sistema abre em segundos.",
+            "area": "TI",
+            "processo": "Infraestrutura e hardware",
+            "referencia": null
+          },
+          "tags": [
+            "hardware",
+            "armazenamento",
+            "disco",
+            "performance"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SSO",
+      "sentidos": [
+        {
+          "id": "sso-ti-1",
+          "categoria": "ti",
+          "en": "Single Sign-On",
+          "pt": "Autenticação Única",
+          "aplicacao": {
+            "contexto": "Mecanismo que permite ao usuário autenticar uma vez e acessar vários sistemas sem repetir credenciais, centralizando o controle de acesso e a revogação.",
+            "exemplo": "Com SSO, quando a pessoa sai da empresa o acesso cai em todos os sistemas de uma vez.",
+            "area": "TI",
+            "processo": "Gestão de identidade e acesso",
+            "referencia": null
+          },
+          "tags": [
+            "autenticacao",
+            "acesso",
+            "identidade",
+            "seguranca"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SUV",
+      "sentidos": [
+        {
+          "id": "suv-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Sport Utility Vehicle",
+          "pt": "Veículo Utilitário Esportivo",
+          "aplicacao": {
+            "contexto": "Categoria de veículo com carroceria alta, posição de dirigir elevada e porte robusto, que dominou o mercado e define hoje boa parte das decisões de portfólio das montadoras.",
+            "exemplo": "O segmento de SUV compacto é onde o volume está, o projeto tem que mirar ali.",
+            "area": "Marketing / Produto",
+            "processo": "Definição de portfólio de produtos",
+            "referencia": null
+          },
+          "tags": [
+            "segmento",
+            "carroceria",
+            "mercado",
+            "produto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "SWOT",
+      "sentidos": [
+        {
+          "id": "swot-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Strengths, Weaknesses, Opportunities and Threats",
+          "pt": "Forças, Fraquezas, Oportunidades e Ameaças",
+          "aplicacao": {
+            "contexto": "Ferramenta de diagnóstico que cruza fatores internos (forças e fraquezas) com externos (oportunidades e ameaças) para apoiar a definição de estratégia. Vale pouco sem ação derivada de cada quadrante.",
+            "exemplo": "Fizemos a SWOT da unidade: a maior ameaça é a dependência de um fornecedor único.",
+            "area": "Estratégia",
+            "processo": "Planejamento estratégico",
+            "referencia": null
+          },
+          "tags": [
+            "estrategia",
+            "diagnostico",
+            "analise",
+            "matriz"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "TAKT",
+      "sentidos": [
+        {
+          "id": "takt-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Takt Time",
+          "pt": "Tempo Takt",
+          "aplicacao": {
+            "contexto": "Ritmo de produção exigido pela demanda: tempo disponível dividido pela quantidade a produzir. Serve de metrônomo do balanceamento das estações; do alemão Takt, compasso.",
+            "exemplo": "Com o takt de 58 segundos essa estação não cabe, precisa dividir a operação.",
+            "area": "Manufatura",
+            "processo": "Balanceamento de linha",
+            "referencia": "Sistema Toyota de Produção"
+          },
+          "tags": [
+            "ritmo",
+            "balanceamento",
+            "lean",
+            "demanda"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "TBD",
+      "sentidos": [
+        {
+          "id": "tbd-generico-1",
+          "categoria": "generico",
+          "en": "To Be Defined / To Be Determined",
+          "pt": "A Ser Definido",
+          "aplicacao": {
+            "contexto": "Marcador usado em documentos, cronogramas e apresentações para sinalizar que um ponto ainda está em aberto. Bom TBD vem com responsável e data para deixar de ser TBD.",
+            "exemplo": "O fornecedor da tampa ainda está TBD, definimos depois do RFQ.",
+            "area": "Geral",
+            "processo": "Elaboração de documentos e cronogramas",
+            "referencia": null
+          },
+          "tags": [
+            "pendente",
+            "definicao",
+            "cronograma",
+            "documento"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "TG",
+      "sentidos": [
+        {
+          "id": "tg-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Tollgate",
+          "pt": "Portão de Passagem / Marco de Aprovação",
+          "aplicacao": {
+            "contexto": "Ponto de decisão formal no cronograma em que a direção avalia os entregáveis da fase e autoriza (ou não) o projeto a seguir. Funciona como pedágio: sem entregável, não passa.",
+            "exemplo": "A gente não passa no TG3 sem o DVP&R fechado e o custo dentro da meta.",
+            "area": "Projetos",
+            "processo": "Governança de fases do projeto",
+            "referencia": null
+          },
+          "tags": [
+            "gate",
+            "marco",
+            "aprovacao",
+            "governanca"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "TPM",
+      "sentidos": [
+        {
+          "id": "tpm-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Total Productive Maintenance",
+          "pt": "Manutenção Produtiva Total",
+          "aplicacao": {
+            "contexto": "Programa que envolve a operação na conservação do equipamento, com manutenção autônoma, planejada e foco em eliminar as grandes perdas. Trabalha junto com o OEE como indicador.",
+            "exemplo": "O pilar de TPM colocou a limpeza diária da prensa com o próprio operador.",
+            "area": "Manutenção",
+            "processo": "Gestão de ativos e manutenção",
+            "referencia": "JIPM"
+          },
+          "tags": [
+            "manutencao",
+            "perda",
+            "equipamento",
+            "lean"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "UI",
+      "sentidos": [
+        {
+          "id": "ui-ti-1",
+          "categoria": "ti",
+          "en": "User Interface",
+          "pt": "Interface do Usuário",
+          "aplicacao": {
+            "contexto": "Camada visível com a qual a pessoa interage: telas, botões, tipografia, estados. Trata de como o produto se apresenta e responde, e não do fluxo mental de quem usa.",
+            "exemplo": "A UI ficou bonita, mas o botão de salvar sumiu no tema escuro.",
+            "area": "TI",
+            "processo": "Design e desenvolvimento de produto digital",
+            "referencia": null
+          },
+          "tags": [
+            "interface",
+            "design",
+            "frontend",
+            "visual"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "UX",
+      "sentidos": [
+        {
+          "id": "ux-ti-1",
+          "categoria": "ti",
+          "en": "User Experience",
+          "pt": "Experiência do Usuário",
+          "aplicacao": {
+            "contexto": "Conjunto da experiência de quem usa o produto: descoberta, fluxo, esforço, erros e sensação ao final. É mais amplo que a interface e começa antes da primeira tela.",
+            "exemplo": "Do ponto de vista de UX, abrir o painel já com o cursor no campo economiza um clique por busca.",
+            "area": "TI",
+            "processo": "Design de produto digital",
+            "referencia": null
+          },
+          "tags": [
+            "experiencia",
+            "design",
+            "usabilidade",
+            "produto"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "VDA",
+      "sentidos": [
+        {
+          "id": "vda-automotivo-1",
+          "categoria": "automotivo",
+          "en": "German Association of the Automotive Industry (Verband der Automobilindustrie)",
+          "pt": "Associação da Indústria Automobilística Alemã",
+          "aplicacao": {
+            "contexto": "Entidade alemã que publica os manuais e métodos adotados pelas montadoras europeias, como a auditoria de processo VDA 6.3 e o manual conjunto de FMEA com a AIAG.",
+            "exemplo": "Esse cliente alemão audita pelo VDA 6.3, não pelo checklist que a gente usa.",
+            "area": "Qualidade",
+            "processo": "Auditoria de processo e normas",
+            "referencia": "VDA 6.3"
+          },
+          "tags": [
+            "norma",
+            "auditoria",
+            "alemanha",
+            "qualidade"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "VIN",
+      "sentidos": [
+        {
+          "id": "vin-automotivo-1",
+          "categoria": "automotivo",
+          "en": "Vehicle Identification Number",
+          "pt": "Número de Identificação do Veículo",
+          "aplicacao": {
+            "contexto": "Código alfanumérico de 17 posições que identifica unicamente cada veículo produzido, codificando fabricante, características e número sequencial. É a chave usada em rastreabilidade, recall e registro.",
+            "exemplo": "Levanta pelo VIN quais carros receberam o lote suspeito de amortecedor.",
+            "area": "Qualidade",
+            "processo": "Rastreabilidade e campanha de campo",
+            "referencia": "ISO 3779"
+          },
+          "tags": [
+            "rastreabilidade",
+            "chassi",
+            "recall",
+            "identificacao"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "VM",
+      "sentidos": [
+        {
+          "id": "vm-ti-1",
+          "categoria": "ti",
+          "en": "Virtual Machine",
+          "pt": "Máquina Virtual",
+          "aplicacao": {
+            "contexto": "Computador emulado por software que roda sobre um hospedeiro físico com sistema operacional próprio e recursos isolados. Permite consolidar servidores e isolar ambientes.",
+            "exemplo": "Sobe uma VM de homologação igual à de produção para testar a migração.",
+            "area": "TI",
+            "processo": "Infraestrutura e virtualização",
+            "referencia": null
+          },
+          "tags": [
+            "virtualizacao",
+            "servidor",
+            "ambiente",
+            "infraestrutura"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "VPN",
+      "sentidos": [
+        {
+          "id": "vpn-ti-1",
+          "categoria": "ti",
+          "en": "Virtual Private Network",
+          "pt": "Rede Privada Virtual",
+          "aplicacao": {
+            "contexto": "Túnel cifrado que liga o dispositivo do usuário à rede corporativa por uma rede pública, dando acesso a sistemas internos como se ele estivesse no escritório.",
+            "exemplo": "Sem VPN você não enxerga o servidor de arquivos da planta.",
+            "area": "TI",
+            "processo": "Acesso remoto e segurança de rede",
+            "referencia": null
+          },
+          "tags": [
+            "rede",
+            "seguranca",
+            "acesso-remoto",
+            "tunel"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "WCM",
+      "sentidos": [
+        {
+          "id": "wcm-automotivo-1",
+          "categoria": "automotivo",
+          "en": "World Class Manufacturing",
+          "pt": "Manufatura de Classe Mundial",
+          "aplicacao": {
+            "contexto": "Programa estruturado em pilares técnicos e gerenciais, com auditoria por pontuação, usado por grandes montadoras para dirigir a melhoria da fábrica atacando perdas priorizadas por custo.",
+            "exemplo": "A auditoria de WCM da planta subiu para nível bronze neste ano.",
+            "area": "Manufatura",
+            "processo": "Programa de excelência operacional",
+            "referencia": null
+          },
+          "tags": [
+            "lean",
+            "pilares",
+            "auditoria",
+            "melhoria"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "sigla": "YTD",
+      "sentidos": [
+        {
+          "id": "ytd-corporativo-1",
+          "categoria": "corporativo",
+          "en": "Year to Date",
+          "pt": "Acumulado no Ano",
+          "aplicacao": {
+            "contexto": "Recorte que soma os resultados do início do exercício até a data atual, permitindo comparar o desempenho acumulado com a meta anual e com o mesmo período do ano anterior.",
+            "exemplo": "No mes fechamos abaixo da meta, mas no YTD ainda estamos positivos.",
+            "area": "Financeiro",
+            "processo": "Análise de resultados",
+            "referencia": null
+          },
+          "tags": [
+            "acumulado",
+            "periodo",
+            "indicador",
+            "relatorio"
+          ],
+          "favorito": false,
+          "acessos": 0,
+          "criadoEm": "2026-09-16T00:00:00.000Z",
+          "atualizadoEm": "2026-09-16T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
