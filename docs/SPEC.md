@@ -295,6 +295,8 @@ interface Config {
   opacidadeOciosa: number;     // 0,05–1,00 · padrão 0,35
   ladoPainel: 'auto' | 'esquerda' | 'direita';
   tamanhoLupa: number;         // 24–72 px · padrão 34
+  larguraPainel: number;       // 320–900 px · padrão 400 (arrastando as bordas)
+  alturaPainel: number;        // 360–1200 px · padrão 560
   transparencia: number;       // 0–0,85 · padrão 0,35
   corAcento: string;           // #RRGGBB
   abaPadrao: 'en' | 'pt' | 'aplicacao';

@@ -4,7 +4,7 @@ import type { Sentido, Sigla } from '@shared/types';
 import { FormSentido, type Rascunho } from './FormSentido';
 import { Icone, IconeLupa } from './IconeLupa';
 
-export function TelaRepertorio({ barra, aoSair }: { barra: ReactNode; aoSair: () => void }): JSX.Element {
+export function TelaRepertorio({ barra }: { barra: ReactNode }): JSX.Element {
   const [lista, setLista] = useState<Sigla[]>([]);
   const [texto, setTexto] = useState('');
   const [editando, setEditando] = useState<Rascunho | null>(null);
@@ -24,15 +24,29 @@ export function TelaRepertorio({ barra, aoSair }: { barra: ReactNode; aoSair: ()
   };
 
   const importar = async (): Promise<void> => {
+    setAviso({ texto: 'Lendo a planilha…', erro: false });
     const rel = await window.lupa.importar('merge');
-    if (!rel) return;
-    const houveErro = rel.erros.length > 0;
-    setAviso({
-      erro: houveErro && rel.inseridos + rel.atualizados === 0,
-      texto:
-        `${rel.inseridos} incluída(s), ${rel.atualizados} atualizada(s), ${rel.ignorados} ignorada(s)` +
-        (houveErro ? ` · 1º erro: linha ${rel.erros[0]?.linha} — ${rel.erros[0]?.mensagem}` : ''),
-    });
+    if (!rel) { setAviso(null); return; }
+
+    const entraram = rel.inseridos + rel.atualizados;
+    const primeiro = rel.erros[0];
+
+    if (entraram === 0) {
+      setAviso({
+        erro: true,
+        texto: primeiro
+          ? `Nenhuma sigla importada. ${primeiro.linha > 0 ? `Linha ${primeiro.linha}: ` : ''}${primeiro.mensagem}`
+          : 'Nenhuma sigla importada — a planilha parece estar vazia. Use a coluna A para a sigla e a B para o significado.',
+      });
+    } else {
+      setAviso({
+        erro: false,
+        texto:
+          `${rel.inseridos} incluída(s), ${rel.atualizados} atualizada(s)` +
+          (rel.ignorados > 0 ? `, ${rel.ignorados} ignorada(s)` : '') +
+          (primeiro ? ` · 1º problema: linha ${primeiro.linha} — ${primeiro.mensagem}` : ''),
+      });
+    }
     await recarregar();
   };
 
@@ -60,7 +74,6 @@ export function TelaRepertorio({ barra, aoSair }: { barra: ReactNode; aoSair: ()
         <button className="primario" onClick={() => setNovo(true)}><Icone nome="mais" /> Nova sigla</button>
         <button onClick={() => void importar()} title="Excel, CSV ou JSON">Importar</button>
         <button onClick={() => void window.lupa.exportar('xlsx')}>Exportar</button>
-        <button onClick={aoSair} className="fantasma" style={{ flex: '0 0 auto' }}>Fechar</button>
       </div>
 
       <div className="conteudo">

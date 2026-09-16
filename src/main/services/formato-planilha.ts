@@ -69,3 +69,53 @@ export function lerLinhaSimples(celulas: unknown[]): LinhaSimples | null {
   if (!rotulo) return null;
   return { rotulo, significado: texto(1), aplicacao: texto(2) };
 }
+
+/** Linha crua de planilha, já com as colunas nomeadas. */
+export type LinhaNomeada = Record<string, string>;
+
+export interface SentidoExistente {
+  id: string;
+  acessos: number;
+  criadoEm: string;
+}
+
+const texto = (v: string | undefined): string => (v ?? '').trim();
+const verdadeiro = (v: string | undefined): boolean =>
+  ['sim', 'true', '1', 'x', 'yes'].includes(texto(v).toLowerCase());
+
+/**
+ * Monta o objeto de sentido a partir de uma linha da planilha.
+ *
+ * Função pura para poder ser testada sem Electron — foi aqui que um `??` no
+ * lugar de `||` deixou o `id` vazio quando a coluna existia mas estava em
+ * branco, fazendo o schema rejeitar TODAS as linhas do import silenciosamente.
+ * `??` só pula null/undefined; string vazia passa. Por isso, todo campo que
+ * precisa cair no padrão quando vem vazio usa `||`.
+ */
+export function montarSentido(
+  linha: LinhaNomeada,
+  alvo: SentidoExistente | undefined,
+  gerarId: () => string,
+  agora: string = new Date().toISOString(),
+): Record<string, unknown> {
+  return {
+    id: alvo?.id || texto(linha['id']) || gerarId(),
+    categoria: texto(linha['categoria']) || 'generico',
+    en: texto(linha['en']),
+    pt: texto(linha['pt']),
+    original: texto(linha['original']),
+    aplicacao: {
+      contexto: texto(linha['contexto']),
+      exemplo: texto(linha['exemplo']),
+      area: texto(linha['area']),
+      processo: texto(linha['processo']),
+      referencia: texto(linha['referencia']) || null,
+    },
+    tags: texto(linha['tags']).split(';').map((t) => t.trim()).filter(Boolean),
+    favorito: verdadeiro(linha['favorito']),
+    acessos: alvo?.acessos ?? 0,
+    revisar: true,
+    criadoEm: texto(linha['criadoEm']) || alvo?.criadoEm || agora,
+    atualizadoEm: agora,
+  };
+}

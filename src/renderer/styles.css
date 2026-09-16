@@ -85,8 +85,11 @@ body {
 .lupa-btn svg { width: 58%; height: 58%; pointer-events: none; }
 
 /* -------------------------------------------------------------- painel --- */
+/* A margem deixa uma faixa livre na borda da janela: é por ela que o Windows
+   captura o arraste de redimensionamento numa janela sem moldura. */
 .painel {
-  display: flex; flex-direction: column; height: 100vh;
+  display: flex; flex-direction: column;
+  height: calc(100vh - 10px); margin: 5px;
   background: rgba(var(--superficie), var(--alfa));
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
@@ -116,7 +119,6 @@ body {
   border-radius: 7px; font-size: 13px; line-height: 1;
 }
 .btn-janela:hover { background: rgba(var(--superficie-2), .95); color: var(--txt); }
-.btn-janela.fechar:hover { background: var(--perigo); color: #fff; }
 
 /* botões de navegação (Repertório / Configurações) */
 .nav {

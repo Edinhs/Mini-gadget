@@ -67,7 +67,15 @@ export function registrarHandlers(): void {
         properties: ['openFile'],
       });
       if (r.canceled || !r.filePaths[0]) return null;
-      return importar(r.filePaths[0], modo === 'substituir' ? 'substituir' : 'merge');
+      try {
+        return importar(r.filePaths[0], modo === 'substituir' ? 'substituir' : 'merge');
+      } catch (e) {
+        // Melhor devolver o motivo do que rejeitar o invoke e a tela nao dizer nada.
+        return {
+          inseridos: 0, atualizados: 0, ignorados: 0, backupCriado: '',
+          erros: [{ linha: 0, campo: 'arquivo', mensagem: e instanceof Error ? e.message : 'falha ao ler o arquivo' }],
+        };
+      }
     } finally {
       bloquearFechamento(false);
     }

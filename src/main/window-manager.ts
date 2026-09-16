@@ -6,8 +6,10 @@ import { BrowserWindow, screen, app } from 'electron';
 import { join } from 'node:path';
 import { obterConfig, salvarConfig } from './store/settings';
 
-const LARG_PAINEL = 400;
-const ALT_PAINEL = 560;
+const MIN_LARG = 320;
+const MIN_ALT = 360;
+const MAX_LARG = 900;
+const MAX_ALT = 1200;
 
 let lupa: BrowserWindow | null = null;
 let painel: BrowserWindow | null = null;
@@ -90,10 +92,14 @@ export function pararArraste(): void {
 }
 
 export function criarPainel(): BrowserWindow {
+  const cfg = obterConfig();
   painel = new BrowserWindow({
-    width: LARG_PAINEL, height: ALT_PAINEL,
-    frame: false, resizable: false, skipTaskbar: true,
-    alwaysOnTop: true, show: false, transparent: true, hasShadow: false,
+    width: cfg.larguraPainel, height: cfg.alturaPainel,
+    minWidth: MIN_LARG, minHeight: MIN_ALT, maxWidth: MAX_LARG, maxHeight: MAX_ALT,
+    frame: false,
+    // Item 1: o usuario ajusta o tamanho arrastando as bordas da janela.
+    resizable: true,
+    skipTaskbar: true, alwaysOnTop: true, show: false, transparent: true, hasShadow: false,
     webPreferences: {
       preload: join(__dirname, '../preload/preload.js'),
       contextIsolation: true, nodeIntegration: false, sandbox: true,
@@ -101,6 +107,18 @@ export function criarPainel(): BrowserWindow {
   });
   painel.setAlwaysOnTop(true, 'screen-saver');
   carregar(painel, 'painel');
+
+  // Guarda o tamanho escolhido, sem gravar a cada pixel do arrasto.
+  let gravar: NodeJS.Timeout | null = null;
+  painel.on('resize', () => {
+    if (gravar) clearTimeout(gravar);
+    gravar = setTimeout(() => {
+      if (!painel) return;
+      const [w, h] = painel.getSize();
+      salvarConfig({ larguraPainel: w ?? MIN_LARG, alturaPainel: h ?? MIN_ALT });
+    }, 400);
+  });
+
   painel.on('blur', () => {
     if (!obterConfig().fixarPainel && !bloqueioDeFechamento) painel?.hide();
   });
@@ -114,20 +132,23 @@ function reposicionarPainel(): void {
   if (!painel || !lupa) return;
   const cfg = obterConfig();
   const tam = cfg.tamanhoLupa;
+  const [pw, ph] = painel.getSize();
+  const largura = pw ?? cfg.larguraPainel;
+  const altura = ph ?? cfg.alturaPainel;
   const [lx, ly] = lupa.getPosition();
   const area = screen.getDisplayNearestPoint({ x: lx ?? 0, y: ly ?? 0 }).workArea;
 
-  const cabeEsquerda = (lx ?? 0) - LARG_PAINEL - 10 >= area.x;
+  const cabeEsquerda = (lx ?? 0) - largura - 10 >= area.x;
   let aEsquerda: boolean;
   if (cfg.ladoPainel === 'esquerda') aEsquerda = true;
   else if (cfg.ladoPainel === 'direita') aEsquerda = false;
   else aEsquerda = cabeEsquerda;
 
-  let x = aEsquerda ? (lx ?? 0) - LARG_PAINEL - 10 : (lx ?? 0) + tam + 10;
-  x = Math.min(Math.max(x, area.x + 4), area.x + area.width - LARG_PAINEL - 4);
+  let x = aEsquerda ? (lx ?? 0) - largura - 10 : (lx ?? 0) + tam + 10;
+  x = Math.min(Math.max(x, area.x + 4), area.x + area.width - largura - 4);
 
-  let y = (ly ?? 0) + tam / 2 - ALT_PAINEL / 2;
-  y = Math.min(Math.max(y, area.y + 4), area.y + area.height - ALT_PAINEL - 4);
+  let y = (ly ?? 0) + tam / 2 - altura / 2;
+  y = Math.min(Math.max(y, area.y + 4), area.y + area.height - altura - 4);
 
   painel.setPosition(Math.round(x), Math.round(y));
 }

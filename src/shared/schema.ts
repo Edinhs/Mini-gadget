@@ -141,6 +141,9 @@ export const ConfigSchema = z.object({
   opacidadeOciosa: z.number().min(0.05).max(1).default(0.35),
   /** Lado da tela em que o painel abre em relacao a lupa. */
   ladoPainel: z.enum(['auto', 'esquerda', 'direita']).default('auto'),
+  /** Tamanho do painel, ajustado arrastando as bordas da janela. */
+  larguraPainel: z.number().int().min(320).max(900).default(400),
+  alturaPainel: z.number().int().min(360).max(1200).default(560),
   /** Diametro da lupa flutuante, em pixels. */
   tamanhoLupa: z.number().int().min(24).max(72).default(34),
   /** Transparencia do fundo das janelas: 0 = opaco, 1 = totalmente translucido. */

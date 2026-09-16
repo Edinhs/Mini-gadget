@@ -57,12 +57,10 @@ export function Painel(): JSX.Element {
         <span className="marca"><IconeLupa tamanho={15} /> Lupa</span>
       )}
       <span className="espaco" />
-      {/* Item 8: minimizar no canto superior direito */}
-      <button className="btn-janela" title="Minimizar" onClick={() => window.lupa.minimizar()}>
+      {/* Minimizar é a única ação de janela: clicar fora e Esc também escondem,
+          e o app continua vivo na lupa flutuante e na bandeja. */}
+      <button className="btn-janela" title="Minimizar (Esc)" onClick={() => window.lupa.minimizar()}>
         <Icone nome="menos" tamanho={14} />
-      </button>
-      <button className="btn-janela fechar" title="Fechar" onClick={() => window.lupa.fecharPainel()}>
-        <Icone nome="x" tamanho={14} />
       </button>
     </div>
   );
@@ -72,7 +70,6 @@ export function Painel(): JSX.Element {
       <div className="painel">
         <TelaRepertorio
           barra={<Barra titulo="Repertório" voltar={() => { setTela('busca'); recarregarTotal(); }} />}
-          aoSair={() => { setTela('busca'); recarregarTotal(); }}
         />
       </div>
     );

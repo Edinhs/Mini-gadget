@@ -8,7 +8,7 @@ import { RepertorioSchema, SentidoSchema } from '../../shared/schema';
 import type { RelatorioImport, Sentido, Sigla } from '../../shared/types';
 import { normalizar } from '../../shared/normalize';
 import * as repo from '../store/repository';
-import { ehCabecalhoCompleto, idiomaDoSignificado, lerLinhaSimples } from './formato-planilha';
+import { ehCabecalhoCompleto, idiomaDoSignificado, lerLinhaSimples, montarSentido } from './formato-planilha';
 
 export const COLUNAS = [
   'id', 'sigla', 'rotulo', 'tipo', 'categoria', 'en', 'pt', 'original',
@@ -50,8 +50,6 @@ export function exportar(caminho: string, formato: 'json' | 'csv' | 'xlsx'): str
   XLSX.writeFile(wb, caminho);
   return caminho;
 }
-
-const verdadeiro = (v: string): boolean => ['sim', 'true', '1', 'x'].includes((v ?? '').trim().toLowerCase());
 
 export function importar(caminho: string, modo: 'merge' | 'substituir'): RelatorioImport {
   const rel: RelatorioImport = { inseridos: 0, atualizados: 0, ignorados: 0, erros: [], backupCriado: '' };
@@ -125,26 +123,7 @@ export function importar(caminho: string, modo: 'merge' | 'substituir'): Relator
     );
     const alvo = porId ?? porCampos;
 
-    const candidato = {
-      id: alvo?.id ?? l['id'] ?? repo.novoId(),
-      categoria: (l['categoria'] || 'generico').trim(),
-      en: (l['en'] ?? '').trim(),
-      pt: (l['pt'] ?? '').trim(),
-      original: (l['original'] ?? '').trim(),
-      aplicacao: {
-        contexto: (l['contexto'] ?? '').trim(),
-        exemplo: (l['exemplo'] ?? '').trim(),
-        area: (l['area'] ?? '').trim(),
-        processo: (l['processo'] ?? '').trim(),
-        referencia: (l['referencia'] ?? '').trim() || null,
-      },
-      tags: (l['tags'] ?? '').split(';').map((t) => t.trim()).filter(Boolean),
-      favorito: verdadeiro(l['favorito'] ?? ''),
-      acessos: alvo?.acessos ?? 0,
-      revisar: true,
-      criadoEm: l['criadoEm'] || alvo?.criadoEm || new Date().toISOString(),
-      atualizadoEm: new Date().toISOString(),
-    };
+    const candidato = montarSentido(l, alvo, repo.novoId);
 
     const r = SentidoSchema.safeParse(candidato);
     if (!r.success) {
