@@ -78,6 +78,7 @@ interface Sentido {
   categoria: Categoria;
   en: string;              // "Production Part Approval Process" — pode estar vazio
   pt: string;              // "Processo de Aprovação de Peça de Produção" — pode estar vazio
+  original: string;        // expansão no idioma de origem: ACE = "Alzacristallo Elettrico"
   idiomaOrigem?: 'en' | 'pt' | 'it' | 'fr' | null; // termos italianos/franceses são comuns na Stellantis
   revisar: boolean;        // true = importado, aguardando conferência do usuário
   aplicacao: {
@@ -153,7 +154,7 @@ aviso não bloqueante com a opção de tentar importar o arquivo manualmente.
 | Campo | Mín | Máx | Observação |
 |---|---|---|---|
 | `sigla` | 1 | 32 | Após normalização |
-| `en`, `pt` | 0 | 200 | **Ao menos um dos dois** preenchido; o outro pode ficar vazio para preencher depois |
+| `en`, `pt`, `original` | 0 | 200 | **Ao menos um dos três** preenchido; os outros podem ficar vazios para preencher depois |
 | `aplicacao.contexto` | 0 | 2000 | Opcional |
 | `aplicacao.exemplo` | 0 | 2000 | Opcional |
 | `aplicacao.area`, `processo` | 0 | 120 | Opcional |
@@ -165,7 +166,8 @@ O excedente é rejeitado pelo Zod com mensagem de campo, nunca truncado em silê
 ### 3.4 Regras de integridade
 - `sigla` é chave única, normalizada: maiúsculas, sem acento, sem pontuação.
 - Toda sigla tem ≥ 1 sentido; excluir o último sentido remove a sigla.
-- **Ao menos um** entre `en` e `pt` preenchido; o outro pode ficar vazio. Nenhum
+- **Ao menos um** entre `en`, `pt` e `original` preenchido; os outros podem ficar
+  vazios. `original` guarda a expansão em italiano ou francês, comum na Stellantis. Nenhum
   campo vazio é preenchido automaticamente pelo app.
 - `rotulo` preserva a grafia do usuário; `sigla` é a chave de busca normalizada.
 - `revisar: true` marca entrada importada ainda não conferida — a UI sinaliza.

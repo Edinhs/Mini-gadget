@@ -13,6 +13,7 @@
           "categoria": "automotivo",
           "en": "Automated Build Code",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -40,6 +41,7 @@
           "categoria": "corporativo",
           "en": "Association of Business Process Management Professionals",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -67,6 +69,7 @@
           "categoria": "automotivo",
           "en": "Antilock Break System",
           "pt": "Sistema de Freios Antitravamento",
+          "original": "",
           "aplicacao": {
             "contexto": "Grafia \"Break\" conforme a lista de origem; conferir se o correto no seu contexto é \"Brake\".",
             "exemplo": "",
@@ -94,6 +97,7 @@
           "categoria": "automotivo",
           "en": "Adaptive Cruise Control",
           "pt": "Controle de Cruzeiro Adaptativo",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -121,8 +125,9 @@
           "categoria": "automotivo",
           "en": "",
           "pt": "",
+          "original": "Alzacristallo Elettrico",
           "aplicacao": {
-            "contexto": "Termo original em italiano: \"Alzacristallo Elettrico\".",
+            "contexto": "",
             "exemplo": "",
             "area": "",
             "processo": "",
@@ -148,6 +153,7 @@
           "categoria": "automotivo",
           "en": "Automatic Crash Notification",
           "pt": "Notificação Automática de Colisão",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -175,6 +181,7 @@
           "categoria": "automotivo",
           "en": "Automotive Data Aggregation process",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -202,6 +209,7 @@
           "categoria": "automotivo",
           "en": "Adjacent Component",
           "pt": "Componente Adjacente",
+          "original": "",
           "aplicacao": {
             "contexto": "Something other than that part caused our part to fail (such as a broken clip, or broken housing, etc).",
             "exemplo": "",
@@ -229,6 +237,7 @@
           "categoria": "automotivo",
           "en": "Advanced Design & Packaging",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -256,6 +265,7 @@
           "categoria": "automotivo",
           "en": "Autonomous Emergency Break",
           "pt": "Frenagem Autônoma de Emergência",
+          "original": "",
           "aplicacao": {
             "contexto": "Grafia \"Break\" conforme a lista de origem; conferir se o correto no seu contexto é \"Brake\".",
             "exemplo": "",
@@ -283,6 +293,7 @@
           "categoria": "automotivo",
           "en": "Staging Final Product",
           "pt": "",
+          "original": "Allestimento Finale Prodotto",
           "aplicacao": {
             "contexto": "Do italiano \"Allestimento Finale Prodotto\". Cada AFP e uma configuracao construivel (buildable configuration).",
             "exemplo": "",
@@ -303,6 +314,7 @@
           "categoria": "automotivo",
           "en": "",
           "pt": "Codigo de identificacao do modelo no CoDeP",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -330,6 +342,7 @@
           "categoria": "automotivo",
           "en": "Automatic Gearbox Shifter Module",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -357,6 +370,7 @@
           "categoria": "automotivo",
           "en": "Auto High Beam",
           "pt": "Farol Alto Automático",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -384,6 +398,7 @@
           "categoria": "corporativo",
           "en": "Architecture Leader",
           "pt": "Líder de Arquitetura",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -411,8 +426,9 @@
           "categoria": "automotivo",
           "en": "",
           "pt": "Modelo / versão",
+          "original": "Allestimento",
           "aplicacao": {
-            "contexto": "Termo original em italiano.",
+            "contexto": "",
             "exemplo": "",
             "area": "",
             "processo": "",
@@ -438,6 +454,7 @@
           "categoria": "automotivo",
           "en": "Absorber Lined Shielded Enclosure",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -465,6 +482,7 @@
           "categoria": "automotivo",
           "en": "Alternator",
           "pt": "Alternador",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -492,6 +510,7 @@
           "categoria": "automotivo",
           "en": "Amplitude Modulation",
           "pt": "Modulação em Amplitude",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -519,6 +538,7 @@
           "categoria": "automotivo",
           "en": "Advanced Manufacturing Engineering",
           "pt": "Engenharia de Manufatura Avançada",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -546,6 +566,7 @@
           "categoria": "automotivo",
           "en": "Amplifier",
           "pt": "Amplificador",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -573,6 +594,7 @@
           "categoria": "automotivo",
           "en": "Artificial Network",
           "pt": "",
+          "original": "",
           "aplicacao": {
             "contexto": "A device used to present a known impedance to the power line of the DUT.",
             "exemplo": "",
@@ -600,6 +622,7 @@
           "categoria": "automotivo",
           "en": "Anomaly",
           "pt": "Anomalia",
+          "original": "",
           "aplicacao": {
             "contexto": "A detectable change in DUT performance due to an applied stimulus.",
             "exemplo": "",
@@ -627,6 +650,7 @@
           "categoria": "corporativo",
           "en": "Asia Pacific Region",
           "pt": "Região Ásia-Pacífico",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -654,6 +678,7 @@
           "categoria": "automotivo",
           "en": "Advanced Product Quality Planning",
           "pt": "Planejamento Avançado da Qualidade do Produto",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
@@ -681,6 +706,7 @@
           "categoria": "automotivo",
           "en": "Additional Quality Requirements",
           "pt": "Requisitos Adicionais de Qualidade",
+          "original": "",
           "aplicacao": {
             "contexto": "",
             "exemplo": "",
