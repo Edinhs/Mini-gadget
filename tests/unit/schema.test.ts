@@ -110,13 +110,27 @@ describe('ConfigSchema', () => {
   it('aplica os padrões do SPEC §6.1', () => {
     const c = ConfigSchema.parse({});
     expect(c.atalhoGlobal).toBe('Ctrl+Alt+L');
-    expect(c.opacidadeOciosa).toBe(0.55);
+    expect(c.opacidadeOciosa).toBe(0.35);
+    expect(c.tamanhoLupa).toBe(34);
+    expect(c.ladoPainel).toBe('auto');
+    expect(c.corAcento).toMatch(/^#[0-9a-f]{6}$/i);
     expect(c.tamanhoHistorico).toBe(10);
     expect(c.cargaInicialAplicadaEm).toBeNull();
   });
 
-  it('rejeita opacidade fora da faixa 0,30–1,00', () => {
-    expect(ConfigSchema.safeParse({ opacidadeOciosa: 0.1 }).success).toBe(false);
+  it('rejeita opacidade fora da faixa 0,05–1,00', () => {
+    expect(ConfigSchema.safeParse({ opacidadeOciosa: 0.01 }).success).toBe(false);
     expect(ConfigSchema.safeParse({ opacidadeOciosa: 1.5 }).success).toBe(false);
+  });
+
+  it('limita o tamanho da lupa a 24–72 px', () => {
+    expect(ConfigSchema.safeParse({ tamanhoLupa: 20 }).success).toBe(false);
+    expect(ConfigSchema.safeParse({ tamanhoLupa: 80 }).success).toBe(false);
+    expect(ConfigSchema.safeParse({ tamanhoLupa: 34 }).success).toBe(true);
+  });
+
+  it('exige cor de acento em hexadecimal', () => {
+    expect(ConfigSchema.safeParse({ corAcento: 'azul' }).success).toBe(false);
+    expect(ConfigSchema.safeParse({ corAcento: '#2f6fed' }).success).toBe(true);
   });
 });

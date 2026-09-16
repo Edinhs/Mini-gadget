@@ -13,7 +13,10 @@ import { pastaBackups } from '../store/paths';
 import { readdirSync, existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { RepertorioSchema } from '../../shared/schema';
-import { abrirPainel, bloquearFechamento, fecharPainel } from '../window-manager';
+import {
+  abrirPainel, bloquearFechamento, fecharPainel, difundirConfig,
+  iniciarArraste, pararArraste, janelaPainel, janelaLupa,
+} from '../window-manager';
 
 const historico: string[] = [];
 
@@ -105,13 +108,24 @@ export function registrarHandlers(): void {
 
   ipcMain.handle('lupa:historico', () => [...historico]);
   ipcMain.handle('lupa:obterConfig', () => obterConfig());
-  ipcMain.handle('lupa:salvarConfig', (_e, patch: unknown) => salvarConfig(ConfigSchema.partial().parse(patch)));
+  ipcMain.handle('lupa:salvarConfig', (_e, patch: unknown) => {
+    const cfg = salvarConfig(ConfigSchema.partial().parse(patch));
+    // Tema, tamanho, opacidade e transparencia valem na hora, nas duas janelas.
+    difundirConfig();
+    return cfg;
+  });
   ipcMain.handle('lupa:novoId', () => repo.novoId());
   ipcMain.handle('lupa:abrirPastaDados', () => shell.openPath(pastaBackups()));
 
   ipcMain.on('lupa:abrirPainel', () => abrirPainel());
   ipcMain.on('lupa:fecharPainel', () => fecharPainel());
   ipcMain.on('lupa:copiar', (_e, texto: unknown) => clipboard.writeText(String(texto ?? '')));
+  ipcMain.on('lupa:iniciarArraste', (_e, dx: unknown, dy: unknown) =>
+    iniciarArraste(Number(dx) || 0, Number(dy) || 0),
+  );
+  ipcMain.on('lupa:pararArraste', () => pararArraste());
+  ipcMain.on('lupa:minimizar', () => janelaPainel()?.hide());
+  ipcMain.on('lupa:ocultarLupa', () => janelaLupa()?.hide());
   ipcMain.on('lupa:bloquearFechamento', (_e, v: unknown) => bloquearFechamento(Boolean(v)));
   ipcMain.handle('lupa:ping', () => 'pong');
 }

@@ -8,7 +8,7 @@ import { criarTray } from './tray';
 import { registrarAtalho } from './shortcuts';
 import * as repo from './store/repository';
 import { aplicarCargaInicialSeNecessario } from './store/bootstrap';
-import { obterConfig } from './store/settings';
+import { obterConfig, aplicarAutostart } from './store/settings';
 
 // SPEC §2 — instância única: a segunda execução abre o painel da existente.
 if (!app.requestSingleInstanceLock()) {
@@ -28,7 +28,7 @@ if (!app.requestSingleInstanceLock()) {
     const ok = registrarAtalho();
     console.log('[lupa] atalho global:', ok ? obterConfig().atalhoGlobal : 'indisponível');
 
-    app.setLoginItemSettings({ openAtLogin: obterConfig().iniciarComWindows });
+    aplicarAutostart(obterConfig().iniciarComWindows);
   });
 
   // O gadget vive na bandeja: fechar o painel não encerra o app.

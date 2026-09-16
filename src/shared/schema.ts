@@ -138,7 +138,15 @@ export const ConfigSchema = z.object({
   atalhoGlobal: z.string().min(1).default('Ctrl+Alt+L'),
   iniciarComWindows: z.boolean().default(false),
   tema: z.enum(['claro', 'escuro', 'sistema']).default('sistema'),
-  opacidadeOciosa: z.number().min(0.3).max(1).default(0.55),
+  opacidadeOciosa: z.number().min(0.05).max(1).default(0.35),
+  /** Lado da tela em que o painel abre em relacao a lupa. */
+  ladoPainel: z.enum(['auto', 'esquerda', 'direita']).default('auto'),
+  /** Diametro da lupa flutuante, em pixels. */
+  tamanhoLupa: z.number().int().min(24).max(72).default(34),
+  /** Transparencia do fundo das janelas: 0 = opaco, 1 = totalmente translucido. */
+  transparencia: z.number().min(0).max(0.85).default(0.35),
+  /** Cor de destaque do tema. */
+  corAcento: z.string().regex(/^#[0-9a-fA-F]{6}$/).default('#2f6fed'),
   abaPadrao: z.enum(['en', 'pt', 'aplicacao']).default('en'),
   categoriaPreferida: CategoriaSchema.nullable().default(null),
   pastaRepertorio: z.string().default(''),

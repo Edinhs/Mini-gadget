@@ -292,7 +292,11 @@ interface Config {
   atalhoGlobal: string;        // padrão 'Ctrl+Alt+L'
   iniciarComWindows: boolean;
   tema: 'claro' | 'escuro' | 'sistema';
-  opacidadeOciosa: number;     // 0,30–1,00 · padrão 0,55
+  opacidadeOciosa: number;     // 0,05–1,00 · padrão 0,35
+  ladoPainel: 'auto' | 'esquerda' | 'direita';
+  tamanhoLupa: number;         // 24–72 px · padrão 34
+  transparencia: number;       // 0–0,85 · padrão 0,35
+  corAcento: string;           // #RRGGBB
   abaPadrao: 'en' | 'pt' | 'aplicacao';
   categoriaPreferida: Categoria | null;
   pastaRepertorio: string;     // padrão %APPDATA%/Lupa

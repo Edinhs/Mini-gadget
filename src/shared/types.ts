@@ -60,6 +60,13 @@ export interface LupaAPI {
   /** Segura o fechamento por blur enquanto ha edicao pendente (SPEC 5.2). */
   bloquearFechamento(v: boolean): void;
   aoFocarBusca(cb: () => void): void;
+  /** Avisa o renderer quando a configuracao muda, para o tema valer na hora. */
+  aoMudarConfig(cb: (cfg: Config) => void): void;
+  /** Arraste livre da lupa: o main passa a seguir o cursor. */
+  iniciarArraste(dx: number, dy: number): void;
+  pararArraste(): void;
+  minimizar(): void;
+  ocultarLupa(): void;
 }
 
 declare global {

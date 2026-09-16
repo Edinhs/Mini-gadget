@@ -5,6 +5,8 @@ import { CardResultado } from './CardResultado';
 import { TelaRepertorio, VazioRepertorio } from './TelaRepertorio';
 import { TelaConfig } from './TelaConfig';
 import { FormSentido, type Rascunho } from './FormSentido';
+import { Icone, IconeLupa } from './IconeLupa';
+import { aplicarTema } from '../tema';
 
 type Tela = 'busca' | 'repertorio' | 'config' | 'novo';
 
@@ -17,50 +19,79 @@ export function Painel(): JSX.Element {
   const [total, setTotal] = useState(0);
   const input = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    void window.lupa.obterConfig().then((c) => {
-      setCfg(c);
-      if (c.tema !== 'sistema') document.documentElement.dataset['tema'] = c.tema;
-    });
+  const recarregarTotal = useCallback(() => {
     void window.lupa.listar().then((l) => setTotal(l.length));
-    window.lupa.aoFocarBusca(() => input.current?.focus());
   }, []);
 
-  const buscar = useCallback((t: string) => {
-    setTermo(t);
-    if (!t.trim()) return setRes(null);
-    void window.lupa.buscar(t).then(setRes);
-  }, []);
+  useEffect(() => {
+    void window.lupa.obterConfig().then((c) => { setCfg(c); aplicarTema(c); });
+    window.lupa.aoMudarConfig((c: Config) => { setCfg(c); aplicarTema(c); });
+    window.lupa.aoFocarBusca(() => input.current?.focus());
+    recarregarTotal();
+  }, [recarregarTotal]);
 
   // debounce de 120 ms (SPEC §5.2)
   useEffect(() => {
-    const id = setTimeout(() => {
-      if (termo.trim()) void window.lupa.buscar(termo).then(setRes);
-    }, 120);
+    if (!termo.trim()) { setRes(null); return; }
+    const id = setTimeout(() => { void window.lupa.buscar(termo).then(setRes); }, 120);
     return () => clearTimeout(id);
   }, [termo]);
 
   useEffect(() => {
     const h = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') { if (tela === 'busca') window.lupa.fecharPainel(); else setTela('busca'); }
-      if (e.key === 'n' && e.ctrlKey) { e.preventDefault(); setTela('novo'); }
+      if (e.key === 'Escape') { if (tela === 'busca') window.lupa.minimizar(); else setTela('busca'); }
+      if (e.key === 'n' && e.ctrlKey) { e.preventDefault(); setRascunho(null); setTela('novo'); }
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
   }, [tela]);
 
-  const recarregarTotal = (): void => { void window.lupa.listar().then((l) => setTotal(l.length)); };
+  const Barra = ({ titulo, voltar }: { titulo?: string; voltar?: () => void }): JSX.Element => (
+    <div className="barra">
+      {voltar ? (
+        <>
+          <button className="btn-janela" title="Voltar" onClick={voltar}>←</button>
+          <span className="marca">{titulo}</span>
+        </>
+      ) : (
+        <span className="marca"><IconeLupa tamanho={15} /> Lupa</span>
+      )}
+      <span className="espaco" />
+      {/* Item 8: minimizar no canto superior direito */}
+      <button className="btn-janela" title="Minimizar" onClick={() => window.lupa.minimizar()}>
+        <Icone nome="menos" tamanho={14} />
+      </button>
+      <button className="btn-janela fechar" title="Fechar" onClick={() => window.lupa.fecharPainel()}>
+        <Icone nome="x" tamanho={14} />
+      </button>
+    </div>
+  );
 
   if (tela === 'repertorio')
-    return <div className="painel"><TelaRepertorio aoSair={() => { setTela('busca'); recarregarTotal(); }} /></div>;
+    return (
+      <div className="painel">
+        <TelaRepertorio
+          barra={<Barra titulo="Repertório" voltar={() => { setTela('busca'); recarregarTotal(); }} />}
+          aoSair={() => { setTela('busca'); recarregarTotal(); }}
+        />
+      </div>
+    );
+
   if (tela === 'config')
-    return <div className="painel"><TelaConfig aoSair={() => setTela('busca')} /></div>;
+    return (
+      <div className="painel">
+        <Barra titulo="Configurações" voltar={() => setTela('busca')} />
+        <TelaConfig />
+      </div>
+    );
+
   if (tela === 'novo')
     return (
       <div className="painel">
-        <div className="barra"><span className="titulo">+ Nova sigla</span></div>
+        <Barra titulo={rascunho ? 'Editar sigla' : 'Nova sigla'} voltar={() => { setRascunho(null); setTela('busca'); }} />
         <FormSentido
           {...(rascunho ? { inicial: rascunho } : {})}
+          {...(!rascunho && termo.trim() ? { rotuloInicial: termo.trim() } : {})}
           aoSalvar={async (r) => {
             await window.lupa.salvarSentido(r.rotulo, r.sentido, r.tipo);
             setRascunho(null); setTela('busca'); recarregarTotal();
@@ -73,23 +104,24 @@ export function Painel(): JSX.Element {
 
   return (
     <div className="painel">
-      <div className="barra">
-        <span className="titulo">🔍 Lupa</span>
-        <span className="espaco" />
-        <button className="fantasma" title="Repertório" onClick={() => setTela('repertorio')}>Repertório</button>
-        <button className="fantasma" title="Configurações" onClick={() => setTela('config')}>⚙</button>
-        <button className="fantasma" title="Fechar" onClick={() => window.lupa.fecharPainel()}>✕</button>
-      </div>
+      <Barra />
 
       <div className="busca-wrap">
-        <input
-          ref={input}
-          type="search"
-          autoFocus
-          placeholder="Digite a sigla…"
-          value={termo}
-          onChange={(e) => buscar(e.target.value)}
-        />
+        <input ref={input} type="search" autoFocus placeholder="Digite a sigla…"
+          value={termo} onChange={(e) => setTermo(e.target.value)} />
+      </div>
+
+      {/* Item 9: acesso direto a Repertório e Configurações */}
+      <div className="nav">
+        <button onClick={() => setTela('repertorio')}>
+          <Icone nome="livro" /> Repertório{total > 0 ? ` · ${total}` : ''}
+        </button>
+        <button onClick={() => { setRascunho(null); setTela('novo'); }}>
+          <Icone nome="mais" /> Nova sigla
+        </button>
+        <button onClick={() => setTela('config')} title="Configurações" style={{ flex: '0 0 auto' }}>
+          <Icone nome="engrenagem" />
+        </button>
       </div>
 
       <div className="conteudo">
@@ -99,18 +131,15 @@ export function Painel(): JSX.Element {
 
         {!termo && total > 0 && (
           <div className="vazio">
-            <p>{total} {total === 1 ? 'sigla cadastrada' : 'siglas cadastradas'}.</p>
-            <p>Digite para buscar. <kbd>Ctrl+N</kbd> cadastra uma nova.</p>
+            <div className="icone"><IconeLupa tamanho={34} /></div>
+            <p>{total} {total === 1 ? 'sigla cadastrada' : 'siglas cadastradas'}</p>
+            <p><kbd>Ctrl+Alt+L</kbd> abre daqui de qualquer lugar · <kbd>Ctrl+N</kbd> cadastra</p>
           </div>
         )}
 
         {res?.resultados.map((s: Sigla) => (
-          <CardResultado
-            key={s.sigla}
-            sigla={s}
-            abaPadrao={cfg?.abaPadrao ?? 'en'}
-            aoEditar={(sig, sen: Sentido) => { setRascunho({ rotulo: sig.rotulo, tipo: sig.tipo, sentido: sen }); setTela('novo'); }}
-          />
+          <CardResultado key={s.sigla} sigla={s} abaPadrao={cfg?.abaPadrao ?? 'en'}
+            aoEditar={(sig, sen: Sentido) => { setRascunho({ rotulo: sig.rotulo, tipo: sig.tipo, sentido: sen }); setTela('novo'); }} />
         ))}
 
         {res?.sugestaoCadastro && (
@@ -118,13 +147,15 @@ export function Painel(): JSX.Element {
             <h2>“{res.termo}” não está no repertório</h2>
             <p>Nada é inventado aqui — cadastre o significado que você usa.</p>
             <div className="ctas">
-              <button className="primario" onClick={() => setTela('novo')}>+ Cadastrar “{res.termo}”</button>
+              <button className="primario" onClick={() => { setRascunho(null); setTela('novo'); }}>
+                <Icone nome="mais" tamanho={13} /> Cadastrar “{res.termo}”
+              </button>
             </div>
           </div>
         )}
 
         {res && res.estrategia !== 'exato' && res.resultados.length > 0 && (
-          <p style={{ color: 'var(--txt-2)', fontSize: 11, textAlign: 'center' }}>
+          <p className="dica" style={{ textAlign: 'center' }}>
             {res.estrategia === 'prefixo' && 'Siglas que começam assim'}
             {res.estrategia === 'fuzzy' && 'Você quis dizer…'}
             {res.estrategia === 'fulltext' && 'Encontradas pelo significado'}

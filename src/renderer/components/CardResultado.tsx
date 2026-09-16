@@ -1,6 +1,7 @@
 /** Card com as abas Inglês · Português · Aplicação (SPEC §5.3). */
 import { useEffect, useState } from 'react';
 import type { Sentido, Sigla } from '@shared/types';
+import { Icone } from './IconeLupa';
 
 type Aba = 'en' | 'pt' | 'aplicacao';
 type SubAba = 'contexto' | 'onde';
@@ -34,6 +35,7 @@ export function CardResultado({
       <div className="card-topo">
         <span className="sigla">{sigla.rotulo}</span>
         <span className="selo">{sentido.categoria}</span>
+        {sigla.tipo === 'termo' && <span className="selo tipo">termo</span>}
         {sentido.revisar && <span className="selo rever">a conferir</span>}
         <span className="espaco" />
         {sigla.sentidos.length > 1 && (
@@ -64,7 +66,7 @@ export function CardResultado({
 
         {aba === 'aplicacao' && (
           <>
-            <div className="abas" style={{ padding: 0, marginBottom: 8 }}>
+            <div className="abas internas">
               <button className={`aba ${sub === 'contexto' ? 'ativa' : ''}`} onClick={() => setSub('contexto')}>Contexto</button>
               <button className={`aba ${sub === 'onde' ? 'ativa' : ''}`} onClick={() => setSub('onde')}>Onde aparece</button>
             </div>
@@ -101,7 +103,7 @@ export function CardResultado({
 
       <div className="linha-acoes">
         <button className="fantasma" title="Copiar o texto desta aba" onClick={() => window.lupa.copiar(textoDaAba())}>
-          ⧉ Copiar
+          <Icone nome="copiar" tamanho={13} /> Copiar
         </button>
         <button
           className="fantasma"
@@ -113,7 +115,7 @@ export function CardResultado({
         <span className="espaco" />
         {aoEditar && (
           <button className="fantasma" onClick={() => aoEditar(sigla, sentido)}>
-            ✎ Editar
+            <Icone nome="lapis" tamanho={13} /> Editar
           </button>
         )}
       </div>

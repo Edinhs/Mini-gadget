@@ -8,6 +8,7 @@ import { RepertorioSchema, SentidoSchema } from '../../shared/schema';
 import type { RelatorioImport, Sentido, Sigla } from '../../shared/types';
 import { normalizar } from '../../shared/normalize';
 import * as repo from '../store/repository';
+import { ehCabecalhoCompleto, idiomaDoSignificado, lerLinhaSimples } from './formato-planilha';
 
 export const COLUNAS = [
   'id', 'sigla', 'rotulo', 'tipo', 'categoria', 'en', 'pt', 'original',
@@ -75,13 +76,40 @@ export function importar(caminho: string, modo: 'merge' | 'substituir'): Relator
       rel.erros.push({ linha: 0, campo: 'arquivo', mensagem: 'planilha sem abas' });
       return rel;
     }
-    linhas = XLSX.utils.sheet_to_json<Linha>(wb.Sheets[nome]!, { defval: '', raw: false });
+    const aba = wb.Sheets[nome]!;
+    const cruas = XLSX.utils.sheet_to_json<unknown[]>(aba, { header: 1, defval: '', raw: false, blankrows: false });
+    const primeira = cruas[0] ?? [];
+
+    if (ehCabecalhoCompleto(primeira)) {
+      linhas = XLSX.utils.sheet_to_json<Linha>(aba, { defval: '', raw: false });
+    } else {
+      // Formato simples: sigla | significado | aplicacao (a terceira e opcional).
+      linhas = [];
+      for (const celulas of cruas) {
+        const simples = lerLinhaSimples(celulas);
+        if (!simples) continue;
+        const campo = idiomaDoSignificado(simples.significado);
+        linhas.push({
+          id: '',
+          sigla: simples.rotulo,
+          rotulo: simples.rotulo,
+          tipo: 'sigla',
+          categoria: 'generico',
+          en: campo === 'en' ? simples.significado : '',
+          pt: campo === 'pt' ? simples.significado : '',
+          original: '',
+          contexto: simples.aplicacao,
+          exemplo: '', area: '', processo: '', referencia: '',
+          tags: '', favorito: 'nao', criadoEm: '', atualizadoEm: '',
+        });
+      }
+    }
   }
 
   if (modo === 'substituir') repo.substituir({ schemaVersion: 1, atualizadoEm: new Date().toISOString(), siglas: [] });
 
   linhas.forEach((l, i) => {
-    const numero = i + 2; // linha 1 = cabeçalho
+    const numero = i + 1;
     const rotulo = (l['rotulo'] || l['sigla'] || '').trim();
     const chave = normalizar(rotulo);
     if (!chave) {

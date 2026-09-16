@@ -28,6 +28,12 @@ const api = {
   copiar: (texto: string) => ipcRenderer.send('lupa:copiar', texto),
   bloquearFechamento: (v: boolean) => ipcRenderer.send('lupa:bloquearFechamento', v),
   aoFocarBusca: (cb: () => void) => ipcRenderer.on('lupa:focar-busca', cb),
+  aoMudarConfig: (cb: (cfg: unknown) => void) =>
+    ipcRenderer.on('lupa:config-mudou', (_e, cfg) => cb(cfg)),
+  iniciarArraste: (dx: number, dy: number) => ipcRenderer.send('lupa:iniciarArraste', dx, dy),
+  pararArraste: () => ipcRenderer.send('lupa:pararArraste'),
+  minimizar: () => ipcRenderer.send('lupa:minimizar'),
+  ocultarLupa: () => ipcRenderer.send('lupa:ocultarLupa'),
 };
 
 contextBridge.exposeInMainWorld('lupa', api);

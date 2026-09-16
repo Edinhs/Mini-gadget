@@ -6,14 +6,17 @@ export type Rascunho = { rotulo: string; tipo: 'sigla' | 'termo'; sentido: Senti
 
 export function FormSentido({
   inicial,
+  rotuloInicial,
   aoSalvar,
   aoCancelar,
 }: {
   inicial?: Rascunho;
+  /** Pre-preenche a sigla quando o cadastro vem de uma busca sem resultado. */
+  rotuloInicial?: string;
   aoSalvar: (r: Rascunho) => void;
   aoCancelar: () => void;
 }): JSX.Element {
-  const [rotulo, setRotulo] = useState(inicial?.rotulo ?? '');
+  const [rotulo, setRotulo] = useState(inicial?.rotulo ?? rotuloInicial ?? '');
   const [tipo, setTipo] = useState<'sigla' | 'termo'>(inicial?.tipo ?? 'sigla');
   const [s, setS] = useState<Sentido | null>(inicial?.sentido ?? null);
   const [erro, setErro] = useState('');
@@ -52,7 +55,7 @@ export function FormSentido({
 
   return (
     <div className="conteudo">
-      {erro && <div className="aviso" style={{ color: '#d64545', background: 'transparent', border: '1px solid #d64545' }}>{erro}</div>}
+      {erro && <div className="aviso erro">{erro}</div>}
 
       <div className="grade-2">
         <div className="campo">
@@ -101,8 +104,8 @@ export function FormSentido({
       <div className="campo"><label>Tags (separadas por ;)</label>
         <input type="text" value={s.tags.join(';')} onChange={(e) => set({ tags: e.target.value.split(';').map((t) => t.trim()).filter(Boolean) })} /></div>
 
-      <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
-        <button className="primario" onClick={salvar}>Salvar</button>
+      <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
+        <button className="primario" onClick={salvar} style={{ flex: 1 }}>Salvar</button>
         <button onClick={aoCancelar}>Cancelar</button>
       </div>
     </div>

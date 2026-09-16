@@ -1,14 +1,15 @@
 /** Lista, CRUD, import e export (SPEC §5.4). */
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import type { Sentido, Sigla } from '@shared/types';
 import { FormSentido, type Rascunho } from './FormSentido';
+import { Icone, IconeLupa } from './IconeLupa';
 
-export function TelaRepertorio({ aoSair }: { aoSair: () => void }): JSX.Element {
+export function TelaRepertorio({ barra, aoSair }: { barra: ReactNode; aoSair: () => void }): JSX.Element {
   const [lista, setLista] = useState<Sigla[]>([]);
   const [texto, setTexto] = useState('');
   const [editando, setEditando] = useState<Rascunho | null>(null);
   const [novo, setNovo] = useState(false);
-  const [aviso, setAviso] = useState('');
+  const [aviso, setAviso] = useState<{ texto: string; erro: boolean } | null>(null);
 
   const recarregar = useCallback(async () => {
     setLista(await window.lupa.listar(texto ? { texto } : undefined));
@@ -22,19 +23,23 @@ export function TelaRepertorio({ aoSair }: { aoSair: () => void }): JSX.Element 
     await recarregar();
   };
 
-  const importar = async (modo: 'merge' | 'substituir'): Promise<void> => {
-    const rel = await window.lupa.importar(modo);
+  const importar = async (): Promise<void> => {
+    const rel = await window.lupa.importar('merge');
     if (!rel) return;
-    setAviso(`${rel.inseridos} incluídas, ${rel.atualizados} atualizadas, ${rel.ignorados} ignoradas${rel.erros.length ? ` · ${rel.erros.length} erro(s): linha ${rel.erros[0]?.linha} — ${rel.erros[0]?.mensagem}` : ''}`);
+    const houveErro = rel.erros.length > 0;
+    setAviso({
+      erro: houveErro && rel.inseridos + rel.atualizados === 0,
+      texto:
+        `${rel.inseridos} incluída(s), ${rel.atualizados} atualizada(s), ${rel.ignorados} ignorada(s)` +
+        (houveErro ? ` · 1º erro: linha ${rel.erros[0]?.linha} — ${rel.erros[0]?.mensagem}` : ''),
+    });
     await recarregar();
   };
 
-  if (novo || editando) {
+  if (novo || editando)
     return (
       <>
-        <div className="barra">
-          <span className="titulo">{novo ? '+ Nova sigla' : 'Editar'}</span>
-        </div>
+        {barra}
         <FormSentido
           {...(editando ? { inicial: editando } : {})}
           aoSalvar={(r) => void salvar(r)}
@@ -42,39 +47,47 @@ export function TelaRepertorio({ aoSair }: { aoSair: () => void }): JSX.Element 
         />
       </>
     );
-  }
 
   return (
     <>
-      <div className="barra">
-        <span className="titulo">Repertório · {lista.length}</span>
-        <span className="espaco" />
-        <button className="primario" onClick={() => setNovo(true)}>+ Nova sigla</button>
-        <button onClick={aoSair}>Voltar</button>
+      {barra}
+
+      <div className="busca-wrap" style={{ paddingBottom: 6 }}>
+        <input type="search" placeholder="Filtrar siglas…" value={texto} onChange={(e) => setTexto(e.target.value)} />
       </div>
 
-      <div className="busca-wrap" style={{ display: 'flex', gap: 6 }}>
-        <input type="search" placeholder="Filtrar…" value={texto} onChange={(e) => setTexto(e.target.value)} />
-        <button onClick={() => void importar('merge')} title="Importar Excel, CSV ou JSON">Importar</button>
-        <button onClick={() => void window.lupa.exportar('xlsx')} title="Exportar para Excel">Exportar</button>
+      <div className="nav" style={{ paddingTop: 0, paddingBottom: 8 }}>
+        <button className="primario" onClick={() => setNovo(true)}><Icone nome="mais" /> Nova sigla</button>
+        <button onClick={() => void importar()} title="Excel, CSV ou JSON">Importar</button>
+        <button onClick={() => void window.lupa.exportar('xlsx')}>Exportar</button>
+        <button onClick={aoSair} className="fantasma" style={{ flex: '0 0 auto' }}>Fechar</button>
       </div>
 
       <div className="conteudo">
-        {aviso && <div className="aviso">{aviso}</div>}
+        {aviso && <div className={`aviso ${aviso.erro ? 'erro' : ''}`}>{aviso.texto}</div>}
+
         {lista.length === 0 ? (
-          <VazioRepertorio aoCadastrar={() => setNovo(true)} aoImportar={() => void importar('merge')} />
+          texto ? (
+            <div className="vazio"><p>Nada encontrado para “{texto}”.</p></div>
+          ) : (
+            <VazioRepertorio aoCadastrar={() => setNovo(true)} aoImportar={() => void importar()} />
+          )
         ) : (
           <table>
-            <thead>
-              <tr><th>Sigla</th><th>Significado</th><th style={{ width: 90 }} /></tr>
-            </thead>
+            <thead><tr><th style={{ width: 96 }}>Sigla</th><th>Significado</th><th className="col-acoes" /></tr></thead>
             <tbody>
               {lista.map((g) =>
                 g.sentidos.map((s) => (
                   <tr key={s.id}>
-                    <td><strong>{g.rotulo}</strong><br /><span className="selo">{s.categoria}</span></td>
-                    <td>{s.en || s.pt || s.original}{s.revisar && <> <span className="selo rever">a conferir</span></>}</td>
-                    <td style={{ whiteSpace: 'nowrap' }}>
+                    <td>
+                      <strong>{g.rotulo}</strong>
+                      <div style={{ marginTop: 3 }}><span className="selo">{s.categoria}</span></div>
+                    </td>
+                    <td className="td-significado">
+                      <div className="texto">{s.en || s.pt || s.original}</div>
+                      {s.revisar && <span className="selo rever">a conferir</span>}
+                    </td>
+                    <td className="col-acoes">
                       <button className="fantasma" title="Editar"
                         onClick={() => setEditando({ rotulo: g.rotulo, tipo: g.tipo, sentido: s as Sentido })}>✎</button>
                       <button className="fantasma perigo" title="Excluir"
@@ -99,12 +112,17 @@ export function TelaRepertorio({ aoSair }: { aoSair: () => void }): JSX.Element 
 export function VazioRepertorio({ aoCadastrar, aoImportar }: { aoCadastrar: () => void; aoImportar: () => void }): JSX.Element {
   return (
     <div className="vazio">
+      <div className="icone"><IconeLupa tamanho={36} /></div>
       <h2>Seu repertório está vazio</h2>
       <p>Nenhuma sigla é criada automaticamente — o conteúdo é todo seu.</p>
       <div className="ctas">
-        <button className="primario" onClick={aoCadastrar}>+ Cadastrar primeira sigla</button>
+        <button className="primario" onClick={aoCadastrar}><Icone nome="mais" tamanho={13} /> Cadastrar primeira</button>
         <button onClick={aoImportar}>Importar planilha</button>
       </div>
+      <p className="dica" style={{ marginTop: 14 }}>
+        A planilha pode ser bem simples: coluna A a sigla, B o significado e
+        C a aplicação. Só com A e B também funciona.
+      </p>
     </div>
   );
 }
