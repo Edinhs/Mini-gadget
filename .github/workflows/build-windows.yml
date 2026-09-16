@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
 
       - name: Instalar dependências
@@ -26,6 +26,18 @@ jobs:
 
       - name: Testes unitários
         run: npm run test:unit
+
+      # Gera out/main, out/preload e out/renderer, que o electron-builder empacota.
+      - name: Compilar bundles
+        run: npx electron-vite build
+
+      - name: Conferir saída da compilação
+        run: |
+          if (-not (Test-Path 'out/main/main.js')) { throw 'out/main/main.js nao foi gerado' }
+          if (-not (Test-Path 'out/preload/preload.js')) { throw 'out/preload/preload.js nao foi gerado' }
+          if (-not (Test-Path 'out/renderer/index.html')) { throw 'out/renderer/index.html nao foi gerado' }
+          Get-ChildItem -Recurse out | Select-Object FullName, Length
+        shell: pwsh
 
       - name: Empacotar (instalador + portátil)
         run: npx electron-builder --win --x64 --publish never
