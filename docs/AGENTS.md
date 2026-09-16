@@ -25,7 +25,7 @@ A regra que torna isso possível:
 |---|---|---|---|---|
 | A0 | **Orquestrador** | Decompõe, dispara, sincroniza ondas, resolve conflito de contrato, faz o merge final | `docs/`, raiz do repo | — |
 | A1 | **Arquiteto / Core** | Contrato de tipos, schema Zod, normalização, config do projeto | `src/shared/**`, `vite.config.ts`, `tsconfig.json`, `package.json` | `init` |
-| A2 | **Dados** | Repertório semente, store com escrita atômica, backup, migração de schema, import/export | `data/**`, `src/main/store/**`, `src/main/services/importer.ts`, `exporter.ts` | `anthropic-skills:xlsx` |
+| A2 | **Dados** | Carga inicial da lista do usuário, store com escrita atômica, backup, migração de schema, import/export | `data/**`, `src/main/store/**`, `src/main/services/importer.ts`, `exporter.ts` | `anthropic-skills:xlsx` |
 | A3 | **Main Process** | Janelas, always-on-top, bandeja, atalho global, IPC, busca em cascata | `src/main/**` (exceto store), `src/preload/**` | — |
 | A4 | **Renderer / UI** | Lupa flutuante, painel, card com abas, repertório, configurações, tema | `src/renderer/**` | `artifact-design` |
 | A5 | **Identidade visual** | Ícone da lupa (.ico/.png), ícone de bandeja, arte do instalador | `build/**` | `anthropic-skills:canvas-design` |
@@ -38,7 +38,7 @@ A regra que torna isso possível:
 ```
 ONDA 1  ── A1 (contrato + setup) ─────────────────────┐  [serial: bloqueia todos]
                                                       │
-ONDA 2  ── A2 (store+seed) ║ A3 (janelas+IPC) ║ A5 (ícones) ║ A6 (plano VF)
+ONDA 2  ── A2 (store+bootstrap) ║ A3 (janelas+IPC) ║ A5 (ícones) ║ A6 (plano VF)
                                                       │
 ONDA 3  ── A3 (busca cascata) ║ A4 (lupa+painel+card) ║ A2 (import/export)
                                                       │
@@ -83,7 +83,7 @@ ONDA 6  ── A7 (release) ── A0 (aceite final contra VF)
 | Agente | Consome | Entrega |
 |---|---|---|
 | A1 | BRIEFING, SPEC | Projeto compilando + contrato congelado |
-| A2 | Contrato, SPEC §3 e §7 | `siglas.seed.json`, store persistente, import/export |
+| A2 | Contrato, SPEC §3 e §7 | Store persistente, carga inicial, import/export |
 | A3 | Contrato, SPEC §2, §4, §5.1, §6 | Janelas, bandeja, atalho, IPC, serviço de busca |
 | A4 | Contrato, SPEC §5, ícones do A5 | Interface completa e navegável |
 | A5 | BRIEFING §5 | `build/icon.ico`, `build/tray.png`, arte do instalador |
@@ -98,6 +98,7 @@ O A0 só declara a v1.0 entregue quando, simultaneamente:
 - [ ] Todos os casos P0 do `docs/VF.md` estão aprovados;
 - [ ] RNF1..RNF8 medidos e dentro do alvo;
 - [ ] Instalador testado em máquina limpa Windows 10/11;
-- [ ] Repertório semente carregando no primeiro boot;
+- [ ] Primeiro boot funciona com repertório vazio (estado vazio + CTAs) e com a
+      carga inicial do usuário, quando fornecida;
 - [ ] README permite que um terceiro instale e use sem ajuda;
 - [ ] Nenhuma tarefa `Must` do SPR em aberto.

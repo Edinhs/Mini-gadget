@@ -67,7 +67,9 @@ repertório pessoal acumulável e exportável.
 - Desambiguação: mesma sigla com múltiplos significados por categoria.
 - CRUD completo do repertório dentro do app (cadastrar, editar, excluir).
 - Importar/exportar repertório em JSON, CSV e XLSX.
-- Seed inicial com siglas de Automotivo, TI, Corporativo e Genérico.
+- Três caminhos de entrada de siglas: **carga inicial** a partir da lista
+  enviada pelo usuário, **import de planilha** Excel/CSV e **cadastro manual**
+  pelo botão "+ Nova sigla" na tela do app.
 - Histórico das últimas consultas e favoritos.
 - Iniciar com o Windows (opcional) e minimizar para a bandeja.
 - Instalador Windows (.exe) + versão portátil.
@@ -87,14 +89,15 @@ repertório pessoal acumulável e exportável.
 | M2 | Tempo de inicialização a frio do gadget | < 3 s |
 | M3 | Taxa de acerto na primeira busca (repertório populado) | ≥ 90% |
 | M4 | Consumo de RAM em repouso | < 180 MB |
-| M5 | Siglas cadastradas no seed inicial | ≥ 100 |
+| M5 | Siglas da lista do usuário importadas sem erro | 100% |
 | M6 | Passos para cadastrar uma sigla nova | ≤ 4 |
 
 ## 8. Riscos e mitigações
 
 | Risco | Impacto | Mitigação |
 |---|---|---|
-| Repertório vazio torna o app inútil no dia 1 | Alto | Seed com ≥100 siglas reais das 4 categorias |
+| Repertório vazio no primeiro boot | Médio | Estado vazio com CTA claro ("cadastre sua primeira sigla" / "importar planilha"); carga inicial feita com a lista do próprio usuário antes da entrega |
+| Significado incorreto por sigla inventada | Alto | **Nenhuma sigla entra no repertório sem vir do usuário.** Nada de conteúdo gerado ou pesquisado externamente |
 | Electron pesado / lento para um widget | Médio | Janela única leve, lazy-load do painel, meta M2/M4 medida |
 | Corrupção do arquivo de dados | Alto | Escrita atômica (tmp + rename) + backup rotativo |
 | Ambiguidade de sigla entre domínios | Médio | Múltiplos sentidos por sigla, ordenados por categoria e uso |
@@ -104,6 +107,8 @@ repertório pessoal acumulável e exportável.
 ## 9. Premissas
 
 - Windows 10/11 64-bit, sem exigência de privilégio de administrador.
+- **O usuário é a única fonte de verdade do repertório.** O app não gera, não
+  sugere e não busca significados em lugar nenhum.
 - Usuário mantém o repertório manualmente; não há fonte de verdade externa.
 - Entrega priorizando **funcional e rápido** sobre completude de features.
 
@@ -116,5 +121,5 @@ repertório pessoal acumulável e exportável.
 | Verificação Funcional (testes/aceite) | `docs/VF.md` |
 | Sprint Planning & Release | `docs/SPR.md` |
 | Malha de agentes e skills | `docs/AGENTS.md` |
-| Repertório semente | `data/siglas.seed.json` |
+| Repertório inicial | Gerado a partir das siglas enviadas pelo usuário |
 | Aplicação | Instalador `.exe` + portátil |

@@ -32,7 +32,7 @@
 │  shortcuts.ts     atalho global (globalShortcut)                           │
 │  store/           repository.ts  → CRUD + escrita atômica + backup         │
 │                   settings.ts    → preferências (electron-store)           │
-│                   seed.ts        → popula repertório no 1º boot            │
+│                   bootstrap.ts   → cria repertório vazio no 1º boot        │
 │  services/        search.ts (Fuse) · importer.ts · exporter.ts             │
 │  ipc/handlers.ts  canais expostos ao renderer                              │
 └───────────────────────────────┬────────────────────────────────────────────┘
@@ -100,6 +100,21 @@ interface Repertorio {
   siglas: Sigla[];
 }
 ```
+
+### 3.2.1 Origem dos dados
+
+O repertório contém **exclusivamente** siglas fornecidas pelo usuário, por um dos
+três caminhos:
+
+| Caminho | Quando | Como entra |
+|---|---|---|
+| Carga inicial | Antes da entrega | Lista enviada pelo usuário, convertida para `data/carga-inicial.json` e importada no 1º boot |
+| Import de planilha | A qualquer momento | Excel/CSV no layout da §7 |
+| Cadastro manual | A qualquer momento | Botão **+ Nova sigla** na tela de Repertório (§5.4) |
+
+Se não houver `data/carga-inicial.json`, o 1º boot cria um repertório **vazio** e
+a interface exibe o estado vazio com os dois CTAs (cadastrar / importar). O app
+nunca inventa, sugere ou busca significado em fonte externa.
 
 ### 3.3 Limites de campo
 
@@ -310,7 +325,7 @@ preserva favoritos e datas. `tags` usa `;` como separador. `favorito` aceita
 ```
 Mini-gadget/
 ├─ docs/           BRIEFING · SPEC · VF · SPR · AGENTS
-├─ data/           siglas.seed.json
+├─ data/           carga-inicial.json (siglas do usuário, quando houver)
 ├─ src/
 │  ├─ main/        main.ts · window-manager · tray · shortcuts · ipc · store · services
 │  ├─ preload/     preload.ts (contextBridge)

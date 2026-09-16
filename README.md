@@ -32,5 +32,6 @@ Electron 32 · Vite 5 · TypeScript 5 · React 18 · Fuse.js · SheetJS · elect
 ## Dados
 
 O repertório fica em `%APPDATA%/Lupa/repertorio.json`, com backup rotativo.
-Semente inicial versionada em [`data/siglas.seed.json`](data/siglas.seed.json).
-Importe e exporte em JSON, CSV ou XLSX a qualquer momento.
+O repertório é **seu**: nenhuma sigla entra sem você cadastrar. Três caminhos de
+entrada — carga inicial a partir da sua lista, import de planilha Excel/CSV e o
+botão **+ Nova sigla** dentro do app. Exporte em JSON, CSV ou XLSX quando quiser.
