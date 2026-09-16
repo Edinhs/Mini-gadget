@@ -1,60 +1,38 @@
 /**
- * Processo principal — esqueleto da Onda 1 (T-01).
- *
- * Janela flutuante, bandeja, atalho global e IPC entram nas Ondas 2 e 3
- * (ver docs/SPR.md). Aqui só o ciclo de vida e a postura de segurança do
- * SPEC §2, que é o que todo o resto vai herdar.
+ * Processo principal do Lupa.
  */
-import { app, BrowserWindow } from 'electron';
-import { join } from 'node:path';
+import { app } from 'electron';
+import { registrarHandlers } from './ipc/handlers';
+import { criarLupa, abrirPainel, criarPainel } from './window-manager';
+import { criarTray } from './tray';
+import { registrarAtalho } from './shortcuts';
+import * as repo from './store/repository';
+import { aplicarCargaInicialSeNecessario } from './store/bootstrap';
+import { obterConfig } from './store/settings';
 
-const ehDev = !app.isPackaged;
-
-/** SPEC §2 — instância única: a segunda execução foca a existente. */
-const conseguiuLock = app.requestSingleInstanceLock();
-if (!conseguiuLock) {
+// SPEC §2 — instância única: a segunda execução abre o painel da existente.
+if (!app.requestSingleInstanceLock()) {
   app.quit();
-}
+} else {
+  app.on('second-instance', () => abrirPainel());
 
-let janela: BrowserWindow | null = null;
+  void app.whenReady().then(() => {
+    repo.carregar();
+    const carga = aplicarCargaInicialSeNecessario();
+    console.log('[lupa] carga inicial:', carga.motivo);
 
-function criarJanela(): void {
-  janela = new BrowserWindow({
-    width: 380,
-    height: 520,
-    show: false,
-    webPreferences: {
-      preload: join(__dirname, '../preload/preload.js'),
-      // CLAUDE.md regra 3 — o renderer nunca toca no sistema direto.
-      contextIsolation: true,
-      nodeIntegration: false,
-      sandbox: true,
-    },
+    registrarHandlers();
+    criarLupa();
+    criarPainel();
+    criarTray();
+    const ok = registrarAtalho();
+    console.log('[lupa] atalho global:', ok ? obterConfig().atalhoGlobal : 'indisponível');
+
+    app.setLoginItemSettings({ openAtLogin: obterConfig().iniciarComWindows });
   });
 
-  janela.once('ready-to-show', () => janela?.show());
-  janela.on('closed', () => {
-    janela = null;
+  // O gadget vive na bandeja: fechar o painel não encerra o app.
+  app.on('window-all-closed', () => {
+    /* mantido vivo pela bandeja */
   });
-
-  if (ehDev && process.env['ELECTRON_RENDERER_URL']) {
-    void janela.loadURL(process.env['ELECTRON_RENDERER_URL']);
-  } else {
-    void janela.loadFile(join(__dirname, '../renderer/index.html'));
-  }
 }
-
-app.on('second-instance', () => {
-  if (janela) {
-    if (janela.isMinimized()) janela.restore();
-    janela.focus();
-  }
-});
-
-void app.whenReady().then(criarJanela);
-
-// Windows é o alvo (SPEC §8/RNF6): fechar a última janela encerra o app.
-// Isso muda na Onda 2, quando o gadget passa a viver na bandeja.
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit();
-});

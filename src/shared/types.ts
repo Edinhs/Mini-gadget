@@ -37,22 +37,29 @@ export interface LupaAPI {
   buscar(termo: string): Promise<ResultadoBusca>;
   obter(sigla: string): Promise<Sigla | null>;
   listar(filtro?: Filtro): Promise<Sigla[]>;
-  salvarSentido(sigla: string, sentido: Sentido): Promise<void>;
+  salvarSentido(sigla: string, sentido: Sentido, tipo?: 'sigla' | 'termo'): Promise<void>;
   duplicarSentido(sigla: string, sentidoId: string): Promise<Sentido>;
   excluirSentido(sigla: string, sentidoId: string): Promise<void>;
   excluirSigla(sigla: string): Promise<void>;
   alternarFavorito(sigla: string, sentidoId: string): Promise<void>;
   registrarAcesso(sigla: string, sentidoId: string): Promise<void>;
-  importar(caminho: string, modo: ModoImport): Promise<RelatorioImport>;
+  /** Abre o dialogo nativo de arquivo e importa o que o usuario escolher. */
+  importar(modo: ModoImport): Promise<RelatorioImport | null>;
+  /** Abre o dialogo de salvar e grava no formato escolhido. */
   exportar(formato: FormatoExport): Promise<string>;
   listarBackups(): Promise<{ caminho: string; data: string }[]>;
   restaurarBackup(caminho: string): Promise<void>;
   historico(): Promise<string[]>;
   obterConfig(): Promise<Config>;
   salvarConfig(patch: Partial<Config>): Promise<Config>;
+  novoId(): Promise<string>;
+  abrirPastaDados(): Promise<string>;
   abrirPainel(): void;
   fecharPainel(): void;
   copiar(texto: string): void;
+  /** Segura o fechamento por blur enquanto ha edicao pendente (SPEC 5.2). */
+  bloquearFechamento(v: boolean): void;
+  aoFocarBusca(cb: () => void): void;
 }
 
 declare global {

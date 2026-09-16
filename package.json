@@ -1,6 +1,6 @@
 {
   "name": "lupa",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Mini-gadget de siglas para Windows",
   "main": "./out/main/main.js",
@@ -14,11 +14,14 @@
     "test:unit": "vitest run --passWithNoTests",
     "test:unit:watch": "vitest",
     "test:e2e": "playwright test --pass-with-no-tests",
-    "package": "npm run build && electron-builder --win --x64"
+    "package": "npm run build && electron-builder --win --x64",
+    "package:dir": "electron-vite build && electron-builder --win --x64 --dir"
   },
   "dependencies": {
+    "fuse.js": "^7.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "xlsx": "^0.18.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -28,10 +31,13 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "electron": "^32.2.0",
+    "electron-builder": "^25.1.8",
     "electron-vite": "^2.3.0",
     "typescript": "^5.6.0",
     "vite": "^5.4.0",
-    "vitest": "^2.1.0",
-    "electron-builder": "^25.1.8"
+    "vitest": "^2.1.0"
+  },
+  "author": {
+    "name": "Edinho Siqueira"
   }
 }

@@ -1,14 +1,33 @@
 /**
- * Ponte renderer ↔ main (SPEC §2). Esqueleto da Onda 1: a superfície `LupaAPI`
- * completa é publicada na Onda 3, junto com os handlers IPC (T-20).
- *
- * Regra: nada além do que está em `LupaAPI` atravessa esta ponte.
+ * Ponte renderer ↔ main (SPEC §2 e §6.2). Nada além da LupaAPI atravessa.
  */
 import { contextBridge, ipcRenderer } from 'electron';
 
 const api = {
-  /** Sonda usada só para validar a ponte no esqueleto. Sai na Onda 3. */
-  ping: (): Promise<string> => ipcRenderer.invoke('lupa:ping'),
-} as const;
+  buscar: (termo: string) => ipcRenderer.invoke('lupa:buscar', termo),
+  obter: (sigla: string) => ipcRenderer.invoke('lupa:obter', sigla),
+  listar: (filtro?: unknown) => ipcRenderer.invoke('lupa:listar', filtro),
+  salvarSentido: (sigla: string, sentido: unknown, tipo?: string) =>
+    ipcRenderer.invoke('lupa:salvarSentido', sigla, sentido, tipo),
+  duplicarSentido: (sigla: string, id: string) => ipcRenderer.invoke('lupa:duplicarSentido', sigla, id),
+  excluirSentido: (sigla: string, id: string) => ipcRenderer.invoke('lupa:excluirSentido', sigla, id),
+  excluirSigla: (sigla: string) => ipcRenderer.invoke('lupa:excluirSigla', sigla),
+  alternarFavorito: (sigla: string, id: string) => ipcRenderer.invoke('lupa:alternarFavorito', sigla, id),
+  registrarAcesso: (sigla: string, id: string) => ipcRenderer.invoke('lupa:registrarAcesso', sigla, id),
+  importar: (modo: string) => ipcRenderer.invoke('lupa:importar', modo),
+  exportar: (formato: string) => ipcRenderer.invoke('lupa:exportar', formato),
+  listarBackups: () => ipcRenderer.invoke('lupa:listarBackups'),
+  restaurarBackup: (caminho: string) => ipcRenderer.invoke('lupa:restaurarBackup', caminho),
+  historico: () => ipcRenderer.invoke('lupa:historico'),
+  obterConfig: () => ipcRenderer.invoke('lupa:obterConfig'),
+  salvarConfig: (patch: unknown) => ipcRenderer.invoke('lupa:salvarConfig', patch),
+  novoId: (): Promise<string> => ipcRenderer.invoke('lupa:novoId'),
+  abrirPastaDados: () => ipcRenderer.invoke('lupa:abrirPastaDados'),
+  abrirPainel: () => ipcRenderer.send('lupa:abrirPainel'),
+  fecharPainel: () => ipcRenderer.send('lupa:fecharPainel'),
+  copiar: (texto: string) => ipcRenderer.send('lupa:copiar', texto),
+  bloquearFechamento: (v: boolean) => ipcRenderer.send('lupa:bloquearFechamento', v),
+  aoFocarBusca: (cb: () => void) => ipcRenderer.on('lupa:focar-busca', cb),
+};
 
 contextBridge.exposeInMainWorld('lupa', api);

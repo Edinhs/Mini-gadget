@@ -1,0 +1,42 @@
+appId: com.edinho.lupa
+productName: Lupa
+copyright: Lupa — mini-gadget de siglas
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - out/**/*
+  - package.json
+
+extraResources:
+  # A carga inicial viaja com o app quando existe (SPEC §3.2.1) e é aplicada
+  # uma única vez, no primeiro boot.
+  - from: data
+    to: data
+    filter: ['carga-inicial.json']
+  - from: build/tray.png
+    to: build/tray.png
+
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+
+nsis:
+  oneClick: false
+  perMachine: false          # instala sem privilégio de administrador (RNF6)
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Lupa
+  artifactName: Lupa-Setup-${version}.${ext}
+  # Desinstalar não apaga o repertório: os dados ficam em %APPDATA%\Lupa.
+  deleteAppDataOnUninstall: false
+
+portable:
+  artifactName: Lupa-Portable-${version}.${ext}

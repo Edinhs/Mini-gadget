@@ -1,0 +1,2 @@
+Os ícones ficam em build/ (icon.ico, icon.png, tray.png). O SVG inline está em
+src/renderer/components/IconeLupa.tsx, usando currentColor para seguir o tema.

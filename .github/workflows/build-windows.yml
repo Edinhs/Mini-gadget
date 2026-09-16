@@ -1,0 +1,43 @@
+name: Build Windows
+
+# Gera o instalador NSIS e a versão portátil em runner Windows nativo —
+# sem wine, sem as limitações do container Linux de desenvolvimento.
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Verificar tipos
+        run: npm run typecheck
+
+      - name: Testes unitários
+        run: npm run test:unit
+
+      - name: Empacotar (instalador + portátil)
+        run: npx electron-builder --win --x64 --publish never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publicar artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lupa-Windows
+          path: |
+            release/*.exe
+            release/*.blockmap
+          if-no-files-found: error
+          retention-days: 30
